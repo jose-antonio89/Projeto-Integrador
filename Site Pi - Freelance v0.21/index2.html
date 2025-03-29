@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo - Cadastro</title>
+    <link rel="stylesheet" href="estiloscadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>  
+    <header>
+        <div class="separação"></div>
+        <div class="random">
+            <nav> 
+                <!-- <LOGO AKI> -->
+                <a href="index.html" class="logo"><i class="fas fa-home"></i></a>    
+                <!-- <LOGO AKI> -->   
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="Oque você esta buscando?">
+                </div>
+                <ul class="cabecalho">
+                    <li><a href="index.html" class="menu-item">HomePage</a></li>
+                    <li><a href="index2.html" class="menu-item">Cadastre-se</a></li>
+                </ul>         
+            </nav>
+        </div>
+
+        <div class="separação"></div>
+
+        <div class="categorias">
+            <a href="design.html"><div class="categoria">Design</div></a>
+            <a href="Programação.html"><div class="categoria">Programação</div></a>
+            <a href="Animação.html"><div class="categoria">Animação</div></a>
+            <a href="ArtistaIA.html"><div class="categoria">Artista IA</div></a>
+            <a href="escritor.html"><div class="categoria">Tradução/Escritor</div></a>
+            <a href="financeiro.html"><div class="categoria">Financeiro</div></a>
+            <a href="fotografias.html"><div class="categoria">Fotografias</div></a>
+            <a href="audio.html"><div class="categoria">Audio/Musica</div></a>
+        </div>
+
+        <div class="separação"></div>
+    </header>
+
+    <section class="flex-cadastro">      
+        <div class="esquerda">
+            <h1>""""Entre para o melhor site de freelancer já visto""""</h1>
+            <ul>
+                <li>Referência no mercado</li>
+                <li>Trabalho de qualidade</li>
+                <li>Fidelidade 100% ao cliente</li>
+            </ul>
+        </div>
+     
+        <div class="sessãologin">
+            <h2>Crie sua conta</h2>
+            <p>Já tem uma conta?</p> <a href="#" class="link-login">Faça login</a>
+
+            <div class="social-buttons">
+                <button class="google button">
+                    <i class="fab fa-google"></i>
+                    Continue com Google
+                </button>
+
+                <button class="facebook button">
+                    <i class="fab fa-facebook-f"></i>
+                    Continue com Facebook
+                </button>
+                
+                <button class="apple button">
+                    <i class="fab fa-apple"></i>
+                    Continue com Apple
+                </button>
+            </div>
+
+            <div class="separator">ou</div>
+
+            <!-- FORMULÁRIO DE CADASTRO -->
+
+              
+            <form id="formCadastro" action="processar_cadastro.php" method="post" class="form-cadastro"> <!--ACTION PARA REDIRECIONAMENTO APOS CADASTRO-->
+
+              <!--AREA NOME-->
+                <div class="form-group">
+                    <label for="nome">Nome Completo*</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                 <!--AREA EMAIL-->
+                <div class="form-group">
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                 <!--AREA SENHA-->
+                <div class="form-group">
+                    <label for="senha">Senha*</label>
+                    <input type="password" id="senha" name="senha" required minlength="8">
+                    <small>Mínimo 8 caracteres</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmar_senha">Confirmar Senha*</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                </div>
+
+                 <!--AREA FREELANCER/CLIENTE-->
+                <div class="form-group">
+                    <label for="tipo_conta">Você é*</label>
+                    <select id="tipo_conta" name="tipo_conta" required>
+                        <option value="">Selecione...</option>
+                        <option value="freelancer">Freelancer (Oferecer serviços)</option>
+                        <option value="cliente">Cliente (Contratar serviços)</option>
+                    </select>
+                </div>
+
+                <!--SE FREELANCER VAI APARECER LABEL DE ATUAÇÃO-->
+                <div class="form-group" id="area-atuacao-group" style="display:none;">
+                    <label for="area_atuacao">Área de Atuação*</label>
+                    <select id="area_atuacao" name="area_atuacao">
+                        <option value="">Selecione sua área...</option>
+                        <option value="design">Design</option>
+                        <option value="programacao">Programação</option>
+                        <option value="animacao">Animação</option>
+                        <option value="artista_ia">Artista IA</option>
+                        <option value="escrita_traducao">Escrita/Tradução</option>
+                        <option value="financeiro">Financeiro</option>
+                        <option value="fotografia">Fotografia</option>
+                        <option value="audio_musica">Áudio/Música</option>
+                    </select>
+                </div>
+
+                <!--AREA TELEFONE-->
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                </div>
+
+                <!--CHECKBOXES-->
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="termos" name="termos" required>
+                    <label for="termos">Eu li e aceito os <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a>*</label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Desejo receber novidades e promoções por e-mail</label>
+                </div>
+
+                <!--BUTTON CRIAR CONTA-->
+                <button type="submit" class="submit-button">Criar Conta</button>
+            </form>
+        </div>
+    </section>
+
+    <script> //script JS para cadastro
+        // MOSTRAR E OCULTAR AREA DE OCUPAÇÃO
+        document.getElementById('tipo_conta').addEventListener('change', function() {
+            const areaAtuacaoGroup = document.getElementById('area-atuacao-group');
+            if (this.value === 'freelancer') {  //SE VALOR IGUAL A FREELANCER APARECE LABEL DE ATUAÇÃO
+                areaAtuacaoGroup.style.display = 'block';
+                document.getElementById('area_atuacao').setAttribute('required', '');
+            } else { //SENÃO NÃO APARECE ND :)
+                areaAtuacaoGroup.style.display = 'none';
+                document.getElementById('area_atuacao').removeAttribute('required');
+            }
+        });
+
+        // VALIDAR SENHA
+        document.getElementById('formCadastro').addEventListener('submit', function(e) { //CAPTURA AMBAS SENHA E CONFIRMARSENHA
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmar_senha').value; 
+            
+            if (senha !== confirmarSenha) { //SE SENHA DIFERENTE DE CORFIRMARSENHA = ERROR
+                e.preventDefault();
+                alert('As senhas não coincidem!');
+            }
+        });
+
+        // MASCARA DO TELEFONE
+        //NÃO VALIDAÇÃO DE NÃO DIGITOS EX:(LETRAS/CARACTERES ESPECIAIS), AUTO APLICAÇÃO DE DDD PARA 2 PRIMEIROS NUMEROS, 
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.substring(0, 11);
+            
+            if (value.length > 0) { 
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                if (value.length > 10) {
+                    value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                } else {
+                    value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                }
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
