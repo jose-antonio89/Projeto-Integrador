@@ -1,55 +1,24 @@
-<?php
-// Config DB
-$db_host = 'localhost'; // Host
-$db_name = 'sistema_login'; // Nome
-$db_user = 'root'; // Usuario
-$db_pass = ''; // Senha
+<?php    
+$hostname = "localhost";
+$bancodedados = "sistema_login";
+$usuario = "root";
+$senha = "";
 
-// Enviar arquivo
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    try {
-        // Connect to database
-        $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", $db_user, $db_pass);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //  form data
-        $name = $_POST['name'] ?? '';
-        $email = $_POST['email'] ?? '';
-        $senha = password_hash($_POST['senha'] ?? '', PASSWORD_DEFAULT); // Hash senha
-        $tipo_conta = $_POST['tipo_conta'] ?? '';
-        $area_atuacao = $_POST['area_atuacao'] ?? '';
-        $telefone = $_POST['telefone'] ?? '';
-        $newsletter = isset($_POST['newsletter']) ? 1 : 0;
-        $data_cadastro = date('Y-m-d H:i:s'); 
-
-        // SQL 
-        $stmt = $pdo->prepare("INSERT INTO usuarios 
-                              (name, email, senha, tipo_conta, area_atuacao, telefone, newsletter, data_cadastro) 
-                              VALUES 
-                              (:name, :email, :senha, :tipo_conta, :area_atuacao, :telefone, :newsletter, :data_cadastro)");
-
-        // Parametros
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':senha', $senha);
-        $stmt->bindParam(':tipo_conta', $tipo_conta);
-        $stmt->bindParam(':area_atuacao', $area_atuacao);
-        $stmt->bindParam(':telefone', $telefone);
-        $stmt->bindParam(':newsletter', $newsletter, PDO::PARAM_INT);
-        $stmt->bindParam(':data_cadastro', $data_cadastro);
-
-        //  Executa
-        $stmt->execute();
-
-        // Sucesso 
-        $success = "Registration successful!";
-    } catch (PDOException $e) {
-        $error = "Database error: " . $e->getMessage();
-    } catch (Exception $e) {
-        $error = "Error: " . $e->getMessage();
-    }
+try {
+    //Criar conexão
+    $conn = new mysqli($hostname, $usuario, $senha, $bancodedados);
     
-    // Validar campos obrigatorios
+    if ($conn->connect_error) {
+        throw new Exception("Conexão falhou: " . $conn->connect_error);
+    }
+
+    //Verificar método de requisição
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") { //Valida os dados antes do processo "Se [request_method] for diferente da erro"
+        throw new Exception("Método de requisição inválido");
+    }
+
+   // Validar campos obrigatórios
     $camposObrigatorios = ['nome', 'email', 'senha', 'tipo_conta']; //Valida se os campos estão preenchidos "Se campo estiver vazio, Mostra mensagem (Campo é obrigatorio)"
     foreach ($camposObrigatorios as $campo) {
         if (empty($_POST[$campo])) {
@@ -62,23 +31,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $conn->real_escape_string($_POST['email']);
 
 
-    // Verificar se e-mail ja existe
+    // Verificar se e-mail já existe
     $verifica = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");  //Verificar email dentro do banco de dados 
     $verifica->bind_param("s", $email);
     $verifica->execute();
     if ($verifica->get_result()->num_rows > 0) {
         throw new Exception("Este e-mail já está cadastrado"); //Mensagem se email ja existente
     }
-}
-?>
-*/
 
-/*
-<?php if (isset($error)): ?>
-        <p class="error"><?php echo htmlspecialchars($error); ?></p>
-    <?php endif; ?>
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); //Hash da senha
+    $tipo_conta = $conn->real_escape_string($_POST['tipo_conta']);
+    $area_atuacao = isset($_POST['area_atuacao']) ? $conn->real_escape_string($_POST['area_atuacao']) : NULL;
+    $telefone = $conn->real_escape_string($_POST['telefone']);
+    $newsletter = isset($_POST['newsletter']) ? 1 : 0;
+
+    // Inserir no banco 
+    //Dados inseridos no cadastro, são capturados em mandados para o banco de dados 
+    $stmt = $conn->prepare("INSERT INTO usuarios ( 
+        nome, 
+        email, 
+        senha, 
+        tipo_conta, 
+        area_atuacao, 
+        telefone, 
+        newsletter, 
+        data_cadastro
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())");
+    $stmt->bind_param("ssssssi", $nome, $email, $senha, $tipo_conta, $area_atuacao, $telefone, $newsletter); 
+
+    if (!$stmt->execute()) {
+        throw new Exception("Erro ao cadastrar: " . $stmt->error);
+    }
+
+    header("Location: perfil.html");
+    exit();
+
+} catch (Exception $e) {
+    // Registrar erro em log 
+    error_log($e->getMessage());
     
-    <?php if (isset($success)): ?>
-        <p class="success"><?php echo htmlspecialchars($success); ?></p>
-    <?php endif; ?>
+    // Mostrar mensagem amigável (ou redirecionar para página de erro)
+    die("Ocorreu um erro durante o cadastro. Por favor, tente novamente.");
+} finally {
+    // Fechar conexões se existirem (Mesmo se der erro)
+    if (isset($verifica)) $verifica->close();
+    if (isset($stmt)) $stmt->close();
+    if (isset($conn)) $conn->close();
+}
  
