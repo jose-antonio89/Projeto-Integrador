@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo - Cadastro</title>
+    <link rel="stylesheet" href="css/estiloscadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><!--LINK DOS ICONES-->
+    <script src="js/scriptcadastro.js" defer></script>
+</head>
+<body>  
+    <header>
+        <div class="separação"></div>
+        <div class="principal">
+            <nav> 
+                <!-- <LOGO AKI> -->
+                    <a href="index.html" class="logo" id="home-logo">
+                    <section>
+                        <img class="imagem-logo" src="img/logo.png" alt="">
+                    </section>   
+                    </a>
+                <!-- <LOGO AKI> -->   
+                
+                <ul class="cabecalho">
+                    <li><a href="index.html" class="menu-item">HomePage</a></li>
+                    <li><a href="index2.html" class="menu-item">Cadastre-se</a></li>
+                </ul>       
+            </nav>
+        </div>
+
+        <div class="separação"></div>
+
+        <div class="categorias">
+            <a href="design.html"><div class="categoria"><i class="fas fa-paint-brush mr-2"></i> Design</div></a>
+            <a href="Programação.html"><div class="categoria"><i class="fas fa-code mr-2"></i> Programação</div></a>
+            <a href="Animação.html"><div class="categoria"><i class="fa-solid fa-film"></i> Animação</div></a>
+            <a href="ArtistaIA.html"><div class="categoria"><i class="fa-solid fa-wifi"></i> Artista IA</div></a>
+            <a href="escritor.html"><div class="categoria"><i class="fa-solid fa-book"></i> Tradução/Escritor</div></a>
+            <a href="financeiro.html"><div class="categoria"><i class="fa-solid fa-money-bill"></i> Financeiro</div></a>
+            <a href="fotografias.html"><div class="categoria"><i class="fa-solid fa-camera"></i> Fotografia</div></a>
+            <a href="audio.html"><div class="categoria"><i class="fa-solid fa-headphones"></i> Áudio/Música</div></a>
+        </div>
+
+        <div class="separação"></div>
+    </header>
+
+    <section class="flex-cadastro">      
+        <div class="esquerda">
+            <h1>""""Entre para o melhor site de freelancer já visto""""</h1>
+            <ul>
+                <li>Referência no mercado</li>
+                <li>Trabalho de qualidade</li>
+                <li>Fidelidade 100% ao cliente</li>
+            </ul>
+        </div>
+     
+        <div class="sessãologin">
+            <h2>Crie sua conta</h2>
+            <p>Já tem uma conta?</p> <a href="login.html" class="link-login">Faça login</a>
+
+            <div class="social-buttons">
+                <button class="google button">
+                    <i class="fab fa-google"></i>
+                    Continue com Google
+                </button>
+
+                <button class="facebook button">
+                    <i class="fab fa-facebook-f"></i>
+                    Continue com Facebook
+                </button>
+                
+                <button class="apple button">
+                    <i class="fab fa-apple"></i>
+                    Continue com Apple
+                </button>
+            </div>
+
+            <div class="separator">ou</div>
+
+            <!-- FORMULÁRIO DE CADASTRO -->
+
+              
+            <form id="formCadastro" action="php/processar_cadastro.php" method="post" class="form-cadastro"> <!--ACTION PARA REDIRECIONAMENTO APOS CADASTRO-->
+
+              <!--AREA NOME-->
+                <div class="form-group">
+                    <label for="nome">Nome Completo*</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                 <!--AREA EMAIL-->
+                <div class="form-group">
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                 <!--AREA SENHA-->
+                <div class="form-group">
+                    <label for="senha">Senha*</label>
+                    <input type="password" id="senha" name="senha" required minlength="8">
+                    <small>Mínimo 8 caracteres</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmar_senha">Confirmar Senha*</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                </div>
+
+                 <!--AREA FREELANCER/CLIENTE-->
+                <div class="form-group">
+                    <label for="tipo_conta">Você é*</label>
+                    <select id="tipo_conta" name="tipo_conta" required>
+                        <option value="">Selecione...</option>
+                        <option value="freelancer">Freelancer (Oferecer serviços)</option>
+                        <option value="cliente">Cliente (Contratar serviços)</option>
+                    </select>
+                </div>
+
+                <!--SE FREELANCER VAI APARECER LABEL DE ATUAÇÃO-->
+                <div class="form-group" id="area-atuacao-group" style="display:none;">
+                    <label for="area_atuacao">Área de Atuação*</label>
+                    <select id="area_atuacao" name="area_atuacao">
+                        <option value="">Selecione sua área...</option>
+                        <option value="design">Design</option>
+                        <option value="programacao">Programação</option>
+                        <option value="animacao">Animação</option>
+                        <option value="artista_ia">Artista IA</option>
+                        <option value="escrita_traducao">Escrita/Tradução</option>
+                        <option value="financeiro">Financeiro</option>
+                        <option value="fotografia">Fotografia</option>
+                        <option value="audio_musica">Áudio/Música</option>
+                    </select>
+                </div>
+
+                <!--TERMOS-->
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="termos" name="termos" required>
+                    <label for="termos" class="checkmark"></label>
+                    <label for="termos" class="checkbox-label">Eu li e aceito os <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a>*</label>
+                    <small></small>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter" class="checkmark"></label>
+                    <label for="newsletter" class="checkbox-label">Desejo receber novidades e promoções por e-mail</label>
+                </div>
+
+                <!--BUTTON CRIAR CONTA-->
+                <button type="submit" class="submit-button">Criar Conta</button>
+            </form>
+        </div>
+    </section>
+
+
+
+     <!-------------------------------FOOTER--------------------------------------->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre a Workly</h3>
+                <p>Conectando empresas aos melhores freelancers desde 2025.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Workly. Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+</html>
