@@ -1,6 +1,6 @@
 <div align="center" id="inicio">
 
-# ![Logo da Workly](View/img/logo.png)
+# ![Logo da Workly](WorklyMVC%20-%20v0.1/View/img/logo.png)
 ### Plataforma digital que conecta freelancers e contratantes de forma segura e eficiente.
 
 ***
@@ -67,11 +67,11 @@ Segundo o IBGE/FGV, as demissões voluntárias voltaram a bater recorde em julho
 
 As demissões sem justa causa continuam em patamares significativos, com 888.201 demissões neste regime contra 323.068 demissões com justa causa. Os dados mostram que as demissões a pedido do empregado representam a maioria significativa dos casos:
 
-[![GRAFICO 2](/View/img/figura2.jpg)](https://blogdoibre.fgv.br/posts/demissoes-pedido-permanecem-em-alta)
+[![GRAFICO 2](WorklyMVC%20-%20v0.1/View/img/figura2.jpg)](https://blogdoibre.fgv.br/posts/demissoes-pedido-permanecem-em-alta)
 
 Paralelamente, pesquisa da Serasa Experian revela que 58,1% dos jovens entre 16-24 anos preferem atuar em desenvolvimento de sistemas, seguido por design (41,9%) e análise de dados (30,2%). Esta preferência por áreas que naturalmente permitem trabalho remoto e freelance cria um ambiente ideal para plataformas de conexão entre talentos e oportunidades:
 
-[![GRAFICO 3](/View/img/figura3.png)](https://www.serasaexperian.com.br/sala-de-imprensa/rh/desenvolvimento-de-sistemas-e-escolha-de-6-em-cada-10-jovens-com-interesse-na-area-de-ti-revela-pesquisa-da-serasa-experian)
+[![GRAFICO 3](WorklyMVC%20-%20v0.1/View/img/figura3.png)](https://www.serasaexperian.com.br/sala-de-imprensa/rh/desenvolvimento-de-sistemas-e-escolha-de-6-em-cada-10-jovens-com-interesse-na-area-de-ti-revela-pesquisa-da-serasa-experian)
 
 Este cenário duplo - aumento das demissões voluntárias e crescimento do interesse por tecnologia - cria um ambiente ideal para plataformas que conectam profissionais qualificados com oportunidades de trabalho flexível. Nossa plataforma se posiciona como a solução ideal para:
 
@@ -140,7 +140,7 @@ Requisitos não funcionais da aplicação (qualidade)
 
 O Modelo de negócios da plataforma se encontra abaixo:
 
-[![Modelo de negocios](/View/img/Modelo-de-Negócios-Canvas-WORKLY.png)](View/img/Modelo-de-Negócios-Canvas-WORKLY.png)
+[![Modelo de negocios](/WorklyMVC%20-%20v0.1/View/img/Modelo-de-Negócios-Canvas-WORKLY.png)](View/img/Modelo-de-Negócios-Canvas-WORKLY.png)
 
 <br>
 
@@ -231,7 +231,7 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 A paleta de cores da Workly foi selecionada para transmitir profissionalismo, confiança e modernidade. As cores principais e as utilizadas em detalhes, tela de fundo e como cor da fonte foram escolhidas para garantir uma identidade visual coesa e agradável, facilitando a usabilidade e a experiência do usuário.
 
-[![Palheta de cores](/View/img/Palheta-de-cores.png)](View/img/Palheta-de-cores.png)
+[![Palheta de cores](/WorklyMVC%20-%20v0.1/View/img/Palheta-de-cores.png)](View/img/Palheta-de-cores.png)
 
 <br>
 
@@ -249,7 +249,7 @@ O logotipo da Workly é um isotipo que utiliza vetores e a fonte Montserrat, sim
 
 ### 5.4 - Modelo de navegação
 
-[![Modelo de navegação](/View/img/Modelo-de-navegação.png)](View/img/Modelo-de-navegação.png)
+[![Modelo de navegação](WorklyMVC%20-%20v0.1/View/img/Modelo-de-navegação.png)](View/img/Modelo-de-navegação.png)
 
 <br>
 
