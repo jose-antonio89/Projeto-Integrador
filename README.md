@@ -79,7 +79,7 @@ Este cenário duplo - aumento das demissões voluntárias e crescimento do inter
 - **Profissionais** que buscam autonomia e projetos alinhados com suas habilidades técnicas
 - **Empresas** que necessitam de talentos especializados em modalidade flexível
 - **Jovens** da geração Z que preferem carreiras em tecnologia com liberdade geográfica
-- 
+
 <br>
 
 ### 1.2 - Objetivos
@@ -113,16 +113,15 @@ Requisitos funcionais da aplicação (funcionalidades esperadas, necessidades qu
 
 #### BUSCA E NAVEGAÇÃO
 - **RF 4** – Permitir a visualização de trabalhos públicos
-- **RF 5** – Interfaces para freelancers e contratantes
-- **RF 6** – Navegar por categorias (Design, Programação, Animação, etc.)
-- **RF 7** – Sistema de pesquisa por palavras-chave
+- **RF 5** – Navegar por categorias (Design, Programação, Animação, etc.)
+- **RF 6** – Sistema de pesquisa por palavras-chave
 
 #### CRIAÇÃO E CONTRATAÇÃO DE PROJETOS
-- **RF 8** – Permitir a criação de projetos para receberem propostas
+- **RF 7** – Permitir a criação de projetos para receberem propostas
 
 #### PÁGINAS IMPORTANTES
-- **RF 9** – Página "Sobre Nós"
-- **RF 10** – Página de "Como Funciona" (para freelancers e clientes)
+- **RF 8** – Página "Sobre Nós"
+- **RF 9** – Página de "Como Funciona" (para freelancers e clientes)
 
 <br>
 
