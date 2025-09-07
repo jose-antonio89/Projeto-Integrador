@@ -140,7 +140,7 @@ Requisitos não funcionais da aplicação (qualidade)
 
 O Modelo de negócios da plataforma se encontra abaixo:
 
-[![Modelo de negocios](/WorklyMVC%20-%20v0.1/View/img/Modelo%@0de%20Negócios%20Canvas%20WORKLY.png)](View/img/Modelo-de-Negócios-Canvas-WORKLY.png)
+[![Modelo de negocios](/WorklyMVC%20-%20v0.1/View/img/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)](/WorklyMVC%20-%20v0.1/View/img/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)
 
 <br>
 
@@ -249,7 +249,7 @@ O logotipo da Workly é um isotipo que utiliza vetores e a fonte Montserrat, sim
 
 ### 5.4 - Modelo de navegação
 
-[![Modelo de navegação](/View/img/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)](/WorklyMVC%20-%20v0.1/View/img/Palheta%20de%20cores.png)
+[![Modelo de navegação](/WorklyMVC%20-%20v0.1/View/img/Modelo%20de%20navegação.png)](/WorklyMVC%20-%20v0.1/View/img/Modelo%20de%20navegação.png)
 
 <br>
 
