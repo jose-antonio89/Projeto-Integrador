@@ -273,9 +273,9 @@ Link para acessar o protótipo: [Figma do Projeto](https://www.figma.com/design/
 
 ## 7 - Aplicação
 
-A aplicação foi desenvolvida inicialmente como uma página estática, incorporando exemplos de funcionalidades futuras e algumas já operacionais.
+A aplicação foi desenvolvida inicialmente como uma página estática, incorporando exemplos de funcionalidades futuras e algumas já operacionais e armazenamos os arquivos e a documentação do projeto neste GitHub
 
-Link para o GitHub: [Github do Projeto](https://github.com/jose-antonio89/Projeto-Integrador)
+[![Pagina inicial](https://www.figma.com/design/hYmRgDqf9kCFHGjJNyExRh/Prot%C3%B3tipo-P.I?node-id=3-13&t=OfXh8xe9dPCxdqg8-4)](https://www.figma.com/design/hYmRgDqf9kCFHGjJNyExRh/Prot%C3%B3tipo-P.I?node-id=3-13&t=OfXh8xe9dPCxdqg8-4)
 
 <br>
 
