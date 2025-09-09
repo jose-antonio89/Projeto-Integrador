@@ -275,8 +275,7 @@ Link para acessar o protótipo: [Figma do Projeto](https://www.figma.com/design/
 
 A aplicação foi desenvolvida inicialmente como uma página estática, incorporando exemplos de funcionalidades futuras e algumas já operacionais e armazenamos os arquivos e a documentação do projeto neste GitHub
 
-[![Pagina inicial](https://www.figma.com/design/hYmRgDqf9kCFHGjJNyExRh/Prot%C3%B3tipo-P.I?node-id=3-13&t=OfXh8xe9dPCxdqg8-4)](https://www.figma.com/design/hYmRgDqf9kCFHGjJNyExRh/Prot%C3%B3tipo-P.I?node-id=3-13&t=OfXh8xe9dPCxdqg8-4)
-
+[![Pagina inicial](WorklyMVC - v0.1/View/img/paginainicial.png)](WorklyMVC - v0.1/View/img/paginainicial.png)
 <br>
 
 ## 8 - Considerações Finais
