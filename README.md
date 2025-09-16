@@ -62,29 +62,13 @@
 
 O mercado de trabalho brasileiro passa por uma significativa transformação, com crescimento notável tanto nas demissões voluntárias quanto no interesse por áreas de tecnologia. Esses movimentos revelam uma busca por novos modelos de trabalho que ofereçam maior autonomia e flexibilidade.
 
-Segundo o IBGE/FGV, as demissões voluntárias voltaram a bater recorde em julho de 2024, atingindo 2,243 milhões de demissões apenas no mês de junho de 2024. Este número representa um aumento consistente em relação aos meses anteriores, indicando uma mudança estrutural no mercado de trabalho:
-
-[![GRAFICO 1](WorklyMVC%20-%20v0.1/View/img/figura1.jpg)](https://blogdoibre.fgv.br/posts/demissoes-pedido-permanecem-em-alta)
-
-As demissões sem justa causa continuam em patamares significativos, com 888.201 demissões neste regime contra 323.068 demissões com justa causa. Os dados mostram que as demissões a pedido do empregado representam a maioria significativa dos casos:
-
-[![GRAFICO 2](WorklyMVC%20-%20v0.1/View/img/figura2.jpg)](https://blogdoibre.fgv.br/posts/demissoes-pedido-permanecem-em-alta)
-
-Paralelamente, pesquisa da Serasa Experian revela que 58,1% dos jovens entre 16-24 anos preferem atuar em desenvolvimento de sistemas, seguido por design (41,9%) e análise de dados (30,2%). Esta preferência por áreas que naturalmente permitem trabalho remoto e freelance cria um ambiente ideal para plataformas de conexão entre talentos e oportunidades:
-
-[![GRAFICO 3](WorklyMVC%20-%20v0.1/View/img/figura3.png)](https://www.serasaexperian.com.br/sala-de-imprensa/rh/desenvolvimento-de-sistemas-e-escolha-de-6-em-cada-10-jovens-com-interesse-na-area-de-ti-revela-pesquisa-da-serasa-experian)
-
-Este cenário duplo - aumento das demissões voluntárias e crescimento do interesse por tecnologia - cria um ambiente ideal para plataformas que conectam profissionais qualificados com oportunidades de trabalho flexível. Nossa plataforma se posiciona como a solução ideal para:
-
-- **Profissionais** que buscam autonomia e projetos alinhados com suas habilidades técnicas
-- **Empresas** que necessitam de talentos especializados em modalidade flexível
-- **Jovens** da geração Z que preferem carreiras em tecnologia com liberdade geográfica
+A Workly nasce da crescente insatisfação das pessoas com as condições tradicionais do mercado de trabalho, oferecendo uma alternativa mais justa, flexível e alinhada às demandas do futuro. A plataforma conecta talentos criativos e digitais a oportunidades reais, permitindo que cada profissional atue com autonomia, segurança e valorização do seu portfólio. Ao intermediar de forma transparente e justa a relação entre contratantes e freelancers, a Workly não apenas amplia as possibilidades de carreira, mas também transforma a frustração com o modelo convencional em oportunidades de crescimento, inovação e realização profissional.
 
 <br>
 
 ### 1.2 - Objetivos
 
-A Workly surge como resposta às transformações do mercado de trabalho contemporâneo, posicionando-se como uma plataforma integradora que conecta freelancers qualificados a oportunidades de projetos flexíveis. Nosso objetivo é desenvolver e consolidar uma plataforma digital inovadora que facilite conexões significativas entre profissionais independentes e contratantes, oferecendo segurança, eficiência e ferramentas adequadas para ambos os lados.
+A Workly surge como resposta às transformações do mercado de trabalho contemporâneo, posicionando-se como uma plataforma integradora que conecta freelancers qualificados a oportunidades de projetos flexíveis. Nosso objetivo é desenvolver e consolidar uma plataforma digital inovadora que facilite conexões significativas entre profissionais independentes e contratantes da área de tecnologia, oferecendo segurança, eficiência e ferramentas adequadas para ambos os lados.
 
 <br>
 
