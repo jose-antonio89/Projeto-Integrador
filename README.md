@@ -107,21 +107,43 @@ Um Documento de Requisitos de Sistema (DRS) é um documento formal que descreve 
 Requisitos funcionais da aplicação (funcionalidades esperadas, necessidades que devem ser atendidas)
 
 #### CADASTRO, ACESSO E PERFIL
-- **RF 1** – O Sistema deve cadastrar usuário com informações básicas (Nome, E-mail e Senha)
-- **RF 2** – Realizar login (Nome ou e-mail e senha)
-- **RF 3** – Permitir a criação e edição de perfis de freelancers e contratantes
+- **RF 1** – O Sistema deve cadastrar usuário com informações básicas (Nome, E-mail e Senha).
+- **RF 2** – Realizar login (Nome ou e-mail e senha).
+- **RF 3** – Permitir a criação e edição de perfis de freelancers e contratantes.
 
 #### BUSCA E NAVEGAÇÃO
-- **RF 4** – Permitir a visualização de trabalhos públicos
-- **RF 5** – Navegar por categorias (Design, Programação, Animação, etc.)
-- **RF 6** – Sistema de pesquisa por palavras-chave
+- **RF 4** – Permitir a visualização de trabalhos públicos.
+- **RF 5** – Navegar por categorias (Design, Programação, Animação, etc.).
+- **RF 6** – Sistema de pesquisa por palavras-chave.
 
 #### CRIAÇÃO E CONTRATAÇÃO DE PROJETOS
-- **RF 7** – Permitir a criação de projetos para receberem propostas
+- **RF 7** – Possibilitar solicitação, criação e personalização de propostas.
+- **RF 8** – Permitir a criação de projetos para receberem propostas.
+- **RF 9** – Bloquear propostas indesejadas.
+- **RF 10** – Permitir visualização dos status da proposta (Aceita, Entregue e Negada).
+
+#### COMUNICAÇÃO E CONTRATOS
+
+- **RF 11** – Permitir a comunicação direta entre freelancers e contratantes através de um sistema interno de mensagens de texto, imagens e documentos.
+- **RF 12** – Sistema de Notificação por e-mail e whatsapp (Caso seja permitido pelo usuário).
+- **RF 13** – Permitir que o projeto seja considerado entregue por meio de um check por ambas as partes.
+
+#### PAGAMENTOS DEPOSITOS E SAQUES
+
+- **RF 14** – Permitir visualização de saldo e a solicitação de saques.
+- **RF 15** – Diferentes meios de saque e depósito (Cartão, PIX, etc).
+- **RF 16** – Limites de saque em diferentes horários para garantir a segurança.
+- **RF 17** – Possbilitar a visualização de histórico de transações.
+- **RF 18** – Permitir pagamentos dos projetos seguindo o contrato.
+
+#### AVALIAÇÕES E FEEDBACKS 
+
+- **RF 19** – Permitir a avaliação e exibição pública de clientes e freelancers, com comentários e avaliação.
 
 #### PÁGINAS IMPORTANTES
-- **RF 8** – Página "Sobre Nós"
-- **RF 9** – Página de "Como Funciona" (para freelancers e clientes)
+- **RF 20** – Página "Sobre Nós".
+- **RF 21** – Página de "Como Funciona" (para freelancers e clientes).
+- **RF 22** – Página de termos de serviço e políticas de privacidade.
 
 <br>
 
