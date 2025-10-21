@@ -260,7 +260,7 @@ Ator Descrição:
 
 ### 5.3 - Principais Casos de Uso
 
-01 – Cadastro de Usuário
+01 – Cadastrar usuario
  
 Atores: Cliente, Freelancer\
 Descrição: Permite que novos usuários criem uma conta informando dados pessoais e tipo de perfil.\
@@ -275,7 +275,7 @@ Fluxo alternativo:\
 2a. Se o e-mail já estiver cadastrado, o sistema exibe mensagem de erro.
 Pós-condição: Conta criada com sucesso.
  
-02 – Login
+02 – Realizar login
  
 Atores: Cliente, Freelancer\
 Descrição: Usuário acessa o sistema com suas credenciais.\
@@ -287,7 +287,7 @@ Se válidas, o usuário é redirecionado ao seu painel.
 Fluxo alternativo:\
 2a. Se as credenciais forem inválidas, o sistema informa erro.
  
-03 – Criação de Serviço
+03 – Criar serviço
  
 Atores: Freelancer\
 Descrição: Freelancer cadastra um novo serviço.\
@@ -298,7 +298,7 @@ Informa título, descrição, categoria, preço e prazo médio.
 Sistema salva o serviço e o exibe na listagem.
 Pós-condição: Serviço disponível para visualização por clientes.
 
-04 – Busca e Visualização de Serviços
+04 – Buscar e visualizar serviços
  
 Atores: Cliente\
 Descrição: Cliente pesquisa e visualiza serviços disponíveis.\
@@ -309,7 +309,7 @@ Informa termos (ex: “edição de vídeo”).
 Sistema lista serviços correspondentes.
 Cliente clica em um serviço para ver detalhes e perfil do freelancer.
  
-05 – Contratação de Serviço
+05 – Contratar serviços
  
 Atores: Cliente, Freelancer\
 Descrição: Cliente contrata um serviço de um freelancer.\
@@ -321,7 +321,7 @@ Cliente confirma e realiza pagamento (simulado ou via gateway).
 Sistema notifica o freelancer da nova contratação.
 Pós-condição: Contrato criado entre cliente e freelancer.
 
-06 – Avaliação de Serviço
+06 – Avaliar serviços
  
 Atores: Cliente\
 Descrição: Após a conclusão, cliente avalia o serviço.\
