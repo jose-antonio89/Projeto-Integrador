@@ -247,7 +247,7 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 ### 5.1 - Diagrama logico do caso de uso da aplicação
 
-[![Modelo de dados](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)
+[![Modelo de dados](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso.png)](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso.png)
 
 ### 5.2 - Atores
 
