@@ -321,7 +321,7 @@ Escolhe o serviço e adiciona nota e comentário.
 Sistema registra a avaliação.
 Pós-condição: Avaliação exibida no perfil do freelancer.
  
-07 – Gerenciar Perfil\
+07 – Gerenciar Perfil
  
 Atores: Freelancer, Cliente\
 Descrição: Permite alterar dados do perfil.\
