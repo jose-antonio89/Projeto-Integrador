@@ -43,14 +43,15 @@
   - [4.2 - Financeiro](#42---financeiro)
   - [4.3 - Técnica](#43---técnica)
   - [4.4 - Operacional](#44---operacional)
-- [5 - Design](#5---design)
-  - [5.1 - Paleta de Cor](#51---paleta-de-cor)
-  - [5.2 - Tipografia](#52---tipografia)
-  - [5.3 - Logo](#53---logo)
-  - [5.4 - Modelo de navegação](#54---modelo-de-navegação)
-- [6 - Protótipo](#6---protótipo)
-- [7 - Aplicação](#7---aplicação)
-- [8 - Considerações Finais](#8---considerações-finais)
+- [5 - Modelo de dados](#5---modelo-de-dados)
+- [6 - Design](#6---design)
+  - [6.1 - Paleta de Cor](#61---paleta-de-cor)
+  - [6.2 - Tipografia](#62---tipografia)
+  - [6.3 - Logo](#63---logo)
+  - [6.4 - Modelo de navegação](#64---modelo-de-navegação)
+- [7 - Protótipo](#7---protótipo)
+- [8 - Aplicação](#8---aplicação)
+- [9 - Considerações Finais](#9---considerações-finais)
 
 </details>
 
@@ -239,9 +240,15 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
-## 5 - Design
+## 7 - Modelo de dados
 
-### 5.1 - Paleta de Cor
+Diagrama de casos de uso da aplicação
+
+[![Modelo de dados][(/WorklyMVC%20-%20v0.1/View/img/)()
+
+## 6 - Design
+
+### 6.1 - Paleta de Cor
 
 A paleta de cores da Workly foi selecionada para transmitir profissionalismo, confiança e modernidade. As cores principais e as utilizadas em detalhes, tela de fundo e como cor da fonte foram escolhidas para garantir uma identidade visual coesa e agradável, facilitando a usabilidade e a experiência do usuário.
 
@@ -249,19 +256,19 @@ A paleta de cores da Workly foi selecionada para transmitir profissionalismo, co
 
 <br>
 
-### 5.2 - Tipografia
+### 6.2 - Tipografia
 
 As fontes escolhidas para o projeto Workly, Montserrat e Josefin Sans, foram selecionadas por sua excelente legibilidade, versatilidade e elegância. Elas contribuem para uma experiência de leitura agradável e reforçam a identidade visual profissional da plataforma.
 
 <br>
 
-### 5.3 - Logo
+### 6.3 - Logo
 
 O logotipo da Workly é um isotipo que utiliza vetores e a fonte Montserrat, simbolizando a conexão eficiente e profissional entre freelancers e clientes. Seu design foi concebido para transmitir a essência da plataforma de forma clara.
 
 <br>
 
-### 5.4 - Modelo de navegação
+### 6.4 - Modelo de navegação
 
 [![Modelo de navegação](/WorklyMVC%20-%20v0.1/View/img/Modelo%20de%20navegação.png)](/WorklyMVC%20-%20v0.1/View/img/Modelo%20de%20navegação.png)
 
@@ -269,7 +276,7 @@ O logotipo da Workly é um isotipo que utiliza vetores e a fonte Montserrat, sim
 
 <br>
 
-## 6 - Protótipo
+## 7 - Protótipo
 
 O protótipo da Workly foi desenvolvido utilizando a ferramenta Figma, que permite a criação de interfaces interativas e visualmente atraentes. O protótipo inclui todas as principais telas e funcionalidades da plataforma, proporcionando uma visão clara de como os usuários irão interagir com o sistema.
 
@@ -277,7 +284,7 @@ Link para acessar o protótipo: [Figma do Projeto](https://www.figma.com/design/
 
 <br>
 
-## 7 - Aplicação
+## 8 - Aplicação
 
 A aplicação foi desenvolvida inicialmente como uma página estática, incorporando exemplos de funcionalidades futuras e algumas já operacionais e armazenamos os arquivos e a documentação do projeto neste GitHub
 
@@ -285,7 +292,7 @@ A aplicação foi desenvolvida inicialmente como uma página estática, incorpor
 
 <br>
 
-## 8 - Considerações Finais
+## 9 - Considerações Finais
 
 ### 1º Semestre
 Este documento detalhou o processo de desenvolvimento da aplicação Workly. Durante o percurso, enfrentamos desafios, como a perda de um membro da equipe responsável pela documentação. No entanto, com a dedicação da equipe remanescente, conseguimos iniciar e avançar em diversas frentes, que serão concluídas no próximo semestre. Acreditamos que a Workly trará contribuições significativas para o mercado de trabalho, conectando freelancers e contratantes de forma eficiente e segura.
