@@ -251,11 +251,12 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 ### 5.2 - Atores
 
-Ator    Descrição \
-Cliente    Usuário que contrata serviços. Pode buscar freelancers, contratar e avaliar. \
-Freelancer    Profissional que oferece serviços na plataforma. Pode cadastrar e editar serviços.\
-Sistema (Plataforma)    Responsável por autenticação, armazenamento de dados e gerenciamento das ações.\
-Administrador (opcional)    Pode gerenciar usuários, remover serviços inapropriados e resolver disputas.
+Ator Descrição:
+
+Cliente --> Usuário que contrata serviços. Pode buscar freelancers, contratar e avaliar. \
+Freelancer --> Profissional que oferece serviços na plataforma. Pode cadastrar e editar serviços.\
+Sistema (Plataforma) --> Responsável por autenticação, armazenamento de dados e gerenciamento das ações.\
+Administrador (opcional) --> Pode gerenciar usuários, remover serviços inapropriados e resolver disputas.
 
 ### 5.3 - Principais Casos de Uso
 
