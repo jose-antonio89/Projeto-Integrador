@@ -242,14 +242,15 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 ## 5 - Modelo de dados
 
-- -------- Atores
+-------- Atores
 - Ator    Descrição 
 - Cliente    Usuário que contrata serviços. Pode buscar freelancers, contratar e avaliar. 
 - Freelancer    Profissional que oferece serviços na plataforma. Pode cadastrar e editar serviços.
 - Sistema (Plataforma)    Responsável por autenticação, armazenamento de dados e gerenciamento das ações.
 - Administrador (opcional)    Pode gerenciar usuários, remover serviços inapropriados e resolver disputas. 
-- -------- Principais Casos de Uso
-* 01 – Cadastro de Usuário
+-------- Principais Casos de Uso
+  
+- 01 – Cadastro de Usuário
  
 - Atores: Cliente, Freelancer 
 - Descrição: Permite que novos usuários criem uma conta informando dados pessoais e tipo de perfil. 
