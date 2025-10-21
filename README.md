@@ -242,18 +242,18 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 ## 5 - Modelo de dados
 
--------- Atores
--Ator    Descrição
--Cliente    Usuário que contrata serviços. Pode buscar freelancers, contratar e avaliar.
--Freelancer    Profissional que oferece serviços na plataforma. Pode cadastrar e editar serviços.
--Sistema (Plataforma)    Responsável por autenticação, armazenamento de dados e gerenciamento das ações.
--Administrador (opcional)    Pode gerenciar usuários, remover serviços inapropriados e resolver disputas.
--------- Principais Casos de Uso
--01 – Cadastro de Usuário
+- -------- Atores
+- Ator    Descrição 
+- Cliente    Usuário que contrata serviços. Pode buscar freelancers, contratar e avaliar. 
+- Freelancer    Profissional que oferece serviços na plataforma. Pode cadastrar e editar serviços.
+- Sistema (Plataforma)    Responsável por autenticação, armazenamento de dados e gerenciamento das ações.
+- Administrador (opcional)    Pode gerenciar usuários, remover serviços inapropriados e resolver disputas. 
+- -------- Principais Casos de Uso
+- 01 – Cadastro de Usuário
  
--Atores: Cliente, Freelancer 
--Descrição: Permite que novos usuários criem uma conta informando dados pessoais e tipo de perfil. 
--Fluxo principal: 
+- Atores: Cliente, Freelancer 
+- Descrição: Permite que novos usuários criem uma conta informando dados pessoais e tipo de perfil. 
+- Fluxo principal: 
  
 O usuário acessa a tela de cadastro.
 Informa nome, e-mail, senha e tipo de usuário (cliente ou freelancer).
@@ -263,11 +263,11 @@ Fluxo alternativo:
 2a. Se o e-mail já estiver cadastrado, o sistema exibe mensagem de erro.
 Pós-condição: Conta criada com sucesso.
  
--02 – Login
+- 02 – Login
  
-Atores: Cliente, Freelancer
-Descrição: Usuário acessa o sistema com suas credenciais.
-Fluxo principal:
+- Atores: Cliente, Freelancer
+- Descrição: Usuário acessa o sistema com suas credenciais.
+- Fluxo principal:
  
 Usuário informa e-mail e senha.
 Sistema valida as credenciais.
@@ -275,33 +275,33 @@ Se válidas, o usuário é redirecionado ao seu painel.
 Fluxo alternativo:
 2a. Se as credenciais forem inválidas, o sistema informa erro.
  
--03 – Criação de Serviço
+- 03 – Criação de Serviço
  
-Atores: Freelancer
-Descrição: Freelancer cadastra um novo serviço.
-Fluxo principal:
+- Atores: Freelancer
+- Descrição: Freelancer cadastra um novo serviço.
+- Fluxo principal:
  
 Freelancer acessa o painel e escolhe “Criar novo serviço”.
 Informa título, descrição, categoria, preço e prazo médio.
 Sistema salva o serviço e o exibe na listagem.
 Pós-condição: Serviço disponível para visualização por clientes.
 
--04 – Busca e Visualização de Serviços
+- 04 – Busca e Visualização de Serviços
  
-Atores: Cliente
-Descrição: Cliente pesquisa e visualiza serviços disponíveis.
-Fluxo principal:
+- Atores: Cliente
+- Descrição: Cliente pesquisa e visualiza serviços disponíveis.
+- Fluxo principal:
  
 Cliente acessa a página de busca.
 Informa termos (ex: “edição de vídeo”).
 Sistema lista serviços correspondentes.
 Cliente clica em um serviço para ver detalhes e perfil do freelancer.
  
--05 – Contratação de Serviço
+- 05 – Contratação de Serviço
  
-Atores: Cliente, Freelancer
-Descrição: Cliente contrata um serviço de um freelancer.
-Fluxo principal:
+- Atores: Cliente, Freelancer
+- Descrição: Cliente contrata um serviço de um freelancer.
+- Fluxo principal:
  
 Cliente seleciona o serviço desejado.
 Sistema exibe detalhes e botão “Contratar”.
@@ -309,28 +309,28 @@ Cliente confirma e realiza pagamento (simulado ou via gateway).
 Sistema notifica o freelancer da nova contratação.
 Pós-condição: Contrato criado entre cliente e freelancer.
  
--06 – Avaliação de Serviço
+- 06 – Avaliação de Serviço
  
-Atores: Cliente
-Descrição: Após a conclusão, cliente avalia o serviço.
-Fluxo principal:
+- Atores: Cliente
+- Descrição: Após a conclusão, cliente avalia o serviço.
+- Fluxo principal:
  
 Cliente acessa histórico de serviços concluídos.
 Escolhe o serviço e adiciona nota e comentário.
 Sistema registra a avaliação.
 Pós-condição: Avaliação exibida no perfil do freelancer.
  
--07 – Gerenciar Perfil
+- 07 – Gerenciar Perfil
  
-Atores: Freelancer, Cliente
-Descrição: Permite alterar dados do perfil.
-Fluxo principal:
+- Atores: Freelancer, Cliente
+- Descrição: Permite alterar dados do perfil.
+- Fluxo principal:
  
 Usuário acessa o painel de configurações.
 Altera informações (nome, descrição, foto, etc).
 Sistema salva as alterações.
 
--Diagrama logico do caso de uso da aplicação
+- Diagrama logico do caso de uso da aplicação
 
 [![Modelo de dados](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)
 
