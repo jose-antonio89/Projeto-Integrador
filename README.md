@@ -244,7 +244,7 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 Diagrama de casos de uso da aplicação
 
-[![Modelo de dados][(/WorklyMVC%20-%20v0.1/View/img/)()
+[![Modelo de dados][(/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)
 
 ## 6 - Design
 
