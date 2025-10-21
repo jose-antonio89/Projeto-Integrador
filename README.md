@@ -242,13 +242,16 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 ## 5 - Modelo de dados
 
--------- Atores\
+### 5.1 - Atores
+
 Ator    Descrição \
 Cliente    Usuário que contrata serviços. Pode buscar freelancers, contratar e avaliar. \
 Freelancer    Profissional que oferece serviços na plataforma. Pode cadastrar e editar serviços.\
 Sistema (Plataforma)    Responsável por autenticação, armazenamento de dados e gerenciamento das ações.\
-Administrador (opcional)    Pode gerenciar usuários, remover serviços inapropriados e resolver disputas.\
--------- Principais Casos de Uso\
+Administrador (opcional)    Pode gerenciar usuários, remover serviços inapropriados e resolver disputas.
+
+### 5.2 - Principais Casos de Uso
+
 01 – Cadastro de Usuário
  
 Atores: Cliente, Freelancer\
@@ -321,7 +324,7 @@ Escolhe o serviço e adiciona nota e comentário.
 Sistema registra a avaliação.
 Pós-condição: Avaliação exibida no perfil do freelancer.
  
-07 – Gerenciar Perfil
+07 – Gerenciar Perfil\
  
 Atores: Freelancer, Cliente\
 Descrição: Permite alterar dados do perfil.\
@@ -331,7 +334,7 @@ Usuário acessa o painel de configurações.
 Altera informações (nome, descrição, foto, etc).
 Sistema salva as alterações.
 
-Diagrama logico do caso de uso da aplicação
+### 5.3 - Diagrama logico do caso de uso da aplicação
 
 [![Modelo de dados](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso%20Workly.jpg)
 
