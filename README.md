@@ -47,6 +47,7 @@
   - [5.1 - Diagrama](#51---diagrama-logico-do-caso-de-uso-da-aplicação)
   - [5.2 - Atores](#52---atores)
   - [5.3 - Principais Casos de Uso](#53---principais-casos-de-uso)
+  - [5.4 - Diagrama de calsses](#54---diagrama-de-classes)
 - [6 - Design](#6---design)
   - [6.1 - Paleta de Cor](#61---paleta-de-cor)
   - [6.2 - Tipografia](#62---tipografia)
@@ -341,6 +342,10 @@ Fluxo principal:
 Usuário acessa o painel de configurações.
 Altera informações (nome, descrição, foto, etc).
 Sistema salva as alterações.
+
+### 5.4 - Diagrama de classes
+
+[![Diagrama de classes](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
