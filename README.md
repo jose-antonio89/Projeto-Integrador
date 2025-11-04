@@ -43,7 +43,7 @@
   - [4.2 - Financeiro](#42---financeiro)
   - [4.3 - Técnica](#43---técnica)
   - [4.4 - Operacional](#44---operacional)
-- [5 - Modelo de dados](#5---modelo-de-dados)
+- [5 - Diagramas da Aplicação](#5---diagramas-da-aplicação)
   - [5.1 - Diagrama](#51---diagrama-logico-do-caso-de-uso-da-aplicação)
   - [5.2 - Atores](#52---atores)
   - [5.3 - Principais Casos de Uso](#53---principais-casos-de-uso)
@@ -243,11 +243,11 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
-## 5 - Modelo de dados
+## 5 - Diagramas da Aplicação
 
 ### 5.1 - Diagrama logico do caso de uso da aplicação
 
-[![Modelo de dados](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso.png)](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso.png)
+[![Diagramas da Aplicação](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso.png)](/WorklyMVC%20-%20v0.1/View/img/Casos%20de%20uso.png)
 
 ### 5.2 - Atores
 
