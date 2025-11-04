@@ -345,7 +345,7 @@ Sistema salva as alterações.
 
 ### 5.4 - Diagrama de classes
 
-[![Diagrama de classes](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.svg)](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.svg)
+[![Diagrama de classes](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
