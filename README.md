@@ -352,7 +352,7 @@ Sistema salva as alterações.
 
 ### 5.5 - Diagrama de Entidade e Relacionamento
 
-[![Diagrama de Entidade e Relacionamento](/WorklyMVC%20-%20v0.1/View/img/)](/WorklyMVC%20-%20v0.1/View/img/)
+[![Diagrama de Entidade e Relacionamento](/WorklyMVC%20-%20v0.1/View/img/WorklyDER.png)](/WorklyMVC%20-%20v0.1/View/img/WorklyDER.png)
 
 <br>
 
