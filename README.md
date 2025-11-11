@@ -348,11 +348,12 @@ Sistema salva as alterações.
 
 [![Diagrama de classes](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)
 
-<p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
 ### 5.5 - Diagrama de Entidade e Relacionamento
 
-[![Diagrama de Entidade e Relacionamento](/WorklyMVC%20-%20v0.1/View/img/WorklyDER.png)](/WorklyMVC%20-%20v0.1/View/img/WorklyDER.png)
+[![Diagrama Entidade Relacionamento](/WorklyMVC%20-%20v0.1/View/img/WorklyDER.png)](/WorklyMVC%20-%20v0.1/View/img/WorklyDER.png)
+
+<p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
 <br>
 
