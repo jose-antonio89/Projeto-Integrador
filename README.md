@@ -48,6 +48,7 @@
   - [5.2 - Atores](#52---atores)
   - [5.3 - Principais Casos de Uso](#53---principais-casos-de-uso)
   - [5.4 - Diagrama de classes](#54---diagrama-de-classes)
+  - [5.5 - Diagrama Entidade Relacionamento](#55---diagrama-entidade-relacionamento)
 - [6 - Design](#6---design)
   - [6.1 - Paleta de Cor](#61---paleta-de-cor)
   - [6.2 - Tipografia](#62---tipografia)
@@ -348,6 +349,10 @@ Sistema salva as alterações.
 [![Diagrama de classes](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)](/WorklyMVC%20-%20v0.1/View/img/Workly.vpd.png)
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
+
+### 5.5 - Diagrama de Entidade e Relacionamento
+
+[![Diagrama de Entidade e Relacionamento](/WorklyMVC%20-%20v0.1/View/img/)](/WorklyMVC%20-%20v0.1/View/img/)
 
 <br>
 
