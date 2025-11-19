@@ -1,6 +1,6 @@
 <div align="center" id="inicio">
 
-# ![Logo da Workly](WorklyMVC%20-%20v0.1/View/img/logo.png)
+# ![Logo da Workly](Workly/View/img2/logo.png)
 ### Plataforma digital que conecta freelancers e contratantes de forma segura e eficiente.
 
 ***
