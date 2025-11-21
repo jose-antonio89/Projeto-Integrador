@@ -49,7 +49,7 @@
   - [5.3 - Principais Casos de Uso](#53---principais-casos-de-uso)
   - [5.4 - Diagrama de classes](#54---diagrama-de-classes)
   - [5.5 - Diagrama Entidade Relacionamento](#55---diagrama-entidade-relacionamento)
-  - [5.6 - Diagrama de processo de negócio](#55---diagrama-de-processo-de-negocio)
+  - [5.6 - Diagrama de processo de negócio](#56---diagrama-de-processo-de-negocio)
 - [6 - Design](#6---design)
   - [6.1 - Paleta de Cor](#61---paleta-de-cor)
   - [6.2 - Tipografia](#62---tipografia)
