@@ -49,6 +49,7 @@
   - [5.3 - Principais Casos de Uso](#53---principais-casos-de-uso)
   - [5.4 - Diagrama de classes](#54---diagrama-de-classes)
   - [5.5 - Diagrama Entidade Relacionamento](#55---diagrama-entidade-relacionamento)
+  - [5.6 - Diagrama de processo de negócio](#55---diagrama-de-processo-de-negocio)
 - [6 - Design](#6---design)
   - [6.1 - Paleta de Cor](#61---paleta-de-cor)
   - [6.2 - Tipografia](#62---tipografia)
@@ -352,6 +353,10 @@ Sistema salva as alterações.
 ### 5.5 - Diagrama Entidade Relacionamento
 
 [![Diagrama Entidade Relacionamento](/Workly/img2/WorklyDER.png)](/Workly/img2/WorklyDER.png)
+
+### 5.6 - Diagrama de processo de negócio
+
+[![Diagrama de processo de negócio](/Workly/img2/BPMN-Workly.png)](/Workly/img2/BPMN-Workly.png)
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
