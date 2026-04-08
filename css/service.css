@@ -1,0 +1,181 @@
+:root {
+    --primary: #04BF55;
+    --primary-dark: #029d47;
+    --primary-light: #e8f9ef;
+    --text-dark: #222222;
+    --text-medium: #444444;
+    --text-light: #666666;
+    --background: #f8f9fb;
+    --white: #ffffff;
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--text-medium);
+}
+
+.service-page-container {
+    display: flex;
+    height: calc(100vh - 142px); 
+}
+
+.service-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.service-main-image {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    object-fit: fill;
+}
+
+.service-details-column {
+    flex-basis: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-details-content {
+    padding: 40px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.service-category-badge {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.service-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.freelancer-info-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.freelancer-avatar-small {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.freelancer-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.service-description {
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+#edit-button-container .btn-edit {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+#edit-button-container .btn-edit:hover {
+    background-color: var(--primary-dark);
+}
+
+.service-action-box {
+    padding: 30px;
+    background-color: #fdfdfd;
+    border-top: 1px solid #eee;
+}
+
+.action-box-price span {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.service-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.service-action-box .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-light);
+}
+
+.btn-tertiary {
+    background: var(--white);
+    color: var(--text-medium);
+    border: 2px solid #ddd;
+}
+
+.btn-tertiary:hover {
+    background: #f5f5f5;
+}

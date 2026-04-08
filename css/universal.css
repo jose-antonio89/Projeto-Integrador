@@ -1,0 +1,16 @@
+.user-name-nav {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.user-name-nav:hover {
+    color: #04BF55;
+}
+
+.profile-menu {
+    display: flex;
+    align-items: center;
+}
