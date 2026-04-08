@@ -1,6 +1,6 @@
 <div align="center" id="inicio">
 
-# ![Logo da Workly](Workly/img2/logo.png)
+# ![Logo da Workly](/img2/logo.png)
 ### Plataforma digital que conecta freelancers e contratantes de forma segura e eficiente.
 
 ***
@@ -157,7 +157,7 @@ Requisitos não funcionais da aplicação (qualidade)
 
 O Modelo de negócios da plataformase encontra abaixo:
 
-[![Modelo de negocios](/Workly/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)](/Workly/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)
+[![Modelo de negocios](/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)](/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)
 
 <br>
 
@@ -250,7 +250,7 @@ A organização é perfeitamente capaz de executar o projeto e concluí-lo. Onde
 
 ### 5.1 - Diagrama logico do caso de uso da aplicação
 
-[![Diagramas da Aplicação](/Workly/img2/Casos%20de%20uso.png)](/Workly/img2/Casos%20de%20uso.png)
+[![Diagramas da Aplicação](/img2/Casos%20de%20uso.png)](/img2/Casos%20de%20uso.png)
 
 ### 5.2 - Atores
 
@@ -347,16 +347,16 @@ Sistema salva as alterações.
 
 ### 5.4 - Diagrama de classes
 
-[![Diagrama de classes](/Workly/img2/Workly.vpd.png)](/Workly/img2/Workly.vpd.png)
+[![Diagrama de classes](/img2/Workly.vpd.png)](/img2/Workly.vpd.png)
 
 
 ### 5.5 - Diagrama Entidade Relacionamento
 
-[![Diagrama Entidade Relacionamento](/Workly/img2/WorklyDER.png)](/Workly/img2/WorklyDER.png)
+[![Diagrama Entidade Relacionamento](/img2/WorklyDER.png)](/img2/WorklyDER.png)
 
 ### 5.6 - Diagrama de processo de negócio
 
-[![Diagrama de processo de negócio](/Workly/img2/BPMN-Workly.png)](/Workly/img2/BPMN-Workly.png)
+[![Diagrama de processo de negócio](/img2/BPMN-Workly.png)](/img2/BPMN-Workly.png)
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
@@ -368,7 +368,7 @@ Sistema salva as alterações.
 
 A paleta de cores da Workly foi selecionada para transmitir profissionalismo, confiança e modernidade. As cores principais e as utilizadas em detalhes, tela de fundo e como cor da fonte foram escolhidas para garantir uma identidade visual coesa e agradável, facilitando a usabilidade e a experiência do usuário.
 
-[![Palheta de cores](/Workly/img2/Palheta%20de%20cores.png)](/Workly/img2/Palheta%20de%20cores.png)
+[![Palheta de cores](/img2/Palheta%20de%20cores.png)](/img2/Palheta%20de%20cores.png)
 
 <br>
 
@@ -386,7 +386,7 @@ O logotipo da Workly é um isotipo que utiliza vetores e a fonte Montserrat, sim
 
 ### 6.4 - Modelo de navegação
 
-[![Modelo de navegação](/Workly/img2/Modelo%20de%20navegação.png)](/Workly/img2/Modelo%20de%20navegação.png)
+[![Modelo de navegação](/img2/Modelo%20de%20navegação.png)](/img2/Modelo%20de%20navegação.png)
 
 <p align="right"><a href="#inicio">[⬆ Voltar ao início]</a></p>
 
@@ -404,7 +404,7 @@ Link para acessar o protótipo: [Figma do Projeto](https://www.figma.com/design/
 
 A aplicação foi desenvolvida inicialmente como uma página estática, incorporando exemplos de funcionalidades futuras e algumas já operacionais e armazenamos os arquivos e a documentação do projeto neste GitHub
 
-[![Pagina inicial](/Workly/img2/paginainicial.png)](https://www.figma.com/design/hYmRgDqf9kCFHGjJNyExRh/Prot%C3%B3tipo-P.I?node-id=3-13&t=OfXh8xe9dPCxdqg8-4)
+[![Pagina inicial](/img2/paginainicial.png)](https://www.figma.com/design/hYmRgDqf9kCFHGjJNyExRh/Prot%C3%B3tipo-P.I?node-id=3-13&t=OfXh8xe9dPCxdqg8-4)
 
 <br>
 
