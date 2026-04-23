@@ -157,7 +157,7 @@ Requisitos não funcionais da aplicação (qualidade)
 
 O Modelo de negócios da plataformase encontra abaixo:
 
-[![Modelo de negocios](frontend/assets/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)](frontend/assets/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)
+[![Modelo de negocios](/frontend/assets/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)](/frontend/assets/img2/Modelo%20de%20Negócios%20Canvas%20WORKLY.png)
 
 <br>
 
