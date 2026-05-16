@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (seeMoreBtn) seeMoreBtn.href = `todos-servicos.html?id_categoria=${categoryId}`;
     }
 
+// Se o container de serviços não existir, não tenta buscar os serviços
+
     if (!servicosContainer) return;
 
     try {
