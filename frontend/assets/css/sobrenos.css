@@ -122,8 +122,7 @@ body {
   .member-info { text-align: center; }
 }
 
-
-/* ===== Limpeza visual v7 ===== */
+/* ===== limpeza visual v7 ===== */
 .about-us-container {
   background: transparent;
   box-shadow: none;
@@ -140,7 +139,6 @@ body {
   box-shadow: 0 14px 34px rgba(15,23,42,0.12);
 }
 
-
 /* ===== v8 sobre nós cleanup ===== */
 .team-member {
   background: transparent !important;
@@ -150,4 +148,18 @@ body {
 
 .member-info {
   max-width: none;
+}
+
+/* seleção de texto padrão do workly
+   quando alguém arrasta o mouse em cima de um texto, fica verde em todas as páginas.
+   deixei aqui também pra não depender de cada tela ter esse estilo separado. */
+::selection {
+  background: #04BF55;
+  color: #ffffff;
+}
+
+/* mesma ideia, só garantindo compatibilidade com firefox. */
+::-moz-selection {
+  background: #04BF55;
+  color: #ffffff;
 }

@@ -1,4 +1,4 @@
-// Ativa a animação dos membros da equipe ao rolar a página.
+// ativa a animação dos membros da equipe ao rolar a página.
 document.addEventListener('DOMContentLoaded', () => {
     const teamMembers = document.querySelectorAll('.team-member');
 

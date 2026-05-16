@@ -1,8 +1,27 @@
+// script para página de cadastro: lida com campos dinâmicos, validações, mensagens de erro e comunicação com a api para criar conta
+
 document.addEventListener('DOMContentLoaded', function () {
     const tipoConta = document.getElementById('tipo_conta');
     const areaAtuacaoGroup = document.getElementById('area-atuacao-group');
     const areaAtuacao = document.getElementById('area_atuacao');
     const form = document.getElementById('formCadastro');
+    const submitButton = form?.querySelector('[type="submit"]');
+
+    const showAlertSafe = (options) => {
+        if (window.Workly?.showAlert) return window.Workly.showAlert(options);
+        alert(options?.text || options?.title || 'Aviso');
+        return Promise.resolve();
+    };
+
+    const apiFetchSafe = (path, options) => {
+        if (window.Workly?.apiFetch) return window.Workly.apiFetch(path, options);
+        const base = window.API_BASE || 'http://localhost:3000';
+        return fetch(`${base}${path}`, options).then(async (response) => {
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) throw new Error(data.mensagem || data.message || 'Erro na requisição.');
+            return data;
+        });
+    };
 
     if (!tipoConta || !areaAtuacaoGroup || !form) {
         console.error('Elementos essenciais do formulário não encontrados');
@@ -113,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (hasError) {
-            window.Workly.showAlert({
+            showAlertSafe({
                 icon: 'warning',
                 title: 'Revise o formulário',
                 text: 'Preencha os campos obrigatórios corretamente antes de continuar.',
@@ -135,13 +154,19 @@ document.addEventListener('DOMContentLoaded', function () {
         data.areaAtuacao = data.area_atuacao;
 
         try {
-            const resultado = await window.Workly.apiFetch('/api/autenticacao/cadastro', {
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.dataset.originalText = submitButton.textContent;
+                submitButton.textContent = 'Criando conta...';
+            }
+
+            const resultado = await apiFetchSafe('/api/autenticacao/cadastro', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
 
-            await window.Workly.showAlert({
+            await showAlertSafe({
                 icon: 'success',
                 title: 'Perfil criado com sucesso!',
                 text: resultado.mensagem || 'Sua conta foi criada. Agora é só fazer login e começar.',
@@ -151,12 +176,17 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'login.html';
         } catch (error) {
             console.error('Erro ao conectar:', error);
-            window.Workly.showAlert({
+            showAlertSafe({
                 icon: 'error',
                 title: 'Não foi possível concluir o cadastro',
                 text: error.message || 'Falha de conexão. Tente novamente em instantes.',
                 confirmText: 'Fechar'
             });
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = submitButton.dataset.originalText || 'Criar Conta';
+            }
         }
     });
 

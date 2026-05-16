@@ -1,3 +1,5 @@
+// script para funcionalidades globais do frontend: tema, modais personalizados, formatação de dados, etc.
+
 (function applyInitialTheme() {
     const isDark = localStorage.getItem('darkMode') === 'enabled';
     if (isDark) {
@@ -16,6 +18,7 @@ function injectGlobalThemeStyles() {
     }
 }
 
+// aplica o tema salvo no localstorage e atualiza o ícone do botão.
 function applyThemeState() {
     const darkEnabled = localStorage.getItem('darkMode') === 'enabled';
     document.body.classList.toggle('dark-mode', darkEnabled);
@@ -27,6 +30,7 @@ function applyThemeState() {
     }
 }
 
+// cria o botão de tema uma vez só, sem precisar repetir ele em todo html.
 function ensureThemeToggle() {
     if (document.querySelector('.theme-toggle')) return;
     const button = document.createElement('button');
@@ -107,10 +111,16 @@ function createSwalOptions({ title = 'Aviso', text = '', icon = 'info', confirmT
         text,
         confirmButtonText: confirmText,
         background: darkEnabled ? '#101826' : '#ffffff',
-        color: darkEnabled ? '#eef5ff' : '#172033',
-        confirmButtonColor: '#0fce6a',
+        color: darkEnabled ? '#eef5ff' : '#111827',
+        allowOutsideClick: true,
+        heightAuto: false,
+        backdrop: 'rgba(4, 10, 20, 0.46)',
+        showClass: { popup: 'workly-modal-enter' },
+        hideClass: { popup: 'workly-modal-exit' },
         customClass: {
-            popup: darkEnabled ? 'workly-swal-popup-dark' : 'workly-swal-popup-light',
+            container: 'workly-swal-container',
+            popup: darkEnabled ? 'workly-swal-popup-dark workly-swal-popup' : 'workly-swal-popup-light workly-swal-popup',
+            icon: 'workly-swal-icon',
             title: 'workly-swal-title',
             htmlContainer: 'workly-swal-text',
             confirmButton: 'workly-swal-confirm'
@@ -136,7 +146,7 @@ function showConfirm({ title = 'Confirmar ação', text = '', icon = 'warning', 
             reverseButtons: true,
             cancelButtonColor: darkEnabled ? '#253247' : '#dbe4f0',
             customClass: {
-                popup: darkEnabled ? 'workly-swal-popup-dark' : 'workly-swal-popup-light',
+                popup: darkEnabled ? 'workly-swal-popup-dark workly-swal-popup' : 'workly-swal-popup-light workly-swal-popup',
                 title: 'workly-swal-title',
                 htmlContainer: 'workly-swal-text',
                 confirmButton: 'workly-swal-confirm',
@@ -208,12 +218,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.togglePassword = togglePassword;
 
+// endereço do backend.
+// local: usa a api na porta 3000.
+// fora do localhost: tenta usar o mesmo domínio; se hospedarem separado, é só trocar aqui.
 window.API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'http://localhost:3000';
+    : window.location.origin;
 
 window.Workly = (() => {
-    const DEFAULT_PROFILE_IMAGE = '../assets/img/perfis/perfil_padrao.png';
+    const DEFAULT_PROFILE_IMAGE = '../assets/img/perfis/perfil_padrao.svg';
+    const DEFAULT_SERVICE_IMAGE = '../assets/img/servicos/servico_padrao.svg';
 
     function getToken() {
         return localStorage.getItem('token');
@@ -228,7 +242,7 @@ window.Workly = (() => {
         localStorage.removeItem('user');
     }
 
-    function logout(redirect = 'login.html') {
+    function logout(redirect = 'index.html') {
         clearSession();
         window.location.href = redirect;
     }
@@ -271,12 +285,18 @@ window.Workly = (() => {
         return {
             ...service,
             idServico: service.idServico || service.id_servico || service.id,
-            imagemServico: service.imagemServico || service.imagem_servico || '',
+            imagemServico: service.imagemServico || service.imagem_servico || DEFAULT_SERVICE_IMAGE,
             categoriaId: service.categoriaId || service.genero_id || null,
             nomeCategoria: service.nomeCategoria || service.nome_genero || '',
             idUsuario: service.idUsuario || service.id_usuario || null,
             nomeFreelancer: service.nomeFreelancer || service.nome_freelancer || '',
-            fotoPerfil: service.fotoPerfil || service.foto_perfil || DEFAULT_PROFILE_IMAGE
+            fotoPerfil: service.fotoPerfil || service.foto_perfil || DEFAULT_PROFILE_IMAGE,
+            precoNegociavel: Boolean(service.precoNegociavel || service.preco_negociavel),
+            valorCombinar: Boolean(service.valorCombinar || service.valor_combinar),
+            avaliacaoMediaServico: Number(service.avaliacaoMediaServico ?? service.avaliacao_media_servico ?? service.mediaAvaliacoes ?? 0),
+            totalAvaliacoesServico: Number(service.totalAvaliacoesServico ?? service.total_avaliacoes_servico ?? service.totalAvaliacoes ?? 0),
+            createdAt: service.createdAt || service.created_at || null,
+            updatedAt: service.updatedAt || service.updated_at || null
         };
     }
 
@@ -288,6 +308,7 @@ window.Workly = (() => {
         return response.text();
     }
 
+        // wrapper do fetch: já coloca token, lê json/texto e trata erro num lugar só.
     async function apiFetch(path, options = {}) {
         const token = getToken();
         const headers = { ...(options.headers || {}) };
@@ -348,6 +369,68 @@ window.Workly = (() => {
             .replace(/'/g, '&#039;');
     }
 
+    function parseDate(value) {
+        if (!value) return null;
+        const date = new Date(value);
+        return Number.isNaN(date.getTime()) ? null : date;
+    }
+
+    function isServiceNewToday(service) {
+        const s = normalizeService(service);
+        const created = parseDate(s?.createdAt);
+        if (!created) return false;
+        const now = new Date();
+        return created.getFullYear() === now.getFullYear()
+            && created.getMonth() === now.getMonth()
+            && created.getDate() === now.getDate();
+    }
+
+    function formatServiceDate(service) {
+        const s = normalizeService(service);
+        const created = parseDate(s?.createdAt);
+        return created
+            ? created.toLocaleDateString('pt-BR')
+            : '--/--/----';
+    }
+
+    // mantém o nome antigo para não quebrar páginas que já chamam essa função,
+    // mas agora ela retorna data no formato dd/mm/yyyy em vez de horário.
+    function formatServiceTime(service) {
+        return formatServiceDate(service);
+    }
+
+    function formatServiceDateTime(service) {
+        const s = normalizeService(service);
+        const created = parseDate(s?.createdAt);
+        return created ? created.toLocaleDateString('pt-BR') : 'Recentemente';
+    }
+
+    function formatServiceRating(service) {
+        const s = normalizeService(service);
+        const media = Number(s?.avaliacaoMediaServico || 0);
+        const total = Number(s?.totalAvaliacoesServico || 0);
+        if (total > 0 && media > 0) {
+            return media.toFixed(1).replace('.', ',') + ' (' + total + ')';
+        }
+        return 'Sem avaliações';
+    }
+
+    function serviceCardMetaMarkup(service) {
+        const s = normalizeService(service);
+        const newBadge = isServiceNewToday(s) ? '<span class="service-new-badge">Novo</span>' : '';
+        return `
+            <div class="service-card-meta">
+                <span class="service-rating-meta"><i class="fas fa-star"></i>${formatServiceRating(s)}</span>
+                <span class="service-time-meta"><i class="far fa-calendar-alt"></i>${formatServiceTime(s)}</span>
+                ${newBadge}
+            </div>
+        `;
+    }
+
+    function loadingMarkup(text = 'Carregando dados da Workly...') {
+        return `<div class="workly-loading" role="status" aria-live="polite"><span class="workly-loader"></span><strong>${escapeHtml(text)}</strong><small>Preparando as informações para você.</small></div>`;
+    }
+
     function serviceCardMarkup(service, variant = 'default') {
         const s = normalizeService(service);
         if (!s) return '';
@@ -356,33 +439,57 @@ window.Workly = (() => {
             return `
                 <div class="servico-card-modern">
                     <div class="servico-card-modern-header">
-                        <img src="${s.fotoPerfil}" alt="Foto do usuário" class="servico-card-modern-user-photo">
-                        <span class="servico-card-modern-user-name">${escapeHtml(s.nomeFreelancer)}</span>
+                        <img src="${s.fotoPerfil}" alt="Foto do usuário" class="servico-card-modern-user-photo" onerror="this.src='../assets/img/perfis/perfil_padrao.svg'">
+                        <a class="servico-card-modern-user-name" href="perfil-publico.html?id=${s.idUsuario}" onclick="event.stopPropagation()">${escapeHtml(s.nomeFreelancer)}</a>
                     </div>
-                    <img src="${s.imagemServico}" alt="Imagem do serviço" class="servico-card-modern-image">
+                    <img src="${s.imagemServico}" alt="Imagem do serviço" class="servico-card-modern-image" onerror="this.src='../assets/img/servicos/servico_padrao.svg'">
                     <div class="servico-card-modern-content">
                         <span class="servico-card-modern-category">${escapeHtml(s.nomeCategoria)}</span>
                         <h3 class="servico-card-modern-title">${escapeHtml(s.nome)}</h3>
-                        <p class="servico-card-modern-price">${formatCurrency(s.preco)}</p>
-                        <button class="servico-card-modern-edit-button" onclick="window.location.href='detalhe-servico.html?id=${s.idServico}'">
-                            <i class="fas fa-pen"></i> Ver detalhes
-                        </button>
+                        ${serviceCardMetaMarkup(s)}
+                        <p class="servico-card-modern-price">${s.valorCombinar ? 'Valor a combinar' : (s.precoNegociavel ? 'A partir de ' + formatCurrency(s.preco) : formatCurrency(s.preco))}</p>
+                        <div class="servico-card-modern-actions">
+                            <button class="servico-card-modern-edit-button" onclick="window.location.href='detalhe-servico.html?id=${s.idServico}'">
+                                <i class="fas fa-eye"></i> Ver detalhes
+                            </button>
+                            ${(variant === 'my-services' || variant === 'my-services-modern') ? `<button class="servico-card-modern-edit-button secondary" onclick="event.stopPropagation(); window.location.href='editar-servico.html?id=${s.idServico}'"><i class="fas fa-pen"></i> Editar</button>` : ''}
+                        </div>
                     </div>
                 </div>
             `;
         }
 
         return `
-            <div class="servico-card" onclick="window.location.href='detalhe-servico.html?id=${s.idServico}'">
-                <img src="${s.imagemServico}" alt="Imagem do serviço" class="card-img">
-                <h3>${escapeHtml(s.nome)}</h3>
-                <p>${escapeHtml(s.descricao)}</p>
-                <div class="creator">
-                    <img src="${s.fotoPerfil}" class="creator-img">
-                    <span class="creator-name">${escapeHtml(s.nomeFreelancer)}</span>
+            <div class="servico-card wk-service-card" onclick="window.location.href='detalhe-servico.html?id=${s.idServico}'">
+                <div class="wk-service-image-wrap">
+                    <img src="${s.imagemServico}" alt="Imagem do serviço" class="card-img ${String(s.imagemServico).includes('servico_padrao.svg') ? 'is-default-service-image' : ''}" onerror="this.src='../assets/img/servicos/servico_padrao.svg'; this.classList.add('is-default-service-image')">
+                    <span class="wk-service-category-badge">${escapeHtml(s.nomeCategoria)}</span>
                 </div>
-                <span class="genero-tag">${escapeHtml(s.nomeCategoria)}</span>
-                <div class="preco">${formatCurrency(s.preco)}</div>
+
+                <div class="wk-service-body">
+                    <div class="wk-service-creator-line">
+                        <img src="${s.fotoPerfil}" alt="Foto de ${escapeHtml(s.nomeFreelancer)}" class="creator-img wk-service-avatar" onerror="this.src='../assets/img/perfis/perfil_padrao.svg'">
+                        <a class="creator-name" href="perfil-publico.html?id=${s.idUsuario}" onclick="event.stopPropagation()">${escapeHtml(s.nomeFreelancer)}</a>
+                    </div>
+
+                    <h3 class="wk-service-title">${escapeHtml(s.nome)}</h3>
+                    <p class="wk-service-desc">${escapeHtml(s.descricao)}</p>
+
+                    ${serviceCardMetaMarkup(s)}
+
+                    <div class="wk-service-price-row">
+                        <div class="wk-service-price">
+                            <small>${s.precoNegociavel ? 'A partir de' : 'Valor'}</small>
+                            <strong>${s.valorCombinar ? 'Valor a combinar' : formatCurrency(s.preco)}</strong>
+                        </div>
+                        ${variant === 'my-services' ? `
+                            <button type="button" class="wk-service-edit-button" onclick="event.stopPropagation(); window.location.href='editar-servico.html?id=${s.idServico}'">
+                                <i class="fas fa-pen"></i>
+                                Alterar
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
             </div>
         `;
     }
@@ -400,9 +507,16 @@ window.Workly = (() => {
         apiFetch,
         fetchCurrentUser,
         formatCurrency,
+        formatServiceRating,
+        formatServiceTime,
+        formatServiceDateTime,
+        isServiceNewToday,
+        serviceCardMetaMarkup,
         serviceCardMarkup,
+        loadingMarkup,
         showAlert,
         showConfirm,
-        defaultProfileImage: DEFAULT_PROFILE_IMAGE
+        defaultProfileImage: DEFAULT_PROFILE_IMAGE,
+        defaultServiceImage: DEFAULT_SERVICE_IMAGE
     };
 })();

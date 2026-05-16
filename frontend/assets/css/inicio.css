@@ -739,8 +739,7 @@ body.dark-mode .card {
     height: 100%;
 }
 
-
-/* ===== Overrides de layout v7 ===== */
+/* ===== overrides de layout v7 ===== */
 header,
 .principal,
 header nav,
@@ -792,8 +791,7 @@ footer {
   padding: 0;
 }
 
-
-/* ===== Ajustes premium da home ===== */
+/* ===== ajustes premium da home ===== */
 .card-container {
     align-items: stretch;
 }
@@ -883,4 +881,30 @@ body.dark-mode .price {
 
 body.dark-mode .card img {
     color: transparent;
+}
+
+/* service card metadata: rating, hour and new badge */
+.home-service-meta {
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+.home-service-meta .service-rating-meta,
+.home-service-meta .service-time-meta,
+.home-service-meta .service-new-badge {
+  font-size: 0.76rem;
+}
+
+/* seleção de texto padrão do workly
+   quando alguém arrasta o mouse em cima de um texto, fica verde em todas as páginas.
+   deixei aqui também pra não depender de cada tela ter esse estilo separado. */
+::selection {
+  background: #04BF55;
+  color: #ffffff;
+}
+
+/* mesma ideia, só garantindo compatibilidade com firefox. */
+::-moz-selection {
+  background: #04BF55;
+  color: #ffffff;
 }

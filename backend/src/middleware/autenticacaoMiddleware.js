@@ -1,7 +1,9 @@
+
 const jwt = require('jsonwebtoken');
 const ambiente = require('../config/ambiente');
 const { erro } = require('../utils/apiResponse');
 
+// middleware das rotas protegidas: só deixa passar quem mandar um jwt válido.
 module.exports = function autenticacaoMiddleware(req, res, next) {
   const cabecalhoAutorizacao = req.header('Authorization');
   if (!cabecalhoAutorizacao) {
@@ -15,6 +17,7 @@ module.exports = function autenticacaoMiddleware(req, res, next) {
 
   try {
     const usuarioDecodificado = jwt.verify(token, ambiente.jwtSecret);
+    // salva os dados do token dentro da req pra controller saber quem está logado.
     req.user = {
       ...usuarioDecodificado,
       idUsuario: usuarioDecodificado.id_usuario,

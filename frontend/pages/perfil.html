@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-icons/4.0.0/iconfont/material-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
     <link rel="stylesheet" href="../assets/css/perfil.css">
-    <link rel="stylesheet" href="../assets/css/modo-escuro.css">
     <link rel="stylesheet" href="../assets/css/comum.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,25 +22,30 @@
 
     <div class="profile-container">
         <div class="profile-header">
-        <img src="" 
-            class="profile-avatar" 
-            alt="Foto de perfil">
+            <div class="avatar-wrapper">
+                <img src="" class="profile-avatar" alt="Foto de perfil">
+                <button type="button" id="open-photo-modal" class="avatar-edit-btn" title="Alterar foto de perfil">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
             <div class="profile-info">
                 <h1 class="profile-name"></h1>
                 <p class="profile-title">Complete seu perfil profissional</p>
-                <p>Level 3 · Workly desde Fevereiro 2025</p>
+                <!-- Bio curta no topo: antes ela só ficava escondida nas configurações, aqui o perfil ganha mais cara de vitrine mesmo. -->
+                <p class="profile-bio" id="profile-bio-preview">Adicione uma biografia para deixar seu perfil mais completo.</p>
+                <p class="profile-meta" id="member-since">Workly desde --</p>
                 <div class="profile-stats">
                     <div class="stat-item">
-                        <div class="stat-value">42</div>
-                        <div class="stat-label">Projetos</div>
+                        <div class="stat-value" id="header-services-count">0</div>
+                        <div class="stat-label">Serviços</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">4.9</div>
-                        <div class="stat-label">Avaliação</div>
+                        <div class="stat-value" id="header-account-type">--</div>
+                        <div class="stat-label">Tipo de conta</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">95%</div>
-                        <div class="stat-label">Conclusão</div>
+                        <div class="stat-value" id="header-area">--</div>
+                        <div class="stat-label">Área</div>
                     </div>
                 </div>
             </div>
@@ -59,65 +63,41 @@
                 <h3>Visão Geral</h3>
                 <div class="stats-row">
                     <div class="stat-box">
-                        <div class="stat-number">R$ 12.450</div>
-                        <div class="stat-text">Total Ganho</div>
+                        <div class="stat-number" id="overview-services-count">0</div>
+                        <div class="stat-text">Serviços Publicados</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number">18</div>
-                        <div class="stat-text">Projetos Ativos</div>
+                        <div class="stat-number" id="overview-rating">--</div>
+                        <div class="stat-text">Avaliação</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number">1.248</div>
-                        <div class="stat-text">Visualizações</div>
+                        <div class="stat-number" id="overview-contracts-count">0</div>
+                        <div class="stat-text">Contratos</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number">32</div>
-                        <div class="stat-text">Leads Novos</div>
+                        <div class="stat-number" id="overview-proposals-count">0</div>
+                        <div class="stat-text">Propostas</div>
                     </div>
+                </div>
+                <div class="overview-actions">
+                    <a href="contratos.html" class="overview-action-btn"><i class="fas fa-briefcase"></i> Ver contratos</a>
+                    <a href="anuncio.html" class="overview-action-btn primary"><i class="fas fa-plus"></i> Novo serviço</a>
                 </div>
             </div>
 
-            <div class="dashboard-card">
+            <div class="dashboard-card monthly-performance-card">
                 <h3>Desempenho Mensal</h3>
                 <div class="chart-container">
                     <canvas id="salesChart"></canvas>
                 </div>
             </div>
 
-            <div class="dashboard-card">
-                <h3>Leads Recentes</h3>
-                <div class="leads-list">
-                    <div class="lead-item">
-                        <img src="https://images.unsplash.com/photo-1743623930275-abbb3ad3be0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5N3x8fGVufDB8fHx8fA%3D%3D" alt="Lead" class="lead-avatar">
-                        <div class="lead-info">
-                            <div class="lead-name">Ana Souza</div>
-                            <div class="lead-email">ana.souza@email.com</div>
-                        </div>
-                        <span class="lead-status status-new">Novo</span>
-                    </div>
-                    <div class="lead-item">
-                        <img src="https://images.unsplash.com/photo-1745236781096-be405b87d05c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNzF8fHxlbnwwfHx8fHw%3D" alt="Lead" class="lead-avatar">
-                        <div class="lead-info">
-                            <div class="lead-name">Pedro Gomes</div>
-                            <div class="lead-email">pedro.gomes@email.com</div>
-                        </div>
-                        <span class="lead-status status-contacted">Contatado</span>
-                    </div>
-                    <div class="lead-item">
-                        <img src="https://images.unsplash.com/photo-1743484977289-22999cb8c001?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNTN8fHxlbnwwfHx8fHw%3D" alt="Lead" class="lead-avatar">
-                        <div class="lead-info">
-                            <div class="lead-name">Ricardo Santos</div>
-                            <div class="lead-email">ricardo.santos@email.com</div>
-                        </div>
-                        <span class="lead-status status-converted">Convertido</span>
-                    </div>
-                    <div class="lead-item">
-                        <img src="https://images.unsplash.com/photo-1745834311180-688615cf5308?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMTJ8fHxlbnwwfHx8fHw%3D" alt="Lead" class="lead-avatar">
-                        <div class="lead-info">
-                            <div class="lead-name">Márcia Oliveira</div>
-                            <div class="lead-email">marcia.oliveira@email.com</div>
-                        </div>
-                        <span class="lead-status status-new">Novo</span>
+            <div class="dashboard-card dashboard-card-link" id="leads-dashboard-card" role="button" tabindex="0" aria-label="Abrir página de contratos">
+                <h3 class="dashboard-card-title-link">Leads <span>Ver contratos <i class="fas fa-arrow-right"></i></span></h3>
+                <div class="leads-list" id="profile-leads-list">
+                    <div class="empty-state-card compact">
+                        <h4>Nenhum lead ainda</h4>
+                        <p>As propostas recebidas aparecerão aqui automaticamente.</p>
                     </div>
                 </div>
             </div>
@@ -131,48 +111,16 @@
 
             <div class="dashboard-card">
                 <h3>Atividades Recentes</h3>
-                <div class="recent-activity">
-                    <div class="activity-item">
-                        <div class="activity-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                        <div class="activity-content">
-                            <div class="activity-title">Pagamento recebido de Projeto Logo</div>
-                            <div class="activity-time">Hoje, 14:30</div>
-                        </div>
-                    </div>
-                    <div class="activity-item">
-                        <div class="activity-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="activity-content">
-                            <div class="activity-title">Novo lead de cliente interessado</div>
-                            <div class="activity-time">Ontem, 09:45</div>
-                        </div>
-                    </div>
-                    <div class="activity-item">
-                        <div class="activity-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="activity-content">
-                            <div class="activity-title">Nova avaliação 5 estrelas recebida</div>
-                            <div class="activity-time">03/05/2025</div>
-                        </div>
-                    </div>
-                    <div class="activity-item">
-                        <div class="activity-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="activity-content">
-                            <div class="activity-title">Projeto Website concluído com sucesso</div>
-                            <div class="activity-time">01/05/2025</div>
-                        </div>
+                <div class="recent-activity" id="profile-activity-list">
+                    <div class="empty-state-card compact">
+                        <h4>Nenhuma atividade recente</h4>
+                        <p>Contratos, avaliações e favoritos recentes aparecerão aqui conforme você usa a plataforma.</p>
                     </div>
                 </div>
             </div>
 
             <div class="dashboard-card">
-                <h3>Visualizações do Perfil</h3>
+                <h3>Atividade da Semana</h3>
                 <div class="chart-container">
                     <canvas id="viewsChart"></canvas>
                 </div>
@@ -192,7 +140,6 @@
 </div>
 <!--------------------------------------------------------------------------------------->
 
-
 <!----------------------------------------------------------Avaliações-------------------------------------------->
 
 <div class="tab-content" id="reviews-tab" style="display: none;">
@@ -200,52 +147,18 @@
       <h2>Avaliações dos Clientes</h2>
       <div class="review-summary">
           <div class="overall-rating">
-              <div class="rating-number">4.9</div>
-              <div class="rating-stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
+              <div class="rating-number" id="profile-rating-number">--</div>
+              <div class="rating-stars muted-stars" id="profile-rating-stars">
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
               </div>
-              <div class="rating-count">Baseado em 42 avaliações</div>
+              <div class="rating-count" id="profile-rating-count">Nenhuma avaliação registrada</div>
           </div>
-          <div class="rating-breakdown">
-              <div class="rating-bar">
-                  <span class="rating-label">5 estrelas</span>
-                  <div class="progress-bar">
-                      <div class="progress" style="width: 85%;"></div>
-                  </div>
-                  <span class="rating-percentage">85%</span>
-              </div>
-              <div class="rating-bar">
-                  <span class="rating-label">4 estrelas</span>
-                  <div class="progress-bar">
-                      <div class="progress" style="width: 10%;"></div>
-                  </div>
-                  <span class="rating-percentage">10%</span>
-              </div>
-              <div class="rating-bar">
-                  <span class="rating-label">3 estrelas</span>
-                  <div class="progress-bar">
-                      <div class="progress" style="width: 5%;"></div>
-                  </div>
-                  <span class="rating-percentage">5%</span>
-              </div>
-              <div class="rating-bar">
-                  <span class="rating-label">2 estrelas</span>
-                  <div class="progress-bar">
-                      <div class="progress" style="width: 0%;"></div>
-                  </div>
-                  <span class="rating-percentage">0%</span>
-              </div>
-              <div class="rating-bar">
-                  <span class="rating-label">1 estrela</span>
-                  <div class="progress-bar">
-                      <div class="progress" style="width: 0%;"></div>
-                  </div>
-                  <span class="rating-percentage">0%</span>
-              </div>
+          <div class="rating-breakdown empty-review-info" id="rating-breakdown">
+              <p>As avaliações reais recebidas aparecerão aqui automaticamente.</p>
           </div>
       </div>
   </div>
@@ -255,14 +168,6 @@
           <h3>Avaliações ainda não disponíveis</h3>
           <p>As avaliações reais dos clientes serão exibidas aqui quando essa funcionalidade estiver integrada ao sistema.</p>
       </div>
-  </div>
-  <div class="pagination">
-      <a href="#" class="page-link active">1</a>
-      <a href="#" class="page-link">2</a>
-      <a href="#" class="page-link">3</a>
-      <span class="page-dots">...</span>
-      <a href="#" class="page-link">6</a>
-      <a href="#" class="page-link next"><i class="fas fa-chevron-right"></i></a>
   </div>
 </div>
 
@@ -295,27 +200,21 @@
       <div class="settings-content">
           <div class="settings-section active" id="profile-settings">
               <h2>Configurações de Perfil</h2>
-              <!-- ATUALIZAR FOTO DO PERFIL -->
-              <form id="update-photo-form" class="settings-form">
+              <div class="settings-form photo-settings-panel">
                   <div class="form-group">
-                      <label for="profile-photo">Foto de Perfil</label>
-                      <div class="photo-upload">
-                          <img src="" 
-                      alt="Foto de perfil atual" 
-                      class="current-photo" 
-                      width="120">
+                      <label>Foto de Perfil</label>
+                      <div class="photo-upload-clean">
+                          <img src="" alt="Foto de perfil atual" class="current-photo" width="120">
                           <div class="upload-actions">
-                            <label for="nova_foto" class="upload-btn" style="margin-bottom: 0px;"></label>
-                            <input type="file" name="nova_foto" id="nova_foto" accept="image/*" required>
-                            <button type="button" class="remove-btn">
-                            <i class="fas fa-trash"></i> Remover
+                            <button type="button" id="open-photo-modal-settings" class="upload-btn">
+                                <i class="fas fa-camera"></i> Alterar foto
                             </button>
-                            <button type="submit">Atualizar Foto</button>
-                            </div>
+                            <p class="helper-text">Envie uma imagem JPG, PNG ou WEBP para deixar seu perfil mais profissional.</p>
+                          </div>
                       </div>
                   </div>
-                </form>
-                        
+              </div>
+
                     <!------------------------------------->
                 <form id="update-profile-form">
                   <div class="form-row">
@@ -393,37 +292,239 @@
           
           
           <div class="settings-section" id="portfolio-settings">
-              <h2>Configurações de Portfólio</h2>
-              <!-- Conteudo para configurações de portfolio aqui -->
-              <p>Gerencie os projetos exibidos em seu portfólio.</p>
+              <h2>Portfólio e Serviços</h2>
+              <form id="portfolio-settings-form" class="settings-form">
+                  <div class="settings-info-card">
+                      <i class="fas fa-circle-info"></i>
+                      <div>
+                          <strong>Esses dados ajudam a montar uma vitrine profissional.</strong>
+                          <p>Por enquanto eles ficam salvos no seu perfil. Depois podem virar uma página pública de portfólio.</p>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="portfolio-title">Título do portfólio</label>
+                      <input type="text" id="portfolio-title" class="form-control" placeholder="Ex.: Sites modernos para pequenos negócios">
+                  </div>
+                  <div class="form-group">
+                      <label for="portfolio-description">Descrição do portfólio</label>
+                      <textarea id="portfolio-description" class="form-control" rows="4" placeholder="Conte quais tipos de projetos você quer destacar."></textarea>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group">
+                          <label for="portfolio-url">Link externo</label>
+                          <input type="url" id="portfolio-url" class="form-control" placeholder="https://meuportfolio.com">
+                      </div>
+                      <div class="form-group">
+                          <label for="availability">Disponibilidade</label>
+                          <select id="availability" class="form-control">
+                              <option value="">Selecione</option>
+                              <option value="Disponível para novos projetos">Disponível para novos projetos</option>
+                              <option value="Agenda parcial">Agenda parcial</option>
+                              <option value="Indisponível no momento">Indisponível no momento</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="hour-price">Valor por hora / referência</label>
+                      <input type="text" id="hour-price" class="form-control" placeholder="Ex.: R$ 50/h ou a combinar">
+                  </div>
+                  <div class="form-actions">
+                      <button type="submit" class="btn-save">Salvar portfólio</button>
+                      <button type="button" class="btn-cancel" data-reset-section="portfolio">Cancelar</button>
+                  </div>
+              </form>
           </div>
           
           <div class="settings-section" id="account-settings">
-              <h2>Configurações de Conta</h2>
-              <!-- Conteudo para configurações de conta aqui -->
-              <p>Gerencie suas preferências de conta e plano de assinatura.</p>
+              <h2>Conta</h2>
+
+              <div class="account-type-card">
+                  <div class="account-type-header">
+                      <span class="account-type-icon"><i class="fas fa-user-gear"></i></span>
+                      <div>
+                          <strong>Tipo de conta</strong>
+                          <p>Essa alteração muda permissões, serviços e como seu perfil aparece na Workly.</p>
+                      </div>
+                  </div>
+
+                  <div class="account-current-status">
+                      <span>Tipo atual</span>
+                      <strong id="current-account-type-label">--</strong>
+                  </div>
+
+                  <form id="account-settings-form" class="settings-form account-type-form">
+                      <div class="form-row">
+                          <div class="form-group">
+                              <label for="account-type">Alterar para</label>
+                              <select id="account-type" class="form-control">
+                                  <option value="Freelancer">Freelancer</option>
+                                  <option value="Contratante">Contratante</option>
+                              </select>
+                          </div>
+                          <div class="form-group" id="account-area-wrapper">
+                              <label for="account-area">Área de atuação</label>
+                              <select id="account-area" class="form-control">
+                                  <option value="">Selecione sua área...</option>
+                                  <option value="Design">Design</option>
+                                  <option value="Programação">Programação</option>
+                                  <option value="Vídeo/Edição">Vídeo/Edição</option>
+                                  <option value="Inteligência Artificial">Inteligência Artificial</option>
+                                  <option value="Escrita/Tradução">Escrita/Tradução</option>
+                                  <option value="Fotografia">Fotografia</option>
+                                  <option value="Áudio/Música">Áudio/Música</option>
+                              </select>
+                          </div>
+                      </div>
+
+                      <div class="settings-info-card account-type-warning">
+                          <i class="fas fa-triangle-exclamation"></i>
+                          <p id="account-type-help">Para virar freelancer, informe uma área de atuação. Para virar contratante, você não pode ter serviços publicados ou contratos ativos como freelancer.</p>
+                      </div>
+
+                      <div class="form-actions">
+                          <button type="submit" class="btn-save">Confirmar alteração</button>
+                          <button type="button" class="btn-cancel" data-reset-section="account">Cancelar</button>
+                      </div>
+                  </form>
+              </div>
           </div>
           
           <div class="settings-section" id="billing-settings">
-              <h2>Configurações de Pagamento</h2>
-              <!-- Conteúdo para configuraçoes de pagamento aqui -->
-              <p>Gerencie seus métodos de pagamento e histórico financeiro.</p>
+              <h2>Pagamentos</h2>
+              <form id="billing-settings-form" class="settings-form">
+                  <div class="settings-info-card">
+                      <i class="fas fa-wallet"></i>
+                      <div>
+                          <strong>Dados preparados para uma futura integração financeira.</strong>
+                          <p>Nenhuma cobrança real é feita pelo sistema neste momento.</p>
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group">
+                          <label for="payment-method">Método preferido</label>
+                          <select id="payment-method" class="form-control">
+                              <option value="">Selecione</option>
+                              <option value="Pix">Pix</option>
+                              <option value="Transferência bancária">Transferência bancária</option>
+                              <option value="A combinar com o cliente">A combinar com o cliente</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="pix-key">Chave Pix</label>
+                          <input type="text" id="pix-key" class="form-control" placeholder="Email, CPF, telefone ou chave aleatória">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="bank-info">Banco / observações</label>
+                      <input type="text" id="bank-info" class="form-control" placeholder="Ex.: Nubank, Banco do Brasil ou instruções de pagamento">
+                  </div>
+                  <div class="form-actions">
+                      <button type="submit" class="btn-save">Salvar pagamentos</button>
+                      <button type="button" class="btn-cancel" data-reset-section="billing">Cancelar</button>
+                  </div>
+              </form>
           </div>
           
           <div class="settings-section" id="notification-settings">
-              <h2>Configurações de Notificações</h2>
-              <!-- Conteudo para configurações de notificaçoes aqui -->
-              <p>Gerencie como e quando deseja receber notificações.</p>
+              <h2>Notificações</h2>
+              <form id="notification-settings-form" class="settings-form">
+                  <div class="toggle-list">
+                      <label class="toggle-row">
+                          <span><strong>Notificações por email</strong><small>Receber avisos importantes da conta.</small></span>
+                          <input type="checkbox" id="notify-email">
+                      </label>
+                      <label class="toggle-row">
+                          <span><strong>Novas propostas e mensagens</strong><small>Avisos quando clientes demonstrarem interesse.</small></span>
+                          <input type="checkbox" id="notify-proposals">
+                      </label>
+                      <label class="toggle-row">
+                          <span><strong>Novidades e marketing</strong><small>Receber dicas, promoções e atualizações da Workly.</small></span>
+                          <input type="checkbox" id="notify-marketing">
+                      </label>
+                  </div>
+                  <div class="form-actions">
+                      <button type="submit" class="btn-save">Salvar notificações</button>
+                      <button type="button" class="btn-cancel" data-reset-section="notifications">Cancelar</button>
+                  </div>
+              </form>
           </div>
           
           <div class="settings-section" id="security-settings">
-              <h2>Configurações de Segurança</h2>
-              <!-- Conteudo para configurações de segurança aqui -->
-              <p>Gerencie sua senha e preferências de segurança da conta.</p>
+              <h2>Segurança</h2>
+              <form id="security-settings-form" class="settings-form">
+                  <div class="form-row">
+                      <div class="form-group">
+                          <label for="current-password">Senha atual</label>
+                          <input type="password" id="current-password" class="form-control" autocomplete="current-password">
+                      </div>
+                      <div class="form-group">
+                          <label for="new-password">Nova senha</label>
+                          <input type="password" id="new-password" class="form-control" autocomplete="new-password" minlength="6">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="confirm-password">Confirmar nova senha</label>
+                      <input type="password" id="confirm-password" class="form-control" autocomplete="new-password" minlength="6">
+                  </div>
+                  <label class="toggle-row security-toggle">
+                      <span><strong>Verificação em duas etapas</strong><small>Campo visual para preparar a funcionalidade. Ainda não envia código real.</small></span>
+                      <input type="checkbox" id="two-factor">
+                  </label>
+                  <div class="form-actions">
+                      <button type="submit" class="btn-save">Atualizar senha</button>
+                      <button type="button" id="save-security-preferences" class="btn-cancel">Salvar preferências</button>
+                  </div>
+              </form>
            </div>
        </div>
     </div>
   </div>                 
+  <div id="photo-modal" class="photo-modal" aria-hidden="true">
+      <div class="photo-modal-content">
+          <button type="button" id="close-photo-modal" class="photo-modal-close" aria-label="Fechar modal">
+              <i class="fas fa-xmark"></i>
+          </button>
+
+          <h2>Alterar foto de perfil</h2>
+          <p class="photo-modal-description">Escolha uma imagem, ajuste o enquadramento e salve sua nova foto.</p>
+
+          <form id="update-photo-form" class="crop-photo-form">
+              <div class="photo-picker-empty" id="photo-picker-empty">
+                  <div class="photo-picker-icon">
+                      <i class="fas fa-image"></i>
+                  </div>
+                  <strong>Nenhuma imagem selecionada</strong>
+                  <span>O recorte e o zoom aparecem depois que você escolher uma nova foto.</span>
+              </div>
+
+              <div class="cropper-editor" id="cropper-editor" hidden>
+                  <div class="cropper-stage" id="cropper-stage">
+                      <canvas id="photo-crop-canvas" class="photo-crop-canvas" width="280" height="280" aria-label="Área de recorte da foto"></canvas>
+                      <div class="cropper-mask" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="cropper-controls">
+                      <label for="photo-zoom">Zoom</label>
+                      <input type="range" id="photo-zoom" min="1" max="3" step="0.01" value="1">
+                      <button type="button" id="reset-photo-crop" class="btn-reset-crop">Centralizar</button>
+                  </div>
+
+                  <p class="cropper-hint"><i class="fas fa-hand-pointer"></i> Arraste a imagem para enquadrar e use o zoom se precisar aproximar.</p>
+              </div>
+
+              <label for="nova_foto" class="modal-file-label">
+                  <i class="fas fa-upload"></i> Escolher imagem
+              </label>
+              <input type="file" name="nova_foto" id="nova_foto" accept="image/*" required>
+
+              <div class="form-actions modal-actions">
+                  <button type="submit" id="save-photo-btn" class="btn-save" disabled>Salvar foto</button>
+                  <button type="button" id="cancel-photo-modal" class="btn-cancel">Cancelar</button>
+              </div>
+          </form>
+      </div>
+  </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">

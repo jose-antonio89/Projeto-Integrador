@@ -1,3 +1,4 @@
+// script para página de categorias: le id da categoria, busca serviços via api, exibe na tela e lida com casos de erro ou categoria sem serviços
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
     const categoryId = urlParams.get('id');
@@ -34,19 +35,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         servicosContainer.innerHTML = '';
         if (services.length > 0) {
             services.forEach(service => {
-                servicosContainer.innerHTML += `
-                    <div class="servico-card" onclick="window.location.href='detalhe-servico.html?id=${service.idServico}'">
-                        <img src="${service.imagemServico}" alt="Imagem do serviço" class="card-img">
-                        <h3>${service.nome}</h3>
-                        <p class="descricao">${service.descricao}</p>
-                        <div class="genero">${service.nomeCategoria}</div>
-                        <div class="criador-info">
-                            <img src="${service.fotoPerfil}" class="criador-foto">
-                            <span class="criador-nome">${service.nomeFreelancer}</span>
-                        </div>
-                        <div class="preco">${window.Workly.formatCurrency(service.preco)}</div>
-                    </div>
-                `;
+                servicosContainer.innerHTML += window.Workly.serviceCardMarkup(service);
             });
         } else {
             servicosContainer.innerHTML = `

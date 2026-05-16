@@ -1,32 +1,32 @@
 :root {
-    /* Cores principais */
+    /* cores principais */
     --primary-color: #04BF55;
     --primary-dark: #038a3d;
     --primary-light: #6AD99A;
     --primary-lighter: #8FD9AF;
     
-    /* Cores secundarias */
+    /* cores secundarias */
     --secondary-color: #2196F3;
     --secondary-dark: #0b7dda;
     --accent-color: #FFEB3B;
     
-    /* Tons de cinza */
+    /* tons de cinza */
     --gray-light: #e4e4e4;
     --gray-medium: #9E9E9E;
     --gray-dark: #333;
     --gray-darker: #1a1a1a;
     --gray-darkest: #121212;
     
-    /* Cores de texto */
+    /* cores de texto */
     --text-color: #333;
     --text-light: #f8f9fa;
     --text-muted: #777;
     
-    /* Cores de fundo */
+    /* cores de fundo */
     --bg-light: #f8f9fa;
     --bg-dark: #1a1a1a;
     
-    /* Cores de borda */
+    /* cores de borda */
     --border-color: #dbdbdb;
     --border-light: #e0e0e0;
 }
@@ -263,10 +263,9 @@ body {
     background-color: #000000;
 }
 
-/*SENHA*/
+/*senha*/
 
-
-/* Modal Esqueceu Senha */
+/* modal esqueceu senha */
 .forgot-password-modal {
     display: none;
     position: fixed;
@@ -338,17 +337,13 @@ body {
     background-color: var(--primary-dark);
 }
 
-
-
 .swal2-confirm {
   background-color: #4CAF50 !important;
 }
 
-
 .form-group input[type="password"] { padding-right: 48px; }
 
-
-/* Fix centralização do login */
+/* fix centralização do login */
 body.login-page {
     min-height: 100vh !important;
     display: flex !important;
@@ -359,4 +354,18 @@ body.login-page {
 
 body.login-page .login-container {
     margin: 0 auto !important;
+}
+
+/* seleção de texto padrão do workly
+   quando alguém arrasta o mouse em cima de um texto, fica verde em todas as páginas.
+   deixei aqui também pra não depender de cada tela ter esse estilo separado. */
+::selection {
+  background: #04BF55;
+  color: #ffffff;
+}
+
+/* mesma ideia, só garantindo compatibilidade com firefox. */
+::-moz-selection {
+  background: #04BF55;
+  color: #ffffff;
 }

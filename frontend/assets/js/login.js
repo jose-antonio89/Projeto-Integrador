@@ -1,3 +1,5 @@
+// script para página de login: lida com envio do formulário, validação, chamada da api, armazenamento de token e dados do usuário, redirecionamento e casos de erro
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('formLogin');
     if (!form) return;

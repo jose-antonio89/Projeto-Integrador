@@ -1,32 +1,32 @@
 :root {
-  /* Cores principais */
+  /* cores principais */
   --primary-color: #04BF55;
   --primary-dark: #038a3d;
   --primary-light: #6AD99A;
   --primary-lighter: #8FD9AF;
   
-  /* Cores secundarias */
+  /* cores secundarias */
   --secondary-color: #2196F3;
   --secondary-dark: #0b7dda;
   --accent-color: #FFEB3B;
   
-  /* Tons de cinza */
+  /* tons de cinza */
   --gray-light: #e4e4e4;
   --gray-medium: #9E9E9E;
   --gray-dark: #333;
   --gray-darker: #1a1a1a;
   --gray-darkest: #121212;
   
-  /* Cores de texto */
+  /* cores de texto */
   --text-color: #333;
   --text-light: #f8f9fa;
   --text-muted: #777;
   
-  /* Cores de fundo */
+  /* cores de fundo */
   --bg-light: #f8f9fa;
   --bg-dark: #1a1a1a;
   
-  /* Cores de borda */
+  /* cores de borda */
   --border-color: #dbdbdb;
   --border-light: #e0e0e0;
   
@@ -55,11 +55,11 @@ body {
 header {
   width: 100%;
   height: auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra */
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: white; /* Fundo branco para o cabeçalho */
+  background: white; /* fundo branco para o cabeçalho */
 }
 
 .principal {
@@ -79,7 +79,6 @@ header nav {
   background-color:var(--gray-light);
 
 }
-
 
 nav ul {
   display: flex;
@@ -150,13 +149,11 @@ nav ul li a:hover{
   box-shadow: 0 0 0 3px rgba(4, 191, 85, 0.2);
 }
 
-
 .separação {
   width: 100%; 
   padding-top: 2px;
   background-color: var(--gray-medium);
 }
-
 
 .categorias {
   font-family: "Poppins", sans-serif;
@@ -180,7 +177,6 @@ nav ul li a:hover{
       
       }
   }
-
 
 }
 
@@ -213,7 +209,6 @@ nav ul li a:hover{
   transform: translateY(-3px);
 }
 
-
 .imagem-logo {
   max-width: 150px;
 }
@@ -234,10 +229,10 @@ nav ul li a:hover{
 }
 
 .logo i:hover {
-  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+  transform: scale(1.05); /* efeito de zoom ao passar o mouse */
 }
    
-   /* Estilos especificos para a pagina de perfil */
+   /* estilos especificos para a pagina de perfil */
    .profile-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -492,7 +487,7 @@ nav ul li a:hover{
     background: var(--gray-light);
 }
 
-/* Responsividade para o perfil */
+/* responsividade para o perfil */
 @media (max-width: 768px) {
     .profile-header {
         flex-direction: column;
@@ -527,10 +522,10 @@ nav ul li a:hover{
 
 @media (max-width: 1300px) {
   .card {
-      width: 200px; /* Largura fixa para telas grandes */
+      width: 200px; /* largura fixa para telas grandes */
   }
 
-  /*Responsividade da linha de categorias */
+  /*responsividade da linha de categorias */
   .categorias {
       padding: 15px 10px;
       gap: 10px;
@@ -560,8 +555,7 @@ nav ul li a:hover{
   }
 }
 
-
-/* Estilos para todas as abas */
+/* estilos para todas as abas */
 .tab-content {
   background: white;
   border-radius: 15px;
@@ -569,7 +563,7 @@ nav ul li a:hover{
   padding: 25px;
 }
 
-/* ===== ESTILOS PARA ABA DE SERVIÇOS ===== */
+/* ===== estilos para aba de serviços ===== */
 .services-header {
   display: flex;
   justify-content: space-between;
@@ -732,8 +726,7 @@ nav ul li a:hover{
   background-color: var(--secondary-light);
 }
 
-
-/* ===== ESTILOS PARA A ABA DE AVALIAÇÕES ===== */
+/* ===== estilos para a aba de avaliações ===== */
 .reviews-header {
   display: flex;
   justify-content: space-between;
@@ -826,7 +819,6 @@ nav ul li a:hover{
 .reviews-list {
   margin-top: 30px;
 }
-
 
 .review-item {
   background: white;
@@ -961,7 +953,7 @@ nav ul li a:hover{
   font-size: 0.8rem;
 }
 
-/* ===== ESTILOS PARA A ABA DE CONFIGURAÇÕES ===== */
+/* ===== estilos para a aba de configurações ===== */
 .settings-container {
   display: flex;
   gap: 30px;
@@ -1085,7 +1077,7 @@ textarea.form-control {
 }
 
 .upload-actions input[type="file"] {
-  display: none; /* Esconde o input padrão */
+  display: none; /* esconde o input padrão */
 }
 
 .upload-actions button[type="submit"] {
@@ -1155,15 +1147,13 @@ textarea.form-control {
   transition: all 0.2s ease;
 }
 
-
 .remove-btn {
   background: #F44336;
   color: #fff;
   border: 1px solid #F44336;
 }
 
-
-/* Responsivo foto-perfil */
+/* responsivo foto-perfil */
 @media (max-width: 600px) {
   .upload-actions {
     flex-direction: column;
@@ -1241,7 +1231,7 @@ textarea.form-control {
   background: var(--gray-light);
 }
 
-/* Modo escuro */
+/* modo escuro */
 .dark-mode-toggle {
   position: fixed;
   bottom: 20px;
@@ -1268,7 +1258,7 @@ textarea.form-control {
 }
 
 /*========================================================================*/
-/* Detalhes para scrollbar */
+/* detalhes para scrollbar */
 ::selection {
   background: var(--primary-color);
   color: white;
@@ -1293,7 +1283,7 @@ textarea.form-control {
 
 /*=====================================================================*/
 
-/*FOOTER*/
+/*footer*/
 footer {
   background: #1a1a1a;
   color: white;
@@ -1384,8 +1374,7 @@ footer {
   font-size: 1rem;
 }
 
-
-/* Responsividade para a aba de configurações e revisões */
+/* responsividade para a aba de configurações e revisões */
 @media (max-width: 920px) {
   .settings-container {
     flex-direction: column;
@@ -1444,7 +1433,7 @@ footer {
   }
 }
 
-/* Estilo para toggle de abas com animacao */
+/* estilo para toggle de abas com animacao */
 .profile-tab {
   position: relative;
   overflow: hidden;
@@ -1470,7 +1459,7 @@ footer {
   transform: scaleX(1);
 }
 
-/* Animacoes para cards e estatisticas */
+/* animacoes para cards e estatisticas */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1487,14 +1476,14 @@ footer {
 .dashboard-card:nth-child(5) { animation-delay: 0.5s; }
 .dashboard-card:nth-child(6) { animation-delay: 0.6s; }
 
-/* Melhorias para hover em cards */
+/* melhorias para hover em cards */
 .dashboard-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
-/* Estilo para icones  */
+/* estilo para icones  */
 .activity-icon, .stat-box {
   transition: all 0.3s ease;
 }
@@ -1503,7 +1492,7 @@ footer {
   transform: scale(1.1);
 }
 
-/* Tooltip para icones e botoes */
+/* tooltip para icones e botoes */
 [data-tooltip] {
   position: relative;
 }
@@ -1531,8 +1520,7 @@ footer {
   bottom: calc(100% + 10px);
 }
 
-/* Perfil NAVBAR */
-
+/* perfil navbar */
 
 .profile-menu {
     display: flex;
@@ -1615,7 +1603,7 @@ footer {
     height: 100%;
 }
 
-/* Estilos para os cards de serviço modernos na aba "Meus Serviços" */
+/* estilos para os cards de serviço modernos na aba "meus serviços" */
 .servicos-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1732,7 +1720,6 @@ footer {
 .current-photo {
   border: none !important;
 }
-
 
 /* ===== v16 profile cleanup ===== */
 #settings-tab,
@@ -1866,7 +1853,6 @@ body.dark-mode .upload-actions {
   padding: 0 !important;
 }
 
-
 /* ===== v17 sidebar tone fix ===== */
 body.dark-mode .settings-sidebar,
 body.dark-mode .settings-nav {
@@ -1889,7 +1875,6 @@ body.dark-mode .settings-nav-item:hover {
 body.dark-mode .settings-nav-item.active {
   background: linear-gradient(90deg, rgba(4, 191, 85, 0.16), rgba(4, 191, 85, 0.08)) !important;
 }
-
 
 /* ===== v18 sidebar uniform dark fix ===== */
 body.dark-mode .settings-sidebar,
@@ -1914,4 +1899,1825 @@ body.dark-mode .settings-nav-item:hover {
 body.dark-mode .settings-nav-item.active {
   background: linear-gradient(90deg, rgba(4, 191, 85, 0.18), rgba(4, 191, 85, 0.08)) !important;
   border-left-color: var(--primary-color) !important;
+}
+
+/* ===== ajustes do perfil dinâmico e modal de foto ===== */
+.avatar-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.avatar-edit-btn {
+  position: absolute;
+  right: 6px;
+  bottom: 8px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.avatar-edit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.profile-meta {
+  color: var(--gray-medium);
+  font-weight: 500;
+}
+
+.empty-state-card {
+  background: var(--bg-light);
+  border: 1px dashed var(--border-light);
+  border-radius: 14px;
+  padding: 22px;
+  color: var(--text-muted);
+}
+
+.empty-state-card h3,
+.empty-state-card h4 {
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.empty-state-card.compact {
+  padding: 18px;
+}
+
+.empty-review-info {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.muted-stars {
+  color: var(--gray-medium);
+}
+
+.photo-settings-card {
+  background: var(--bg-light);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 25px;
+}
+
+.helper-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.photo-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.photo-modal.active {
+  display: flex;
+}
+
+.photo-modal-content {
+  width: min(92vw, 430px);
+  background: #fff;
+  color: var(--text-color);
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+}
+
+.photo-modal-content h2 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.photo-modal-description {
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.photo-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-light);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.modal-photo-preview {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+}
+
+.modal-file-label,
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.modal-file-label:hover,
+.upload-btn:hover {
+  background: var(--primary-dark);
+}
+
+#nova_foto {
+  display: none;
+}
+
+.modal-actions {
+  margin-top: 22px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .profile-header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .profile-stats {
+    justify-content: center;
+  }
+
+  .photo-modal-content {
+    padding: 24px 18px;
+  }
+}
+
+body.dark-mode .photo-modal-content {
+  background: #121a28;
+  color: #eef5ff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .photo-modal-close,
+body.dark-mode .empty-state-card,
+body.dark-mode .photo-settings-card {
+  background: #1b2638;
+  color: #eef5ff;
+}
+
+body.dark-mode .empty-state-card h3,
+body.dark-mode .empty-state-card h4 {
+  color: #eef5ff;
+}
+
+body.dark-mode .photo-modal-description,
+body.dark-mode .helper-text,
+body.dark-mode .empty-review-info,
+body.dark-mode .empty-state-card p {
+  color: #9fb0c7;
+}
+
+/* garante que os alertas do sweetalert apareçam acima do modal de foto */
+.swal2-container {
+  z-index: 20000 !important;
+}
+
+/* ===== configurações do perfil preenchidas ===== */
+.settings-info-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(4, 191, 85, 0.08);
+  border: 1px solid rgba(4, 191, 85, 0.18);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 22px;
+  color: var(--text-dark);
+}
+
+.settings-info-card i {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin-top: 2px;
+}
+
+.settings-info-card p {
+  margin: 4px 0 0;
+  color: var(--text-medium);
+}
+
+.settings-info-card.warning {
+  background: rgba(245, 158, 11, 0.10);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.settings-info-card.warning i {
+  color: #f59e0b;
+}
+
+.form-control:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  background: var(--bg-light);
+}
+
+.toggle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  background: var(--background-white);
+  color: var(--text-dark);
+}
+
+.toggle-row span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toggle-row small {
+  color: var(--text-medium);
+  font-size: 0.86rem;
+}
+
+.toggle-row input[type="checkbox"] {
+  width: 46px;
+  height: 24px;
+  accent-color: var(--primary-color);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.security-toggle {
+  margin-top: 8px;
+}
+
+body.dark-mode .settings-info-card,
+body.dark-mode .toggle-row,
+body.dark-mode .form-control:disabled {
+  background: rgba(15, 23, 42, 0.72) !important;
+  border-color: rgba(148, 163, 184, 0.18) !important;
+  color: #e5eefb !important;
+}
+
+body.dark-mode .settings-info-card p,
+body.dark-mode .toggle-row small {
+  color: #9fb0c8 !important;
+}
+
+/* melhorias do upload/crop da foto de perfil */
+.photo-settings-card {
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.08), rgba(0, 150, 70, 0.03));
+  border: 1px solid rgba(0, 200, 83, 0.16);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.photo-upload {
+  align-items: center;
+  gap: 18px;
+}
+
+.photo-upload .current-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #08c765;
+  box-shadow: 0 10px 25px rgba(0, 200, 83, 0.2);
+}
+
+.upload-actions {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.upload-btn::before {
+  content: none !important;
+}
+
+.upload-btn {
+  border-radius: 999px;
+  padding: 13px 20px;
+  background: linear-gradient(135deg, #08c765, #04984e);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(0, 200, 83, 0.28);
+  transform: translateY(0);
+}
+
+.upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 200, 83, 0.34);
+}
+
+.photo-modal-content {
+  width: min(94vw, 520px);
+  padding: 32px;
+  border-radius: 24px;
+}
+
+.crop-photo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cropper-stage {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #0b1220;
+  margin: 6px auto 18px;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 18px 40px rgba(0,0,0,0.22);
+}
+
+.cropper-stage:active {
+  cursor: grabbing;
+}
+
+.cropper-stage .modal-photo-preview {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+.cropper-mask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 0 49%, rgba(3, 7, 18, 0.58) 50% 100%);
+  box-shadow: inset 0 0 0 999px rgba(3, 7, 18, 0.18);
+}
+
+.cropper-mask::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #08c765;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.18), 0 0 28px rgba(8,199,101,0.28);
+}
+
+.cropper-controls {
+  width: 100%;
+  max-width: 340px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cropper-controls label {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+#photo-zoom {
+  width: 100%;
+  accent-color: #08c765;
+}
+
+.btn-reset-crop {
+  border: 1px solid var(--border-light);
+  background: var(--bg-light);
+  color: var(--text-color);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cropper-hint {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin: 12px 0 0;
+}
+
+.cropper-hint i {
+  color: #08c765;
+  margin-right: 5px;
+}
+
+body.dark-mode .photo-settings-card {
+  background: linear-gradient(135deg, rgba(8, 199, 101, 0.13), rgba(15, 23, 42, 0.8));
+  border-color: rgba(8, 199, 101, 0.18);
+}
+
+body.dark-mode .cropper-controls label {
+  color: #eef5ff;
+}
+
+body.dark-mode .btn-reset-crop {
+  background: #1b2638;
+  color: #eef5ff;
+  border-color: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 520px) {
+  .photo-upload {
+    flex-direction: column;
+    text-align: center;
+  }
+  .upload-actions {
+    align-items: center;
+  }
+  .cropper-stage {
+    width: 240px;
+    height: 240px;
+  }
+  .cropper-mask::after {
+    width: 190px;
+    height: 190px;
+  }
+  .cropper-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* refinamento do botão e do modal de foto */
+.photo-settings-card {
+  background: linear-gradient(135deg, rgba(8, 199, 101, 0.12), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(8, 199, 101, 0.22);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.photo-upload {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px dashed rgba(8, 199, 101, 0.28);
+}
+
+.upload-actions .helper-text {
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+
+.upload-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: translateX(-110%);
+  transition: transform 0.55s ease;
+}
+
+.upload-btn:hover::after {
+  transform: translateX(110%);
+}
+
+.upload-btn i {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.photo-modal-content {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.28);
+}
+
+.photo-picker-empty {
+  width: min(100%, 360px);
+  min-height: 215px;
+  margin: 8px auto 18px;
+  padding: 28px 24px;
+  border: 2px dashed rgba(8, 199, 101, 0.28);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(8, 199, 101, 0.08), rgba(248, 250, 252, 0.92));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.photo-picker-empty[hidden],
+.cropper-editor[hidden] {
+  display: none !important;
+}
+
+.photo-picker-empty strong {
+  color: var(--text-dark);
+  font-size: 1.05rem;
+}
+
+.photo-picker-empty span {
+  max-width: 285px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.photo-picker-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #08c765, #04a653);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.65rem;
+  box-shadow: 0 16px 34px rgba(8, 199, 101, 0.28);
+}
+
+.cropper-editor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: cropperFadeIn 0.22s ease;
+}
+
+@keyframes cropperFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cropper-stage {
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at center, rgba(8, 199, 101, 0.12), transparent 42%),
+    linear-gradient(135deg, #0b1220, #111827);
+  cursor: default;
+  will-change: transform;
+}
+
+.cropper-stage.is-ready {
+  cursor: grab;
+}
+
+.cropper-stage.is-ready:active {
+  cursor: grabbing;
+}
+
+.cropper-stage .modal-photo-preview {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-user-drag: none;
+}
+
+.cropper-mask::after {
+  width: 225px;
+  height: 225px;
+  border-width: 4px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.2), 0 0 35px rgba(8,199,101,0.38);
+}
+
+.cropper-controls {
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+#photo-zoom {
+  height: 6px;
+  cursor: pointer;
+}
+
+.modal-file-label {
+  margin-top: 4px;
+  box-shadow: 0 16px 34px rgba(8, 199, 101, 0.28);
+}
+
+#save-photo-btn:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  box-shadow: none;
+  filter: grayscale(0.2);
+}
+
+body.dark-mode .photo-upload {
+  background: rgba(15, 23, 42, 0.64);
+  border-color: rgba(8, 199, 101, 0.24);
+}
+
+body.dark-mode .photo-picker-empty {
+  background: linear-gradient(135deg, rgba(8, 199, 101, 0.12), rgba(15, 23, 42, 0.86));
+  border-color: rgba(8, 199, 101, 0.24);
+}
+
+body.dark-mode .photo-picker-empty strong {
+  color: #eef5ff;
+}
+
+body.dark-mode .cropper-controls {
+  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba(255,255,255,0.08);
+}
+
+@media (max-width: 520px) {
+  .cropper-stage {
+    width: 245px;
+    height: 245px;
+  }
+  .cropper-mask::after {
+    width: 188px;
+    height: 188px;
+  }
+}
+
+/* ajustes finais do crop de foto: mais fluido e visual mais limpo */
+.cropper-stage {
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  cursor: grab;
+  isolation: isolate;
+}
+
+.cropper-stage.is-ready:active {
+  cursor: grabbing;
+}
+
+.cropper-stage .modal-photo-preview {
+  will-change: transform;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  image-rendering: auto;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.cropper-mask {
+  pointer-events: none;
+}
+
+.cropper-controls {
+  margin-top: 14px;
+}
+
+.cropper-hint {
+  margin-top: 4px;
+  opacity: .82;
+}
+
+/* crop v4: preview em canvas para deixar o arraste mais fluido */
+.photo-crop-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.cropper-stage.dragging {
+  cursor: grabbing;
+}
+
+.cropper-stage .modal-photo-preview {
+  display: none !important;
+}
+
+/* ajustes visuais: dashboard mais limpo e remoção de contornos fantasmas */
+.dashboard-card .stats-row {
+  gap: 14px;
+  justify-content: flex-start;
+}
+
+.dashboard-card .stats-row .stat-box {
+  flex: 1 1 180px;
+  width: auto;
+  min-width: 170px;
+}
+
+/* evita outlines/bordas verdes acidentais sem remover estados de design dos botões */
+.profile-container *,
+.profile-container *::before,
+.profile-container *::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-container :focus,
+.profile-container :focus-visible {
+  outline: none !important;
+}
+
+body.dark-mode .photo-settings-card {
+  border: none !important;
+  background: linear-gradient(145deg, rgba(8, 18, 31, 0.96), rgba(12, 32, 43, 0.9)) !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28) !important;
+}
+
+body.dark-mode .photo-upload {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .settings-form,
+body.dark-mode .settings-content,
+body.dark-mode .dashboard-card,
+body.dark-mode .profile-card,
+body.dark-mode .empty-state-card {
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24) !important;
+}
+
+body.dark-mode .settings-form,
+body.dark-mode .dashboard-card,
+body.dark-mode .profile-card,
+body.dark-mode .empty-state-card {
+  border-color: rgba(148, 163, 184, 0.10) !important;
+}
+
+body.dark-mode .photo-upload .current-photo {
+  border: 3px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(4, 191, 85, 0.14) !important;
+  border-color: rgba(4, 191, 85, 0.45) !important;
+}
+
+/* fix definitivo: remove contorno verde da área de troca de foto */
+.photo-settings-card,
+.photo-settings-card:hover,
+.photo-settings-card:focus,
+.photo-settings-card:focus-within,
+.photo-upload,
+.photo-upload:hover,
+.photo-upload:focus,
+.photo-upload:focus-within,
+.upload-actions,
+.upload-actions:hover,
+.upload-actions:focus,
+.upload-actions:focus-within {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.photo-upload {
+  background: transparent !important;
+}
+
+.photo-settings-card {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+body.dark-mode .photo-settings-card,
+body.dark-mode .photo-upload,
+html.dark-mode-enabled .photo-settings-card,
+html.dark-mode-enabled .photo-upload,
+html.dark-mode-enabled body .photo-settings-card,
+html.dark-mode-enabled body .photo-upload {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* mantém a foto com acabamento, mas sem borda verde */
+.photo-upload .current-photo,
+body.dark-mode .photo-upload .current-photo,
+html.dark-mode-enabled .photo-upload .current-photo {
+  border: none !important;
+  outline: none !important;
+}
+
+/* ===== fix real: remove contorno verde da área de foto do perfil =====
+   a borda vinha de regras antigas da classe .photo-upload. o html agora usa
+   .photo-upload-clean para não herdar esses estilos. */
+.photo-settings-panel {
+  max-width: 800px;
+  margin-bottom: 25px;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.photo-upload-clean {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.photo-upload-clean:hover,
+.photo-upload-clean:focus,
+.photo-upload-clean:focus-within,
+.photo-settings-panel:hover,
+.photo-settings-panel:focus,
+.photo-settings-panel:focus-within {
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.photo-upload-clean::before,
+.photo-upload-clean::after,
+.photo-settings-panel::before,
+.photo-settings-panel::after {
+  content: none !important;
+  display: none !important;
+}
+
+.photo-upload-clean .current-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  flex: 0 0 auto;
+}
+
+body.dark-mode .photo-settings-panel,
+body.dark-mode .photo-upload-clean,
+html.dark-mode-enabled .photo-settings-panel,
+html.dark-mode-enabled .photo-upload-clean,
+html.dark-mode-enabled body .photo-settings-panel,
+html.dark-mode-enabled body .photo-upload-clean {
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 576px) {
+  .photo-upload-clean {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* integração das avaliações reais no perfil */
+.rating-breakdown-row {
+    display: grid;
+    grid-template-columns: 46px 1fr 30px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--text-color, #333);
+    font-size: 0.92rem;
+}
+
+.rating-breakdown-row i,
+.profile-review-stars i,
+.rating-stars i {
+    color: #f5b301;
+}
+
+.rating-breakdown-bar {
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.rating-breakdown-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #04BF55, #36d982);
+}
+
+.profile-review-card {
+    background: var(--background-white, #fff);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.profile-review-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.profile-review-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-review-top h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-dark, #1f2937);
+}
+
+.profile-review-top p {
+    margin: 3px 0 0;
+    font-size: 0.88rem;
+    color: var(--text-muted, #6b7280);
+}
+
+.profile-review-date {
+    margin-left: auto;
+    font-size: 0.82rem;
+    color: var(--text-muted, #6b7280);
+    white-space: nowrap;
+}
+
+.profile-review-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.profile-review-comment {
+    margin: 0 0 14px;
+    line-height: 1.55;
+    color: var(--text-color, #374151);
+}
+
+.profile-review-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.profile-review-notes span {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(4, 191, 85, 0.1);
+    color: #038f41;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+body.dark-mode .profile-review-card {
+    background: #102235;
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .profile-review-top h4,
+body.dark-mode .profile-review-comment,
+body.dark-mode .rating-breakdown-row {
+    color: #eaf2ff;
+}
+
+body.dark-mode .profile-review-top p,
+body.dark-mode .profile-review-date {
+    color: #9fb3c8;
+}
+
+body.dark-mode .rating-breakdown-bar {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .profile-review-notes span {
+    background: rgba(4, 191, 85, 0.16);
+    color: #5ef09b;
+}
+
+/* leads/propostas recebidas no perfil */
+.proposal-lead {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+}
+
+.proposal-lead .lead-avatar {
+    flex: 0 0 42px;
+    margin-right: 0;
+    border: 2px solid rgba(4, 191, 85, 0.18);
+    background: var(--background-light);
+}
+
+.lead-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.lead-service {
+    margin: 0 0 6px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.proposal-lead .lead-email {
+    line-height: 1.45;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.lead-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--gray-medium);
+}
+
+.lead-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(4, 191, 85, 0.08);
+}
+
+.status-soft {
+    background: rgba(100, 116, 139, 0.12);
+    color: var(--text-light);
+}
+
+body.dark-mode .proposal-lead {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .proposal-lead .lead-email,
+body.dark-mode .status-soft {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+body.dark-mode .lead-meta span {
+    background: rgba(4, 191, 85, 0.12);
+    color: rgba(255, 255, 255, 0.76);
+}
+
+/* ajustes finais: leads recentes */
+.proposal-lead .lead-info {
+    min-width: 0;
+}
+
+.proposal-lead .lead-name {
+    color: #111827;
+    font-weight: 800;
+}
+
+.proposal-lead .lead-service {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.proposal-lead .lead-email {
+    display: block;
+    color: #64748b !important;
+    opacity: 1 !important;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    margin: 4px 0 10px;
+}
+
+.proposal-lead .lead-status {
+    white-space: nowrap;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 6px 12px;
+}
+
+.status-concluido {
+    background: rgba(4, 191, 85, 0.14) !important;
+    color: #049b45 !important;
+}
+
+.status-pendente {
+    background: rgba(245, 158, 11, 0.14) !important;
+    color: #b45309 !important;
+}
+
+.status-andamento {
+    background: rgba(59, 130, 246, 0.13) !important;
+    color: #2563eb !important;
+}
+
+.status-cancelado {
+    background: rgba(239, 68, 68, 0.13) !important;
+    color: #dc2626 !important;
+}
+
+body.dark-mode .proposal-lead .lead-name {
+    color: #f8fafc;
+}
+
+body.dark-mode .proposal-lead .lead-email {
+    color: rgba(226, 232, 240, 0.82) !important;
+}
+
+body.dark-mode .status-concluido {
+    background: rgba(4, 191, 85, 0.18) !important;
+    color: #5ef09b !important;
+}
+
+body.dark-mode .status-pendente {
+    background: rgba(245, 158, 11, 0.18) !important;
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .status-andamento {
+    background: rgba(96, 165, 250, 0.18) !important;
+    color: #93c5fd !important;
+}
+
+body.dark-mode .status-cancelado {
+    background: rgba(248, 113, 113, 0.18) !important;
+    color: #fca5a5 !important;
+}
+
+/* dashboard dinâmico: atividades reais */
+.activity-dynamic {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+}
+
+.activity-dynamic .activity-icon {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    margin-right: 0;
+    background: rgba(4, 191, 85, 0.12);
+    color: var(--primary-color);
+}
+
+.activity-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.activity-dynamic .activity-title {
+    color: #111827;
+    font-weight: 800;
+    margin: 0;
+}
+
+.activity-description {
+    margin: 4px 0 8px;
+    color: #64748b;
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.activity-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.activity-status,
+.activity-value {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.activity-status {
+    background: rgba(4, 191, 85, 0.12);
+    color: #049b45;
+}
+
+.activity-value {
+    background: rgba(15, 23, 42, 0.06);
+    color: #334155;
+}
+
+.activity-contrato .activity-icon {
+    background: rgba(4, 191, 85, 0.12);
+    color: var(--primary-color);
+}
+
+.activity-avaliacao .activity-icon {
+    background: rgba(245, 158, 11, 0.14);
+    color: #f59e0b;
+}
+
+.activity-favorito .activity-icon {
+    background: rgba(244, 63, 94, 0.12);
+    color: #f43f5e;
+}
+
+.activity-servico .activity-icon {
+    background: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+}
+
+body.dark-mode .activity-dynamic {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .activity-dynamic .activity-title {
+    color: #f8fafc;
+}
+
+body.dark-mode .activity-description {
+    color: rgba(226, 232, 240, 0.78);
+}
+
+body.dark-mode .activity-status {
+    background: rgba(4, 191, 85, 0.18);
+    color: #5ef09b;
+}
+
+body.dark-mode .activity-value {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(226, 232, 240, 0.86);
+}
+
+body.dark-mode .activity-time {
+    color: rgba(226, 232, 240, 0.62);
+}
+
+/* dashboard dinâmico corrigido: resumo visível mesmo quando o gráfico estiver zerado ou sem cdn */
+.dashboard-live-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.dashboard-live-item {
+  background: rgba(4, 191, 85, 0.08);
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(4, 191, 85, 0.14);
+}
+
+.dashboard-live-item span {
+  display: block;
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.dashboard-live-item strong {
+  display: block;
+  font-size: 1rem;
+  color: #101827;
+  font-weight: 800;
+}
+
+body.dark-mode .dashboard-live-item {
+  background: rgba(4, 191, 85, 0.12);
+  border-color: rgba(4, 191, 85, 0.18);
+}
+
+body.dark-mode .dashboard-live-item span {
+  color: rgba(226, 232, 240, 0.74);
+}
+
+body.dark-mode .dashboard-live-item strong {
+  color: #f8fafc;
+}
+
+@media (max-width: 600px) {
+  .dashboard-live-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* padronização dashboard: card de leads clicável e listas compactas */
+.dashboard-card-link {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.dashboard-card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.10);
+  border-color: rgba(4, 191, 85, 0.22);
+}
+
+.dashboard-card-link:focus-visible {
+  outline: 3px solid rgba(4, 191, 85, 0.25);
+  outline-offset: 3px;
+}
+
+.dashboard-card-title-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dashboard-card-title-link span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  background: rgba(4, 191, 85, 0.10);
+  border-radius: 999px;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.dashboard-card-title-link i {
+  font-size: 0.72rem;
+}
+
+.leads-list .proposal-lead:nth-of-type(n+4),
+.recent-activity .activity-dynamic:nth-of-type(n+4) {
+  display: none !important;
+}
+
+body.dark-mode .dashboard-card-link:hover {
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+  border-color: rgba(94, 240, 155, 0.22);
+}
+
+body.dark-mode .dashboard-card-title-link span {
+  color: #5ef09b;
+  background: rgba(4, 191, 85, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   ajustes do topo do perfil
+   fiz essa parte mais "vitrine": bio aparecendo no header e cards sem aquele
+   preto chapado. a ideia é melhorar o visual sem mexer na lógica do sistema.
+-------------------------------------------------------------------------- */
+.profile-header {
+  position: relative;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.profile-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(4, 191, 85, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(33, 150, 243, 0.08), transparent 32%);
+}
+
+.profile-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-info {
+  min-width: 280px;
+}
+
+.profile-title {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.profile-bio {
+  max-width: 680px;
+  margin: 6px 0 14px;
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.profile-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-meta::before {
+  content: "\f073";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+.profile-stats {
+  align-items: stretch;
+}
+
+.stat-item {
+  min-width: 150px;
+  text-align: left;
+  padding: 18px 22px;
+  border: 1px solid rgba(4, 191, 85, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(245, 247, 250, 0.86));
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12);
+}
+
+.stat-label {
+  margin-top: 4px;
+}
+
+/* dark mode do header: troca o "preto jogado" por um card de vidro bem mais integrado. */
+body.dark-mode .profile-header,
+html.dark-mode-enabled body .profile-header {
+  background: linear-gradient(135deg, rgba(8, 18, 31, 0.96), rgba(15, 23, 42, 0.92)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.10) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28) !important;
+}
+
+body.dark-mode .profile-name,
+html.dark-mode-enabled body .profile-name {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .profile-title,
+html.dark-mode-enabled body .profile-title {
+  color: #22c55e !important;
+}
+
+body.dark-mode .profile-bio,
+html.dark-mode-enabled body .profile-bio {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .profile-meta,
+html.dark-mode-enabled body .profile-meta {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode .stat-item,
+html.dark-mode-enabled body .stat-item {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.58)) !important;
+  border: 1px solid rgba(34, 197, 94, 0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 16px 34px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.dark-mode .stat-item .stat-value,
+html.dark-mode-enabled body .stat-item .stat-value {
+  color: #22c55e !important;
+}
+
+body.dark-mode .stat-item .stat-label,
+html.dark-mode-enabled body .stat-item .stat-label {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .profile-tabs,
+html.dark-mode-enabled body .profile-tabs {
+  background: rgba(15, 23, 42, 0.72) !important;
+  border: 1px solid rgba(148, 163, 184, 0.10) !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.dark-mode .profile-tab.active,
+html.dark-mode-enabled body .profile-tab.active {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  color: #07111f !important;
+}
+
+body.dark-mode .profile-tab:hover:not(.active),
+html.dark-mode-enabled body .profile-tab:hover:not(.active) {
+  background: rgba(34, 197, 94, 0.08) !important;
+}
+
+@media (max-width: 768px) {
+  .profile-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+}
+
+/* seleção de texto padrão do workly
+   quando alguém arrasta o mouse em cima de um texto, fica verde em todas as páginas.
+   deixei aqui também pra não depender de cada tela ter esse estilo separado. */
+::selection {
+  background: #04BF55;
+  color: #ffffff;
+}
+
+/* mesma ideia, só garantindo compatibilidade com firefox. */
+::-moz-selection {
+  background: #04BF55;
+  color: #ffffff;
+}
+
+/* correção: lista de distribuição de receita sem overflow */
+.revenue-breakdown-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+    min-width: 0;
+}
+
+.revenue-breakdown-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: #f4f7fb;
+    border: 1px solid rgba(148, 163, 184, .16);
+    min-width: 0;
+}
+
+.revenue-breakdown-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.revenue-breakdown-item strong {
+    white-space: nowrap;
+}
+
+/* ===== perfil: correção do card desempenho mensal ===== */
+.dashboard-grid {
+  align-items: stretch;
+}
+
+.dashboard-card {
+  min-width: 0;
+  overflow: visible !important;
+}
+
+.dashboard-card:has(#salesChart),
+.dashboard-card.monthly-performance-card {
+  min-height: auto !important;
+}
+
+.dashboard-card:has(#salesChart) .chart-container,
+.monthly-performance-card .chart-container {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+  overflow: visible !important;
+  padding-bottom: 6px;
+}
+
+.dashboard-card:has(#salesChart) canvas,
+.monthly-performance-card canvas {
+  max-width: 100% !important;
+}
+
+.dashboard-card:has(#salesChart) .stats-row,
+.monthly-performance-card .stats-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px !important;
+  margin-top: 18px;
+}
+
+.dashboard-card:has(#salesChart) .stat-box,
+.monthly-performance-card .stat-box {
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 14px 14px !important;
+  overflow: hidden;
+}
+
+.dashboard-card:has(#salesChart) .stat-label,
+.monthly-performance-card .stat-label,
+.dashboard-card:has(#salesChart) .stat-text,
+.monthly-performance-card .stat-text {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-card:has(#salesChart) .stat-number,
+.monthly-performance-card .stat-number {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+}
+
+@media (max-width: 780px) {
+  .dashboard-card:has(#salesChart) .stats-row,
+  .monthly-performance-card .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card:has(#salesChart) .stat-label,
+  .monthly-performance-card .stat-label,
+  .dashboard-card:has(#salesChart) .stat-text,
+  .monthly-performance-card .stat-text {
+    white-space: normal;
+  }
+}
+
+/* ===== configuração especial: tipo de conta ===== */
+.account-type-card {
+    display: grid;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(247,250,253,.94));
+    border: 1px solid rgba(148, 163, 184, .18);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, .06);
+}
+
+.account-type-header {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.account-type-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    color: #052e16;
+    background: linear-gradient(135deg, #86efac, #22c55e);
+    box-shadow: 0 12px 26px rgba(34, 197, 94, .18);
+}
+
+.account-type-header strong {
+    display: block;
+    color: #0f172a;
+    font-size: 1.12rem;
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+.account-type-header p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.55;
+    font-weight: 600;
+}
+
+.account-current-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(4, 191, 85, .09);
+    border: 1px solid rgba(4, 191, 85, .15);
+}
+
+.account-current-status span {
+    color: #526174;
+    font-weight: 800;
+}
+
+.account-current-status strong {
+    color: #039447;
+    font-weight: 900;
+}
+
+.account-type-form {
+    display: grid;
+    gap: 16px;
+}
+
+.account-type-warning {
+    border-color: rgba(245, 158, 11, .22) !important;
+    background: rgba(245, 158, 11, .08) !important;
+}
+
+.account-type-warning i {
+    color: #f59e0b !important;
+}
+
+body.dark-mode .account-type-card {
+    background: linear-gradient(160deg, rgba(14,25,42,.94), rgba(10,18,34,.90));
+    border-color: rgba(94,130,172,.20);
+    box-shadow: 0 18px 46px rgba(0,4,18,.32);
+}
+
+body.dark-mode .account-type-header strong {
+    color: #eef4ff;
+}
+
+body.dark-mode .account-type-header p,
+body.dark-mode .account-current-status span {
+    color: #a9b9cf;
+}
+
+body.dark-mode .account-current-status {
+    background: rgba(74, 222, 128, .11);
+    border-color: rgba(74, 222, 128, .18);
+}
+
+body.dark-mode .account-current-status strong {
+    color: #86efac;
+}
+
+body.dark-mode .account-type-warning {
+    background: rgba(245, 158, 11, .10) !important;
+    border-color: rgba(245, 158, 11, .20) !important;
 }

@@ -1,40 +1,40 @@
 
 :root {
-  /* Cores principais */
+  /* cores principais */
   --primary-color: #04BF55;
   --primary-dark: #038a3d;
   --primary-light: #6AD99A;
   --primary-lighter: #8FD9AF;
   
-  /* Cores secundarias */
+  /* cores secundarias */
   --secondary-color: #2196F3;
   --secondary-dark: #0b7dda;
   --accent-color: #FFEB3B;
   
-  /* Tons de cinza */
+  /* tons de cinza */
   --gray-light: #e4e4e4;
   --gray-medium: #9E9E9E;
   --gray-dark: #333;
   --gray-darker: #1a1a1a;
   --gray-darkest: #121212;
   
-  /* Cores de texto */
+  /* cores de texto */
   --text-color: #333;
   --text-light: #f8f9fa;
   --text-muted: #777;
   
-  /* Cores de fundo */
+  /* cores de fundo */
   --bg-light: #f8f9fa;
   --bg-dark: #1a1a1a;
   
-  /* Cores de borda */
+  /* cores de borda */
   --border-color: #dbdbdb;
   --border-light: #e0e0e0;
 }
 
 /*==================================================================*/
 
-/* PARTE BACK-END CADASTRO */
+/* parte back-end cadastro */
 
 .form-cadastro {
   margin-top: 20px;
@@ -118,11 +118,9 @@
   right: 0;
 }
 
+/* não modificar abaixo */
 
-/* NÃO MODIFICAR ABAIXO */
-
-
-/*MAIN*/
+/*main*/
 
 *{
   padding: 0; margin: 0;
@@ -140,12 +138,9 @@ body {
   position: relative;
 }
 
-
-
-
 /* navbar global controlada por comum.css */
 
-/* Separação da area de cadastro*/
+/* separação da area de cadastro*/
 
 .flex-cadastro {
   max-width: 1200px;
@@ -188,7 +183,7 @@ body {
   left: 0;
 }
 
-/*Separação login | Esta parte se refere a parte da direita da section*/ 
+/*separação login | esta parte se refere a parte da direita da section*/ 
 
 .sessãologin {
   width: 45%;
@@ -305,8 +300,7 @@ body {
   font-size: 20px;
 }
 
-
-/* Estilos para o footer */
+/* estilos para o footer */
 footer {
   background: #1a1a1a;
   color: white;
@@ -398,9 +392,7 @@ footer {
   font-size: 1rem;
 }
 
-
-
-/*==============RESPONSIVIDADE==================*/
+/*==============responsividade==================*/
 @media (max-width: 1500px) {
   .categoria {
       padding: 12px 8px;
@@ -416,10 +408,10 @@ footer {
 
 @media (max-width: 1300px) {
   .card {
-      width: 200px; /* Largura fixa para telas grandes */
+      width: 200px; /* largura fixa para telas grandes */
   }
 
-  /*Responsividade da linha de categorias */
+  /*responsividade da linha de categorias */
   .categorias {
       padding: 15px 10px;
       gap: 8px;
@@ -531,22 +523,21 @@ footer {
       overflow-x: auto;
       flex-wrap: nowrap;
       padding: 15px 10px;
-      -webkit-overflow-scrolling: touch; /*Scrollbar para mobile*/
+      -webkit-overflow-scrolling: touch; /*scrollbar para mobile*/
   }
 
   header nav {
     width: 100%;
   }
 
-  /* Logo centralizado */
+  /* logo centralizado */
   .logo {
     margin: 0 auto ;
     text-align: center;
     justify-content: center;
   }
 
-
-  /* Links de navegação em coluna */
+  /* links de navegação em coluna */
   nav ul {
     align-items: center;
     width: 100%;
@@ -558,8 +549,7 @@ footer {
     padding: 8px 0;
   }
 
-
-  /* Ajuste do menu-item */
+  /* ajuste do menu-item */
   .menu-item {
     padding: 8px 0;
     width: 100%;
@@ -569,9 +559,8 @@ footer {
 }
 /*=================================================================================================*/
 
-
-/* ========== INTERATIVIDADE ========== */
-/* Efeito nos inputs */
+/* ========== interatividade ========== */
+/* efeito nos inputs */
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--primary-color);
@@ -579,7 +568,7 @@ footer {
     outline: none;
 }
 
-/* Checkboxes estilizados */
+/* checkboxes estilizados */
 .checkbox-group {
     position: relative;
     padding-left: 30px;
@@ -595,7 +584,7 @@ footer {
     width: 0;
 }
 
-/* Checkbox customizado */
+/* checkbox customizado */
 .checkmark {
     position: absolute;
     top: 0;
@@ -616,19 +605,19 @@ footer {
     border-color: var(--primary-color);
 }
 
-/* Checkmark (escondido quando não selecionado) */
+/* checkmark (escondido quando não selecionado) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Mostra o checkmark quando selecionado */
+/* mostra o checkmark quando selecionado */
 .checkbox-group input:checked ~ .checkmark:after {
     display: block;
 }
 
-/* Estilo do checkmark */
+/* estilo do checkmark */
 .checkbox-group .checkmark:after {
     left: 7px;
     top: 3px;
@@ -639,7 +628,7 @@ footer {
     transform: rotate(45deg);
 }
 
-/* Links nos termos */
+/* links nos termos */
 .checkbox-group a {
     color: var(--primary-color);
     text-decoration: none;
@@ -649,7 +638,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Botões sociais com hover */
+/* botões sociais com hover */
 .social-buttons button {
     transition: all 0.3s ease;
     position: relative;
@@ -679,7 +668,7 @@ footer {
     color: #000;
 }
 
-/* Efeito de loading no submit */
+/* efeito de loading no submit */
 .submit-button.loading {
     position: relative;
     color: transparent;
@@ -710,7 +699,7 @@ footer {
     }
 }
 
-/* Validação de campos */
+/* validação de campos */
 .form-group.error input {
     border-color: #e74c3c;
 }
@@ -747,12 +736,9 @@ footer {
   max-width: 150px;
 }
 
-
-
 .form-group input[type="password"] { padding-right: 48px; }
 
-
-/* ===== AJUSTES CADASTRO (v12) ===== */
+/* ===== ajustes cadastro (v12) ===== */
 .flex-cadastro {
   align-items: flex-start;
   gap: 48px;
@@ -784,7 +770,6 @@ body.dark-mode .sessãologin {
     padding-top: 0;
   }
 }
-
 
 /* ===== v13 cadastro visual cleanup ===== */
 body.page-cadastro .flex-cadastro {
@@ -841,7 +826,6 @@ body.dark-mode.page-cadastro .sessãologin {
   }
 }
 
-
 /* garante que a tela de cadastro use a navbar global */
 body.page-cadastro header,
 body.page-cadastro .principal,
@@ -856,4 +840,18 @@ body.page-cadastro .categorias,
 body.page-cadastro .categoria,
 body.page-cadastro .menu-item {
   font-family: "Poppins", sans-serif;
+}
+
+/* seleção de texto padrão do workly
+   quando alguém arrasta o mouse em cima de um texto, fica verde em todas as páginas.
+   deixei aqui também pra não depender de cada tela ter esse estilo separado. */
+::selection {
+  background: #04BF55;
+  color: #ffffff;
+}
+
+/* mesma ideia, só garantindo compatibilidade com firefox. */
+::-moz-selection {
+  background: #04BF55;
+  color: #ffffff;
 }

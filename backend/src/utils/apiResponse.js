@@ -1,3 +1,4 @@
+// utils para formatar respostas da api de forma consistente: sucesso, erro, etc
 function jsonBase(payload) {
   return {
     ...payload,

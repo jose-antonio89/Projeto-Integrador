@@ -1,11 +1,19 @@
+
 const app = require('./app');
 const connectDatabase = require('./config/db');
 const ambiente = require('./config/ambiente');
+const { popularBancoDemo } = require('./seed');
 
-// Inicia a conexão com o banco e sobe o servidor.
+// ponto de partida do backend: conecta no mongo, prepara os dados demo se estiver ligado e sobe a api
 (async () => {
   try {
     await connectDatabase();
+
+    if (ambiente.autoSeed) {
+      // banco já começa com categorias/serviços de exemplo.
+      await popularBancoDemo();
+    }
+
     app.listen(ambiente.port, () => {
       console.log(`Servidor rodando em http://localhost:${ambiente.port}`);
     });

@@ -1,32 +1,32 @@
 :root {
-  /* Cores principais */
+  /* cores principais */
   --primary-color: #04BF55;
   --primary-dark: #038a3d;
   --primary-light: #6AD99A;
   --primary-lighter: #8FD9AF;
   
-  /* Cores secundarias */
+  /* cores secundarias */
   --secondary-color: #2196F3;
   --secondary-dark: #0b7dda;
   --accent-color: #FFEB3B;
   
-  /* Tons de cinza */
+  /* tons de cinza */
   --gray-light: #e4e4e4;
   --gray-medium: #9E9E9E;
   --gray-dark: #333;
   --gray-darker: #1a1a1a;
   --gray-darkest: #121212;
   
-  /* Cores de texto */
+  /* cores de texto */
   --text-color: #333;
   --text-light: #f8f9fa;
   --text-muted: #777;
   
-  /* Cores de fundo */
+  /* cores de fundo */
   --bg-light: #f8f9fa;
   --bg-dark: #1a1a1a;
   
-  /* Cores de borda */
+  /* cores de borda */
   --border-color: #dbdbdb;
   --border-light: #e0e0e0;
 }
@@ -66,7 +66,7 @@ body {
   }
 }
 
-/* Efeito de bolhas flutuantes */
+/* efeito de bolhas flutuantes */
 body::before {
   content: "";
   position: fixed;
@@ -91,17 +91,16 @@ body::before {
   }
 }
 
-
-/*=============NAVBAR=============*/
+/*=============navbar=============*/
 
 header {
   width: 100%;
   height: auto;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra sutil */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* sombra sutil */
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: white; /* Fundo branco para o cabeçalho */
+  background: white; /* fundo branco para o cabeçalho */
 }
 
 .principal {
@@ -212,7 +211,7 @@ nav ul li a:hover{
   background-color: #9E9E9E;
 }
 
-/*============CATEGORIAS==============*/
+/*============categorias==============*/
 
 .categorias {
   font-family: "Poppins", sans-serif;
@@ -236,7 +235,6 @@ nav ul li a:hover{
       
       }
   }
-
 
 }
 
@@ -269,7 +267,7 @@ nav ul li a:hover{
   transform: translateY(-3px);
 }
 
-/*============LOGO==============*/
+/*============logo==============*/
 
 .imagem-logo {
   max-width: 150px;
@@ -291,10 +289,10 @@ nav ul li a:hover{
 }
 
 .logo i:hover {
-  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+  transform: scale(1.05); /* efeito de zoom ao passar o mouse */
 }
 
-/*============BANNER-CATEGORIA==============*/
+/*============banner-categoria==============*/
 .container {
   width: 90%;
   max-width: 1200px;
@@ -302,7 +300,6 @@ nav ul li a:hover{
   text-align: center;
   padding: 20px;
 }
-
 
 .cabeca {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
@@ -357,7 +354,7 @@ nav ul li a:hover{
   opacity: 0.9;
 }
 
-/*Botões DA categoria*/
+/*botões da categoria*/
 
 .btn-container {
   display: flex;
@@ -403,30 +400,26 @@ nav ul li a:hover{
   transition: background-color 0.3s ease
 }
 
-
 .btn:hover .icon {
   background-color: var(--primary-color);
 }
 
-
-
-
 /* cores 
-#04BF55
-#6AD99A
-#8FD9AF
-#04BF45
-#F2F2F2
+#04bf55
+#6ad99a
+#8fd9af
+#04bf45
+#f2f2f2
 
 cores 2
-#4CAF50
-#2196F3
-#FFEB3B
-#9E9E9E
-#2C6B2F
+#4caf50
+#2196f3
+#ffeb3b
+#9e9e9e
+#2c6b2f
 */
 
-/* Estilos para o footer */
+/* estilos para o footer */
 
 footer {
   background: #1a1a1a;
@@ -537,7 +530,7 @@ footer::before {
   z-index: 0;
 }
 
-/*RESPONSIVIDADE*/
+/*responsividade*/
 
 @media (max-width: 1500px) {
   .categoria {
@@ -625,7 +618,7 @@ footer::before {
     margin: 0;
   }
 
-  /* Barra de busca na base */
+  /* barra de busca na base */
   .search-container {
     width: 100%;
   }
@@ -659,7 +652,7 @@ footer::before {
   }
 }
 
-/* Detalhes para scrollbar */
+/* detalhes para scrollbar */
 ::selection {
   background: var(--primary-color);
   color: white;
@@ -682,11 +675,7 @@ footer::before {
   background: var(--primary-dark);
 }
 
-
-
-
-
-/* ========== ESTILOS DOS CARDS DE SERVIÇOS ========== */
+/* ========== estilos dos cards de serviços ========== */
 
 .popular-services {
   max-width: 1200px;
@@ -711,7 +700,7 @@ footer::before {
   font-size: 1.1rem;
 }
 
-/* CONTAINER PRINCIPAL */
+/* container principal */
 .servicos-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -722,8 +711,7 @@ footer::before {
     margin: 0 auto;
 }
 
-/* CARD DO SERVIÇO */
-
+/* card do serviço */
 
 .servico-card {
     background: #ffffffe1;
@@ -812,8 +800,7 @@ footer::before {
     color: #04BF55;
 }
 
-
-/*SE CASO NO HOUVER SERVICO*/
+/*se caso no houver servico*/
 .no-service {
     width: 100%;
     max-width: 600px;
@@ -834,7 +821,7 @@ footer::before {
     opacity: 0.9;
 }
 
-/* Titulo */
+/* titulo */
 .no-service h2 {
     font-size: 1.9rem;
     color: #222;
@@ -842,14 +829,13 @@ footer::before {
     font-weight: 600;
 }
 
-/* Texto */
+/* texto */
 .no-service p {
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 25px;
     line-height: 1.6;
 }
-
 
 .no-service .btn-add {
     display: inline-block;
@@ -869,14 +855,13 @@ footer::before {
     box-shadow: 0 4px 12px rgba(4, 191, 85, 0.3);
 }
 
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 /*============================================================*/
 
-/*SEE MORE*/
+/*see more*/
 
 .see-more-container {
   text-align: center;
@@ -908,7 +893,7 @@ footer::before {
   transform: translateX(3px);
 }
 
-/* Responsividade dos cards */
+/* responsividade dos cards */
 @media (max-width: 768px) {
   .services-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -940,9 +925,7 @@ footer::before {
 
 /*======================================*/
 
-
-
-/*============PERFIL==============*/
+/*============perfil==============*/
 .perfil {
   border-radius: 50%;
   padding: 17px;
@@ -954,7 +937,7 @@ footer::before {
   position: relative;
 }
 
-/*DARKMODE*/
+/*darkmode*/
 
 body.dark-mode .seller-name,
 body.dark-mode .service-title {
@@ -972,8 +955,7 @@ body.dark-mode .btn:hover {
   border-color: var(--primary-color);
 }
 
-/* Perfil NAVBAR */
-
+/* perfil navbar */
 
 .profile-menu {
     display: flex;
@@ -1117,8 +1099,7 @@ body.dark-mode .btn:hover {
   box-shadow: 0 14px 30px rgba(15,206,106,0.22);
 }
 
-
-/* ===== Limpeza visual v7 ===== */
+/* ===== limpeza visual v7 ===== */
 .popular-services,
 .section-header,
 .servicos-container {
@@ -1142,7 +1123,6 @@ body.dark-mode .btn:hover {
   box-shadow: none !important;
 }
 
-
 /* ===== v8 categorias cleanup ===== */
 .container,
 .popular-services {
@@ -1153,7 +1133,6 @@ body.dark-mode .btn:hover {
 .popular-services {
   border: none !important;
 }
-
 
 /* ===== v9 categorias light/dark hero consistency ===== */
 .container {
@@ -1169,7 +1148,7 @@ body.dark-mode .btn:hover {
 }
 
 /* ===== v10 hero theme fix ===== */
-/* Padrão/tema claro = verde branding */
+/* padrão/tema claro = verde branding */
 .cabeca {
   background: linear-gradient(135deg, #10b44a, #09a63d) !important;
   color: #ffffff !important;
@@ -1189,7 +1168,7 @@ body.dark-mode .btn:hover {
   background: rgba(255,255,255,0.12) !important;
 }
 
-/* Tema escuro = mantém bloco dark premium */
+/* tema escuro = mantém bloco dark premium */
 body.dark-mode .cabeca,
 html.dark-mode-enabled .cabeca {
   background: linear-gradient(135deg, #0f172a, #23314a) !important;
@@ -1215,7 +1194,6 @@ html.dark-mode-enabled .cabeca::after {
   background: rgba(255,255,255,0.08) !important;
 }
 
-
 /* ===== v11 explicit light-mode override ===== */
 body:not(.dark-mode) .cabeca,
 html:not(.dark-mode-enabled) body .cabeca {
@@ -1240,4 +1218,18 @@ body:not(.dark-mode) .cabeca::after,
 html:not(.dark-mode-enabled) body .cabeca::before,
 html:not(.dark-mode-enabled) body .cabeca::after {
   background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* seleção de texto padrão do workly
+   quando alguém arrasta o mouse em cima de um texto, fica verde em todas as páginas.
+   deixei aqui também pra não depender de cada tela ter esse estilo separado. */
+::selection {
+  background: #04BF55;
+  color: #ffffff;
+}
+
+/* mesma ideia, só garantindo compatibilidade com firefox. */
+::-moz-selection {
+  background: #04BF55;
+  color: #ffffff;
 }

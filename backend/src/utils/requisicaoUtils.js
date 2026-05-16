@@ -1,3 +1,6 @@
+// utils para lidar com requisições: extrair campos de forma flexível, normalizar tipos, etc.
+
+
 function obterCampo(obj, nomes = [], valorPadrao = undefined) {
   for (const nome of nomes) {
     if (obj?.[nome] !== undefined) {
@@ -6,6 +9,8 @@ function obterCampo(obj, nomes = [], valorPadrao = undefined) {
   }
   return valorPadrao;
 }
+
+// normaliza o tipo de conta para os valores esperados no banco: 'Freelancer' ou 'Contratante'
 
 function normalizarTipoConta(valor) {
   const texto = String(valor || '').trim().toLowerCase();
