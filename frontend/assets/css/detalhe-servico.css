@@ -908,3 +908,182 @@ body.dark-mode .detail-toast {
     width: 100%;
   }
 }
+
+
+/* ===== perfil clicável e avaliações no detalhe do serviço ===== */
+.freelancer-profile-link,
+.info-profile-link,
+.service-review-author {
+  color: inherit;
+  text-decoration: none;
+}
+
+.freelancer-profile-link:hover,
+.info-profile-link:hover,
+.service-review-author:hover {
+  color: var(--detail-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.info-pill .info-profile-link {
+  display: inline-block;
+  color: var(--detail-text);
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.service-reviews-section {
+  margin-top: 22px;
+  padding: 24px;
+  border-radius: var(--detail-radius-lg);
+}
+
+.service-reviews-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.service-reviews-summary {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #a16207;
+  font-size: 0.82rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.service-reviews-list {
+  display: grid;
+  gap: 12px;
+}
+
+.service-review-item,
+.service-review-empty {
+  padding: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.88);
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.service-review-top,
+.service-review-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.service-review-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--detail-text);
+  font-size: 0.94rem;
+  font-weight: 850;
+}
+
+.service-review-author i {
+  color: var(--detail-primary);
+}
+
+.service-review-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #f59e0b;
+}
+
+.service-review-item p {
+  margin: 12px 0;
+  color: var(--detail-muted-strong);
+  line-height: 1.65;
+}
+
+.service-review-meta {
+  justify-content: flex-start;
+  color: var(--detail-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.service-review-meta span,
+.service-review-meta time {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.service-review-empty {
+  display: grid;
+  gap: 7px;
+  color: var(--detail-muted);
+  text-align: center;
+}
+
+.service-review-empty i {
+  color: #f59e0b;
+  font-size: 1.35rem;
+}
+
+.service-review-empty strong {
+  color: var(--detail-text);
+}
+
+body.dark-mode .freelancer-profile-link:hover,
+body.dark-mode .info-profile-link:hover,
+body.dark-mode .service-review-author:hover {
+  color: #86efac !important;
+}
+
+body.dark-mode .service-reviews-summary {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fde68a;
+}
+
+body.dark-mode .service-review-item,
+body.dark-mode .service-review-empty {
+  background: rgba(15, 23, 42, 0.78);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+body.dark-mode .service-review-author,
+body.dark-mode .service-review-empty strong,
+body.dark-mode .info-pill .info-profile-link {
+  color: #eef5ff;
+}
+
+body.dark-mode .service-review-item p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .service-review-meta {
+  color: #aebbd0;
+}
+
+body.dark-mode .service-review-meta span,
+body.dark-mode .service-review-meta time {
+  background: rgba(148, 163, 184, 0.12);
+}
+
+@media (max-width: 700px) {
+  .service-reviews-head {
+    display: grid;
+  }
+
+  .service-reviews-summary {
+    width: fit-content;
+    white-space: normal;
+  }
+}

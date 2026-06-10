@@ -51,5 +51,6 @@ const usuarioSchema = new mongoose.Schema(
 
 usuarioSchema.index({ tipoConta: 1, localizacao: 1 });
 usuarioSchema.index({ tipoConta: 1, disponibilidade: 1 });
+usuarioSchema.index({ avaliacaoMedia: -1, totalAvaliacoes: -1 });
 
 module.exports = mongoose.model('Usuario', usuarioSchema);

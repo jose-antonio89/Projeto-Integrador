@@ -13,8 +13,8 @@ const {
   notificarContratoCancelado
 } = require('../utils/notificacaoUtils');
 
-const STATUS_ATIVOS = ['pendente', 'proposta_pendente', 'proposta_aceita', 'em_andamento', 'concluido'];
-const STATUS_FINAIS = ['cancelado', 'encerrado'];
+const STATUS_ATIVOS = ['pendente', 'proposta_pendente', 'proposta_aceita', 'em_andamento'];
+const STATUS_FINAIS = ['cancelado', 'concluido', 'encerrado'];
 
 function popularContrato(query) {
   const camposUsuario = 'nome fotoPerfil tipoConta areaAtuacao tituloProfissional bio localizacao site linkedin github instagram avaliacaoMedia totalAvaliacoes';
@@ -164,7 +164,7 @@ exports.aceitar = async (req, res) => {
     if (!dados) return;
     const { contrato, userId } = dados;
     if (!ehFreelancer(contrato, userId)) return erro(res, 403, 'Somente o freelancer pode aceitar a proposta.');
-    if (!['proposta_pendente', 'pendente'].includes(contrato.status)) return erro(res, 400, 'Este contrato não está aguardando aceite.');
+    if (!['proposta_pendente', 'pendente'].includes(contrato.status)) return erro(res, 400, 'Este contrato não está aguardando início.');
     contrato.status = contrato.tipoContratacao === 'fixo' ? 'em_andamento' : 'proposta_aceita';
     const nomeServico = await obterNomeServico(contrato);
     // fixo = freelancer aceitou e já vai iniciar; notifica como trabalho iniciado.

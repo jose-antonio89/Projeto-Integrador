@@ -31,5 +31,6 @@ contratoSchema.index({ cliente: 1, servico: 1, status: 1 });
 contratoSchema.index({ freelancer: 1, status: 1, createdAt: -1 });
 contratoSchema.index({ freelancer: 1, createdAt: -1 });
 contratoSchema.index({ cliente: 1, createdAt: -1 });
+contratoSchema.index({ servico: 1, status: 1, createdAt: -1 });
 
 module.exports = mongoose.model('Contrato', contratoSchema);

@@ -7,5 +7,6 @@ const favoritoSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 favoritoSchema.index({ usuario: 1, servico: 1 }, { unique: true });
+favoritoSchema.index({ servico: 1 });
 
 module.exports = mongoose.model('Favorito', favoritoSchema);

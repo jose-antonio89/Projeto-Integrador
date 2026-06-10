@@ -9,6 +9,8 @@ const Usuario = require('./models/Usuario');
 const Contrato = require('./models/Contrato');
 const Favorito = require('./models/Favorito');
 const Avaliacao = require('./models/Avaliacao');
+const Mensagem = require('./models/Mensagem');
+const Notificacao = require('./models/Notificacao');
 const { gerarCpfValido } = require('./utils/cpfUtils');
 
 // senha padrão dos usuários demo.
@@ -227,9 +229,20 @@ async function obterCategorias() {
 }
 
 async function criarUsuarioSeNaoExistir(dados, senhaHash) {
-  const usuarioExistente = await Usuario.findOne({ email: dados.email });
+  // Procura por email ou CPF para permitir atualizar usuários demo antigos.
+  // Antes os emails tinham sufixo .freela01/.cliente01; agora ficam só nome.sobrenome@demo.workly.
+  const usuarioExistente = await Usuario.findOne({
+    $or: [
+      { email: dados.email },
+      { cpf: dados.cpf }
+    ]
+  });
+
   if (usuarioExistente) {
-    await Usuario.updateOne({ _id: usuarioExistente._id }, { $set: { ...dados, senha: usuarioExistente.senha } });
+    await Usuario.updateOne(
+      { _id: usuarioExistente._id },
+      { $set: { ...dados, senha: usuarioExistente.senha } }
+    );
     return Usuario.findById(usuarioExistente._id);
   }
 
@@ -279,6 +292,31 @@ async function criarAvaliacaoSeNaoExistir(dados) {
   return Avaliacao.create(dados);
 }
 
+async function criarMensagemDemoSeNaoExistir(dados) {
+  const existente = await Mensagem.findOne({
+    contrato: dados.contrato,
+    remetente: dados.remetente,
+    texto: dados.texto
+  });
+
+  if (existente) return existente;
+
+  return Mensagem.create(dados);
+}
+
+async function criarNotificacaoDemoSeNaoExistir(dados) {
+  const existente = await Notificacao.findOne({
+    destinatario: dados.destinatario,
+    tipo: dados.tipo,
+    referenciaId: dados.referenciaId,
+    titulo: dados.titulo
+  });
+
+  if (existente) return existente;
+
+  return Notificacao.create(dados);
+}
+
 async function recalcularAvaliacoesFreelancers(freelancers) {
   for (const freelancer of freelancers) {
     const avaliacoes = await Avaliacao.find({ freelancer: freelancer._id });
@@ -302,10 +340,29 @@ async function popularBancoDemo() {
   const categorias = await obterCategorias();
   const senhaHash = await bcrypt.hash(SENHA_DEMO, 10);
 
-  const usuariosDemoExistentes = await Usuario.countDocuments({ email: new RegExp(`${DOMINIO_DEMO.replace('.', '\\.')}\\s*$`, 'i') });
-  const servicosDemoExistentes = await Servico.countDocuments({ nome: /^Demo Workly -/ });
+  // Migração simples para versões antigas do seed: 'encerrado' passa a ser tratado como 'concluido'.
+  // Assim a interface fica com apenas um status final positivo.
+  await Contrato.updateMany({ status: 'encerrado' }, { $set: { status: 'concluido' } });
 
-  if (usuariosDemoExistentes >= TOTAL_USUARIOS_DEMO && servicosDemoExistentes >= 120) {
+  const usuariosDemoExistentes = await Usuario.countDocuments({ email: new RegExp(`${DOMINIO_DEMO.replace('.', '\\.')}\\s*$`, 'i') });
+  const usuariosDemoComEmailAntigo = await Usuario.countDocuments({
+    email: /\.(freela|cliente)\d{2}@demo\.workly$/i
+  });
+  const servicosDemoExistentes = await Servico.countDocuments({ nome: /^Demo Workly -/ });
+  const contratosDemoExistentes = await Contrato.countDocuments({ detalhesPedido: /Pedido demonstrativo criado pelo seed/i });
+  const mensagensDemoExistentes = await Mensagem.countDocuments({ texto: /^Demo Workly:/ });
+  const avaliacoesDemoExistentes = await Avaliacao.countDocuments({ comentario: { $in: COMENTARIOS } });
+  const favoritosDemoExistentes = await Favorito.countDocuments({});
+
+  if (
+    usuariosDemoExistentes >= TOTAL_USUARIOS_DEMO &&
+    servicosDemoExistentes >= 120 &&
+    contratosDemoExistentes >= 120 &&
+    mensagensDemoExistentes >= 100 &&
+    avaliacoesDemoExistentes >= 100 &&
+    favoritosDemoExistentes >= 100 &&
+    usuariosDemoComEmailAntigo === 0
+  ) {
     console.log('Seed demo completa já existe. Nenhum dado duplicado foi criado.');
     return;
   }
@@ -316,7 +373,7 @@ async function popularBancoDemo() {
     const areaAtuacao = escolher(AREAS, i);
     freelancers.push(await criarUsuarioSeNaoExistir({
       nome,
-      email: `${slug(nome)}.freela${String(i + 1).padStart(2, '0')}${DOMINIO_DEMO}`,
+      email: `${slug(nome)}${DOMINIO_DEMO}`,
       cpf: gerarCpf('900', i + 1),
       telefone: `(14) 98888-${String(1000 + i).slice(-4)}`,
       tipoConta: 'Freelancer',
@@ -347,7 +404,7 @@ async function popularBancoDemo() {
     const segmento = escolher(['Comércio', 'Educação', 'Saúde', 'Eventos', 'Marketing', 'Tecnologia', 'Serviços', 'Alimentação'], i);
     contratantes.push(await criarUsuarioSeNaoExistir({
       nome,
-      email: `${slug(nome)}.cliente${String(i + 1).padStart(2, '0')}${DOMINIO_DEMO}`,
+      email: `${slug(nome)}${DOMINIO_DEMO}`,
       cpf: gerarCpf('901', i + 1),
       telefone: `(14) 97777-${String(1000 + i).slice(-4)}`,
       tipoConta: 'Contratante',
@@ -390,7 +447,9 @@ async function popularBancoDemo() {
   }
 
   const contratos = [];
-  const statusCiclo = ['encerrado', 'concluido', 'em_andamento', 'proposta_aceita', 'pendente', 'proposta_pendente'];
+  // Ciclo com boa quantidade de contratos concluídos para permitir 100+ avaliações no seed.
+  // O status 'encerrado' foi removido da experiência visual para não duplicar o sentido de 'concluído'.
+  const statusCiclo = ['concluido', 'concluido', 'em_andamento', 'concluido', 'pendente', 'concluido'];
   const contratosParaCriar = Math.min(220, servicos.length * 2);
 
   for (let i = 0; i < contratosParaCriar; i += 1) {
@@ -422,7 +481,7 @@ async function popularBancoDemo() {
     }));
   }
 
-  const contratosAvaliaveis = contratos.filter(contrato => ['encerrado', 'concluido'].includes(contrato.status));
+  const contratosAvaliaveis = contratos.filter(contrato => contrato.status === 'concluido');
   for (let i = 0; i < contratosAvaliaveis.length; i += 1) {
     const contrato = contratosAvaliaveis[i];
     const notaServico = [5, 5, 5, 4, 4, 5, 3][i % 7];
@@ -447,11 +506,63 @@ async function popularBancoDemo() {
     await criarFavoritoSeNaoExistir(cliente._id, servico._id);
   }
 
+  // Mensagens reais de chat para demonstrar coleção de mensagens, índices e aggregations.
+  // Não é notificação artificial: são conversas vinculadas a contratos.
+  const statusChatAtivo = ['pendente', 'proposta_pendente', 'proposta_aceita', 'em_andamento'];
+  const contratosComChat = contratos.filter(contrato => statusChatAtivo.includes(contrato.status)).slice(0, 120);
+  for (let i = 0; i < contratosComChat.length; i += 1) {
+    const contrato = contratosComChat[i];
+    const criadaEm = dataMesesAtras(i % 6, 5 + (i % 20));
+
+    await criarMensagemDemoSeNaoExistir({
+      contrato: contrato._id,
+      remetente: contrato.cliente,
+      texto: `Demo Workly: Olá! Enviei os detalhes do projeto #${String(i + 1).padStart(3, '0')}.`,
+      lida: true,
+      createdAt: criadaEm,
+      updatedAt: criadaEm
+    });
+
+    await criarMensagemDemoSeNaoExistir({
+      contrato: contrato._id,
+      remetente: contrato.freelancer,
+      texto: `Demo Workly: Recebi o pedido e já vou analisar o escopo #${String(i + 1).padStart(3, '0')}.`,
+      // algumas mensagens ficam não lidas para testar o sininho, mas somente em contratos com chat ativo.
+      lida: i % 9 !== 0,
+      createdAt: dataMesesAtras(i % 6, 6 + (i % 20)),
+      updatedAt: dataMesesAtras(i % 6, 6 + (i % 20))
+    });
+  }
+
+  // Poucas notificações de exemplo, só para o sininho aparecer na apresentação.
+  // Notificação é evento temporário, então não faz sentido criar 100 documentos fake.
+  for (let i = 0; i < 12; i += 1) {
+    const contrato = contratos[i];
+    await criarNotificacaoDemoSeNaoExistir({
+      destinatario: contrato.freelancer,
+      tipo: i % 2 === 0 ? 'contrato_novo' : 'proposta_nova',
+      titulo: i % 2 === 0 ? 'Nova contratação recebida' : 'Nova proposta recebida',
+      mensagem: 'Notificação demonstrativa criada pelo seed para validar o fluxo do sininho.',
+      lida: i % 3 === 0,
+      referenciaId: contrato._id,
+      tipoReferencia: 'contrato',
+      createdAt: dataMesesAtras(i % 2, 12 + i),
+      updatedAt: dataMesesAtras(i % 2, 12 + i)
+    });
+  }
+
   await recalcularAvaliacoesFreelancers(freelancers);
+
+  const [totalMensagensDemo, totalAvaliacoesDemo, totalFavoritosDemo] = await Promise.all([
+    Mensagem.countDocuments({ texto: /^Demo Workly:/ }),
+    Avaliacao.countDocuments({ comentario: { $in: COMENTARIOS } }),
+    Favorito.countDocuments({})
+  ]);
 
   console.log('Seed demo criada/atualizada com sucesso.');
   console.log(`Usuários demo: ${TOTAL_FREELANCERS} freelancers + ${TOTAL_CONTRATANTES} contratantes = ${TOTAL_USUARIOS_DEMO}.`);
-  console.log(`Serviços demo: ${servicos.length}. Contratos demo: ${contratos.length}. Avaliações demo: ${contratosAvaliaveis.length}.`);
+  console.log(`Serviços demo: ${servicos.length}. Contratos demo: ${contratos.length}. Avaliações demo: ${totalAvaliacoesDemo}.`);
+  console.log(`Mensagens demo: ${totalMensagensDemo}. Favoritos: ${totalFavoritosDemo}. Notificações demo: 12.`);
   console.log(`Senha de todos os usuários demo: ${SENHA_DEMO}`);
 }
 

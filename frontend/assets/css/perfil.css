@@ -3721,3 +3721,14 @@ body.dark-mode .account-type-warning {
     background: rgba(245, 158, 11, .10) !important;
     border-color: rgba(245, 158, 11, .20) !important;
 }
+
+/* Compatibilidade com dados antigos: encerrado usa o mesmo visual de concluído. */
+.lead-status.status-encerrado {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+}
+
+body.dark-mode .lead-status.status-encerrado {
+  background: rgba(4, 191, 85, .13) !important;
+  color: #8df0b6 !important;
+}

@@ -149,6 +149,7 @@ function mapServico(req, servico) {
 
 function mapContrato(req, contrato, usuarioAtualId = null) {
   const servico = contrato.servico || {};
+  const statusNormalizado = contrato.status === 'encerrado' ? 'concluido' : contrato.status;
   const cliente = contrato.cliente || {};
   const freelancer = contrato.freelancer || servico.freelancer || {};
   const base = {
@@ -164,7 +165,7 @@ function mapContrato(req, contrato, usuarioAtualId = null) {
     prazoDesejado: contrato.prazoDesejado || '',
     referencias: contrato.referencias || '',
     tipoContratacao: contrato.tipoContratacao === 'negociavel' ? 'fixo' : (contrato.tipoContratacao || 'fixo'),
-    status: contrato.status,
+    status: statusNormalizado,
     papel: usuarioAtualId ? (String(cliente._id) === String(usuarioAtualId) ? 'cliente' : 'freelancer') : '',
     cliente: cliente._id ? mapUsuarioPublico(req, cliente) : null,
     freelancer: freelancer._id ? mapUsuarioPublico(req, freelancer) : null,

@@ -12,6 +12,7 @@ const rotasFavorito = require('./routes/favoritoRoutes');
 const rotasAvaliacao = require('./routes/avaliacaoRoutes');
 const rotasNotificacao = require('./routes/notificacaoRoutes');
 const rotasMensagem = require('./routes/mensagemRoutes');
+const rotasDashboardMongo = require('./routes/dashboardMongoRoutes');
 const { erro } = require('./utils/apiResponse');
 
 const app = express();
@@ -59,6 +60,8 @@ app.use('/api/avaliacoes', rotasAvaliacao);
 app.use('/api/notificacoes', rotasNotificacao);
 
 app.use('/api/mensagens', rotasMensagem);
+
+app.use('/api/dashboard', rotasDashboardMongo);
 
 app.get('/', (_req, res) => {
   res.json({ sucesso: true, mensagem: 'API Workly v2.1 — com notificações e chat.', message: 'API Workly v2.1' });

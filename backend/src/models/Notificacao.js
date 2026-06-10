@@ -28,5 +28,6 @@ const notificacaoSchema = new mongoose.Schema({
 
 // índice para buscar notificações de um usuário ordenadas por data, filtrando não-lidas.
 notificacaoSchema.index({ destinatario: 1, lida: 1, createdAt: -1 });
+notificacaoSchema.index({ destinatario: 1, tipo: 1, referenciaId: 1, lida: 1 });
 
 module.exports = mongoose.model('Notificacao', notificacaoSchema, 'notificacoes');

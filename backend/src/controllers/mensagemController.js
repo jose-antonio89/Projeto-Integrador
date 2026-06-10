@@ -6,6 +6,8 @@ const Notificacao = require('../models/Notificacao');
 const { sucesso, erro } = require('../utils/apiResponse');
 const { notificarMensagemNova } = require('../utils/notificacaoUtils');
 
+const STATUS_CHAT_ATIVO = ['pendente', 'proposta_pendente', 'proposta_aceita', 'em_andamento'];
+
 function usuarioId(req) {
   return req.user.id_usuario || req.user.idUsuario;
 }
@@ -19,7 +21,7 @@ function toObjectId(value) {
 // sem isso qualquer pessoa poderia tentar abrir conversa pelo id.
 async function carregarContratoDoUsuario(contratoId, userId) {
   const contrato = await Contrato.findById(contratoId)
-    .select('servico cliente freelancer')
+    .select('servico cliente freelancer status')
     .populate('servico', 'nome')
     .populate('cliente', 'nome')
     .populate('freelancer', 'nome')
@@ -36,9 +38,8 @@ async function carregarContratoDoUsuario(contratoId, userId) {
 }
 
 // envia uma mensagem no chat de um contrato.
-// apenas as duas partes do contrato podem escrever — contratos finalizados aceitam mensagens também,
-// pois as partes podem precisar trocar informações mesmo após a conclusão.
-// envia uma mensagem dentro de um contrato e avisa a outra pessoa com notificação.
+// O chat fica disponível apenas enquanto o contrato está ativo.
+// Contratos concluídos, encerrados ou cancelados não entram na central de mensagens.
 exports.enviar = async (req, res) => {
   try {
     const userId = usuarioId(req);
@@ -51,6 +52,9 @@ exports.enviar = async (req, res) => {
 
     const contrato = await carregarContratoDoUsuario(contratoId, userId);
     if (!contrato) return erro(res, 403, 'Você não faz parte deste contrato ou ele não existe.');
+    if (!STATUS_CHAT_ATIVO.includes(contrato.status)) {
+      return erro(res, 400, 'O chat deste contrato não está mais ativo.');
+    }
 
     const mensagem = await Mensagem.create({
       contrato: contratoId,
@@ -84,6 +88,7 @@ exports.resumoPorContrato = async (req, res) => {
     const userId = usuarioId(req);
 
     const contratos = await Contrato.find({
+      status: { $in: STATUS_CHAT_ATIVO },
       $or: [{ cliente: userId }, { freelancer: userId }]
     }).select('_id').lean();
 
@@ -136,6 +141,9 @@ exports.listarPorContrato = async (req, res) => {
 
     const contrato = await carregarContratoDoUsuario(contratoId, userId);
     if (!contrato) return erro(res, 403, 'Você não faz parte deste contrato ou ele não existe.');
+    if (!STATUS_CHAT_ATIVO.includes(contrato.status)) {
+      return erro(res, 400, 'O chat deste contrato não está mais ativo.');
+    }
 
     // marca como lidas as mensagens enviadas pelo outro usuário neste contrato.
     // Depois limpa as notificações dessas mensagens para o sino não ficar preso.
@@ -181,6 +189,7 @@ exports.contarNaoLidas = async (req, res) => {
 
     // busca contratos nos quais o usuário participa.
     const contratos = await Contrato.find({
+      status: { $in: STATUS_CHAT_ATIVO },
       $or: [{ cliente: userId }, { freelancer: userId }]
     }).select('_id').lean();
 

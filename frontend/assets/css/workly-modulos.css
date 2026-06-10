@@ -1993,3 +1993,254 @@ body.dark-mode .message-bubble.mine p {
     font-size: .94rem !important;
   }
 }
+
+/* ===== padronização visual de status e limpeza do tema escuro ===== */
+.status,
+.module-pill.status,
+.lead-status,
+.conversation-status,
+.message-status {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+  border: 1px solid transparent !important;
+}
+
+.status.pendente,
+.status.proposta_pendente,
+.lead-status.status-pendente,
+.conversation-status.pendente,
+.conversation-status.proposta_pendente,
+.message-status.pendente,
+.message-status.proposta_pendente {
+  color: #9a5a00 !important;
+  background: #fff7ed !important;
+  border-color: rgba(245, 158, 11, .22) !important;
+}
+
+.status.proposta_aceita,
+.conversation-status.proposta_aceita,
+.message-status.proposta_aceita {
+  color: #047857 !important;
+  background: #ecfdf5 !important;
+  border-color: rgba(4, 191, 85, .18) !important;
+}
+
+.status.em_andamento,
+.lead-status.status-andamento,
+.conversation-status.em_andamento,
+.message-status.em_andamento {
+  color: #1d4ed8 !important;
+  background: #eff6ff !important;
+  border-color: rgba(37, 99, 235, .18) !important;
+}
+
+.status.concluido,
+.lead-status.status-concluido,
+.conversation-status.concluido,
+.message-status.concluido {
+  color: #047857 !important;
+  background: #ecfdf5 !important;
+  border-color: rgba(4, 191, 85, .18) !important;
+}
+
+.status.encerrado,
+.conversation-status.encerrado,
+.message-status.encerrado {
+  color: #047857 !important;
+  background: #ecfdf5 !important;
+  border-color: rgba(4, 191, 85, .18) !important;
+}
+
+.status.cancelado,
+.lead-status.status-cancelado,
+.conversation-status.cancelado,
+.message-status.cancelado {
+  color: #be123c !important;
+  background: #fff1f2 !important;
+  border-color: rgba(225, 29, 72, .18) !important;
+}
+
+body.dark-mode .module-page {
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(74, 222, 128, .10), transparent 28%),
+    linear-gradient(180deg, #07101f 0%, #0a1424 100%) !important;
+}
+
+body.dark-mode .module-card,
+body.dark-mode .contract-card,
+body.dark-mode .chat-summary-card,
+body.dark-mode .message-contract-card,
+body.dark-mode .conversation-card,
+body.dark-mode .conversation-item,
+body.dark-mode .empty-module,
+body.dark-mode .contracts-section-head,
+body.dark-mode .wk-contract-toggle,
+body.dark-mode .wk-contract-panel-inner,
+body.dark-mode .contract-detail-panel,
+body.dark-mode .contract-detail-card {
+  background: linear-gradient(180deg, rgba(15, 23, 42, .94), rgba(11, 18, 32, .94)) !important;
+  border: 1px solid rgba(94, 130, 172, .18) !important;
+  box-shadow: 0 18px 46px rgba(0, 4, 18, .34) !important;
+  color: #eef4ff !important;
+}
+
+body.dark-mode .module-card-img,
+body.dark-mode .message-service-image,
+body.dark-mode .conversation-image,
+body.dark-mode .contract-card .module-card-img {
+  background: linear-gradient(135deg, rgba(8, 15, 29, .96), rgba(13, 30, 45, .96)) !important;
+  border-bottom: 1px solid rgba(94, 130, 172, .14) !important;
+}
+
+body.dark-mode .module-card h3,
+body.dark-mode .contract-title-row h3,
+body.dark-mode .conversation-title,
+body.dark-mode .message-chat-title,
+body.dark-mode .contract-detail-title {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .module-card p,
+body.dark-mode .contract-message,
+body.dark-mode .conversation-preview,
+body.dark-mode .message-chat-subtitle,
+body.dark-mode .contract-detail-text,
+body.dark-mode .empty-module p {
+  color: #aebbd0 !important;
+}
+
+body.dark-mode .module-meta,
+body.dark-mode .contract-title-row,
+body.dark-mode .message-meta-row {
+  color: #dbeafe !important;
+}
+
+body.dark-mode .module-pill:not(.status),
+body.dark-mode .price-pill,
+body.dark-mode .conversation-meta-pill,
+body.dark-mode .message-meta-pill {
+  background: rgba(148, 163, 184, .10) !important;
+  color: #d7e2f2 !important;
+  border: 1px solid rgba(148, 163, 184, .13) !important;
+}
+
+body.dark-mode .status.pendente,
+body.dark-mode .status.proposta_pendente,
+body.dark-mode .lead-status.status-pendente,
+body.dark-mode .conversation-status.pendente,
+body.dark-mode .conversation-status.proposta_pendente,
+body.dark-mode .message-status.pendente,
+body.dark-mode .message-status.proposta_pendente {
+  color: #fbbf24 !important;
+  background: rgba(245, 158, 11, .13) !important;
+  border-color: rgba(245, 158, 11, .24) !important;
+}
+
+body.dark-mode .status.proposta_aceita,
+body.dark-mode .status.concluido,
+body.dark-mode .lead-status.status-concluido,
+body.dark-mode .conversation-status.proposta_aceita,
+body.dark-mode .conversation-status.concluido,
+body.dark-mode .message-status.proposta_aceita,
+body.dark-mode .message-status.concluido {
+  color: #8df0b6 !important;
+  background: rgba(4, 191, 85, .13) !important;
+  border-color: rgba(4, 191, 85, .24) !important;
+}
+
+body.dark-mode .status.em_andamento,
+body.dark-mode .lead-status.status-andamento,
+body.dark-mode .conversation-status.em_andamento,
+body.dark-mode .message-status.em_andamento {
+  color: #93c5fd !important;
+  background: rgba(59, 130, 246, .13) !important;
+  border-color: rgba(59, 130, 246, .24) !important;
+}
+
+body.dark-mode .status.encerrado,
+body.dark-mode .conversation-status.encerrado,
+body.dark-mode .message-status.encerrado {
+  color: #8df0b6 !important;
+  background: rgba(4, 191, 85, .13) !important;
+  border-color: rgba(4, 191, 85, .24) !important;
+}
+
+body.dark-mode .status.cancelado,
+body.dark-mode .lead-status.status-cancelado,
+body.dark-mode .conversation-status.cancelado,
+body.dark-mode .message-status.cancelado {
+  color: #fda4af !important;
+  background: rgba(225, 29, 72, .13) !important;
+  border-color: rgba(225, 29, 72, .24) !important;
+}
+
+body.dark-mode .module-btn.secondary,
+body.dark-mode .message-top-action,
+body.dark-mode .wk-contract-toggle {
+  background: rgba(15, 23, 42, .72) !important;
+  color: #eef4ff !important;
+  border-color: rgba(94, 130, 172, .22) !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .module-btn.secondary:hover,
+body.dark-mode .message-top-action:hover,
+body.dark-mode .wk-contract-toggle:hover {
+  background: rgba(74, 222, 128, .11) !important;
+  color: #86efac !important;
+  border-color: rgba(74, 222, 128, .25) !important;
+}
+
+body.dark-mode .module-btn.danger {
+  background: rgba(225, 29, 72, .12) !important;
+  color: #fda4af !important;
+  border: 1px solid rgba(225, 29, 72, .24) !important;
+}
+
+body.dark-mode .contract-message,
+body.dark-mode .contract-tip,
+body.dark-mode .rating-closed,
+body.dark-mode .freelancer-closed {
+  background: rgba(148, 163, 184, .08) !important;
+  color: #d7e2f2 !important;
+  border: 1px solid rgba(148, 163, 184, .12) !important;
+}
+
+body.dark-mode .rating-form,
+body.dark-mode .message-input-shell {
+  background: rgba(8, 15, 29, .58) !important;
+  border: 1px solid rgba(94, 130, 172, .14) !important;
+  border-radius: 18px !important;
+}
+
+body.dark-mode .message-bubble:not(.mine) > div {
+  background: rgba(15, 23, 42, .84) !important;
+  border: 1px solid rgba(94, 130, 172, .16) !important;
+}
+
+body.dark-mode .message-bubble.mine > div {
+  background: linear-gradient(180deg, rgba(15, 206, 106, .18), rgba(4, 191, 85, .12)) !important;
+  border: 1px solid rgba(74, 222, 128, .22) !important;
+}
+
+
+/* Perfil clicável nos cards de contrato */
+.module-profile-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.module-profile-link:hover {
+  color: #029d47;
+  border-color: rgba(4, 191, 85, .25);
+  background: rgba(4, 191, 85, .10);
+  transform: translateY(-1px);
+}
+
+body.dark-mode .module-profile-link:hover {
+  color: #86efac;
+  background: rgba(74, 222, 128, .12);
+  border-color: rgba(74, 222, 128, .24);
+}

@@ -27,16 +27,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   function labelStatus(status = '') {
-    const labels = {
-      pendente: 'Aguardando início',
-      proposta_pendente: 'Proposta pendente',
-      proposta_aceita: 'Proposta aceita',
-      em_andamento: 'Em andamento',
-      concluido: 'Entrega concluída',
-      cancelado: 'Cancelado',
-      encerrado: 'Concluído'
-    };
-    return labels[status] || String(status).replace('_', ' ');
+    return window.Workly?.formatContractStatus
+      ? window.Workly.formatContractStatus(status)
+      : String(status || 'pendente').replace(/_/g, ' ');
   }
 
   function priceLabel(c) {

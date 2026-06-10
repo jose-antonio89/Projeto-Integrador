@@ -373,6 +373,28 @@ window.Workly = (() => {
         return `R$ ${Number(value || 0).toFixed(2).replace('.', ',')}`;
     }
 
+
+    const CONTRACT_STATUS_LABELS = {
+        pendente: 'Aguardando início',
+        proposta_pendente: 'Proposta pendente',
+        proposta_aceita: 'Proposta aceita',
+        em_andamento: 'Em andamento',
+        concluido: 'Concluído',
+        encerrado: 'Concluído',
+        cancelado: 'Cancelado'
+    };
+
+    function formatContractStatus(status = '') {
+        const key = String(status || '').trim();
+        return CONTRACT_STATUS_LABELS[key] || key.replace(/_/g, ' ') || 'Pendente';
+    }
+
+    function getContractStatusClass(status = '') {
+        const key = String(status || 'pendente').trim() || 'pendente';
+        const normalizedKey = key === 'encerrado' ? 'concluido' : key;
+        return normalizedKey.replace(/[^a-z0-9_-]/gi, '').toLowerCase();
+    }
+
     function escapeHtml(text = '') {
         return String(text)
             .replace(/&/g, '&amp;')
@@ -520,6 +542,8 @@ window.Workly = (() => {
         apiFetch,
         fetchCurrentUser,
         formatCurrency,
+        formatContractStatus,
+        getContractStatusClass,
         formatServiceRating,
         formatServiceTime,
         formatServiceDateTime,

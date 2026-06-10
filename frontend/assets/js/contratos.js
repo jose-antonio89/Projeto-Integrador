@@ -99,7 +99,7 @@ function card(c) {
         </div>
         <p>${esc(c.descricaoServico || 'Contrato criado pela plataforma Workly.').slice(0, 115)}</p>
         <div class="module-meta">
-          <span class="module-pill"><i class="fas fa-user"></i>${esc(outro?.nome || 'Usuário')}</span>
+          ${profilePill(outro)}
           <span class="module-pill"><i class="fas fa-id-badge"></i>${roleLabel}</span>
           <span class="module-pill price-pill">${priceLabel(c)}</span>
           ${c.tipoContratacao && c.tipoContratacao !== 'fixo' ? `<span class="module-pill"><i class="fas fa-handshake"></i>${c.tipoContratacao === 'combinar' ? 'Valor a combinar' : 'Negociação'}</span>` : ''}
@@ -116,16 +116,20 @@ function card(c) {
   }
 
   function labelStatus(status = '') {
-    const labels = {
-      pendente: 'Aguardando início',
-      proposta_pendente: 'Proposta pendente',
-      proposta_aceita: 'Proposta aceita',
-      em_andamento: 'Em andamento',
-      concluido: 'Entrega concluída',
-      cancelado: 'Cancelado',
-      encerrado: 'Concluído'
-    };
-    return labels[status] || String(status).replace('_', ' ');
+    return window.Workly?.formatContractStatus
+      ? window.Workly.formatContractStatus(status)
+      : String(status || 'pendente').replace(/_/g, ' ');
+  }
+
+  function profilePill(user = {}) {
+    const name = esc(user?.nome || 'Usuário');
+    const id = user?.idUsuario || user?.id_usuario || user?.id || user?._id;
+
+    if (!id) {
+      return `<span class="module-pill"><i class="fas fa-user"></i>${name}</span>`;
+    }
+
+    return `<a class="module-pill module-profile-link" href="perfil-publico.html?id=${encodeURIComponent(id)}"><i class="fas fa-user"></i>${name}</a>`;
   }
 
   function priceLabel(c) {
@@ -171,16 +175,16 @@ function actionsFor(c) {
 
   function feedbackContrato(c) {
     if (c.papel === 'cliente' && (c.status === 'encerrado' || c.jaAvaliado || c.ja_avaliado)) {
-      return '<div class="rating-closed"><i class="fas fa-circle-check"></i> Avaliação enviada. Contrato encerrado.</div>';
+      return '<div class="rating-closed"><i class="fas fa-circle-check"></i> Avaliação enviada. Contrato concluído.</div>';
     }
     if (c.papel === 'freelancer' && c.status === 'encerrado') {
       return '<div class="rating-closed freelancer-closed"><i class="fas fa-circle-check"></i> Serviço avaliado pelo contratante.</div>';
     }
     if (c.papel === 'cliente' && c.status === 'concluido') {
-      return '<div class="contract-tip"><i class="fas fa-star"></i> Avalie para encerrar este contrato.</div>';
+      return '<div class="contract-tip"><i class="fas fa-star"></i> Avalie este contrato concluído.</div>';
     }
     if (c.papel === 'cliente' && c.status === 'proposta_pendente') {
-      return '<div class="contract-tip"><i class="fas fa-clock"></i> Aguardando resposta do freelancer.</div>';
+      return '<div class="contract-tip"><i class="fas fa-clock"></i> Aguardando início do freelancer.</div>';
     }
     return '';
   }

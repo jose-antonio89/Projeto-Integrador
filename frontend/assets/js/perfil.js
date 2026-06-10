@@ -216,16 +216,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatContractStatus(status) {
-        const labels = {
-            pendente: 'Aguardando início',
-            proposta_pendente: 'Proposta pendente',
-            proposta_aceita: 'Proposta aceita',
-            em_andamento: 'Em andamento',
-            concluido: 'Concluído',
-            cancelado: 'Cancelado',
-            encerrado: 'Concluído'
-        };
-        return labels[status] || 'Pendente';
+        return window.Workly?.formatContractStatus
+            ? window.Workly.formatContractStatus(status)
+            : String(status || 'pendente').replace(/_/g, ' ');
     }
 
     function formatLeadPrice(lead) {
@@ -257,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const mensagem = escapeProfileText(lead.mensagem || 'Sem mensagem enviada.');
             const status = String(lead.status || 'pendente');
             const tipo = lead.tipoContratacao === 'fixo' ? 'Contratação direta' : 'Proposta recebida';
-            const statusClass = (status === 'concluido' || status === 'encerrado') ? 'status-concluido' : (status === 'pendente' || status === 'proposta_pendente' ? 'status-pendente' : (status === 'cancelado' ? 'status-cancelado' : 'status-andamento'));
+            const statusClass = (status === 'encerrado' || status === 'concluido') ? 'status-concluido' : (status === 'pendente' || status === 'proposta_pendente' ? 'status-pendente' : (status === 'cancelado' ? 'status-cancelado' : 'status-andamento')); 
 
             return [
                 '<article class="lead-item proposal-lead">',

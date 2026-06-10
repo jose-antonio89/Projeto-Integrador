@@ -3562,3 +3562,309 @@ html.dark-mode-enabled .workly-logo-switch:hover {
     drop-shadow(0 0 22px rgba(0, 255, 123, 0.55))
     drop-shadow(0 0 36px rgba(0, 255, 123, 0.32)) !important;
 }
+
+/* ===== limpeza final do tema escuro ===== */
+body.dark-mode,
+html.dark-mode-enabled body {
+  background:
+    radial-gradient(ellipse at 9% 0%, rgba(74, 222, 128, .11), transparent 28%),
+    radial-gradient(ellipse at 92% 0%, rgba(59, 130, 246, .08), transparent 24%),
+    linear-gradient(180deg, #060d1b 0%, #0a1424 52%, #0b1728 100%) !important;
+}
+
+body.dark-mode .container,
+body.dark-mode .profile-container,
+body.dark-mode .settings-container,
+body.dark-mode .about-us-container,
+body.dark-mode .popular-services,
+body.dark-mode .servicos-container,
+body.dark-mode .service-details-content,
+body.dark-mode .service-image-column,
+body.dark-mode .service-details-column {
+  box-shadow: none !important;
+}
+
+body.dark-mode .service-card,
+body.dark-mode .servico-card,
+body.dark-mode .servico-card-modern,
+body.dark-mode .dashboard-card,
+body.dark-mode .settings-sidebar,
+body.dark-mode .settings-content,
+body.dark-mode .tab-content,
+body.dark-mode .form-section,
+body.dark-mode .review-summary,
+body.dark-mode .review-item,
+body.dark-mode .empty-state-card,
+body.dark-mode .create-ad-card,
+body.dark-mode .preview-card,
+body.dark-mode .ad-form-card,
+body.dark-mode .side-card,
+body.dark-mode .detail-card,
+body.dark-mode .seller-card,
+body.dark-mode .action-card,
+body.dark-mode .service-action-box {
+  background: linear-gradient(180deg, rgba(15, 23, 42, .94), rgba(11, 18, 32, .94)) !important;
+  border: 1px solid rgba(94, 130, 172, .18) !important;
+  box-shadow: 0 18px 46px rgba(0, 4, 18, .34) !important;
+  color: #eef4ff !important;
+}
+
+body.dark-mode .service-card:hover,
+body.dark-mode .servico-card:hover,
+body.dark-mode .servico-card-modern:hover,
+body.dark-mode .dashboard-card:hover {
+  border-color: rgba(74, 222, 128, .24) !important;
+  box-shadow: 0 22px 54px rgba(0, 4, 18, .42), 0 0 0 1px rgba(74, 222, 128, .08) !important;
+}
+
+body.dark-mode hr,
+body.dark-mode .divider,
+body.dark-mode .form-divider,
+body.dark-mode .section-divider {
+  border-color: rgba(94, 130, 172, .18) !important;
+  background: rgba(94, 130, 172, .18) !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .search-box,
+body.dark-mode .form-control {
+  background: rgba(8, 15, 29, .92) !important;
+  color: #eef4ff !important;
+  border-color: rgba(94, 130, 172, .24) !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus,
+body.dark-mode .search-box:focus,
+body.dark-mode .form-control:focus {
+  border-color: rgba(74, 222, 128, .48) !important;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, .11) !important;
+}
+
+body.dark-mode .module-pill,
+body.dark-mode .badge,
+body.dark-mode .tag,
+body.dark-mode .category-badge,
+body.dark-mode .wk-service-category-badge,
+body.dark-mode .service-category-badge {
+  border-radius: 999px !important;
+}
+
+body.dark-mode .workly-loading,
+body.dark-mode .no-service,
+body.dark-mode .empty-state-message {
+  background: linear-gradient(180deg, rgba(15, 23, 42, .90), rgba(11, 18, 32, .92)) !important;
+  border: 1px solid rgba(94, 130, 172, .18) !important;
+  color: #eef4ff !important;
+}
+
+
+/* Ajuste fino do ícone dos modais/alertas para não ficar torto no círculo */
+.wk-modal-icon,
+.swal2-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-style: solid !important;
+  border-radius: 999px !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+.wk-modal-icon i {
+  display: block !important;
+  font-size: 2rem !important;
+  line-height: 1 !important;
+  transform: translateY(1px) !important;
+}
+
+.wk-modal-icon.wk-success i {
+  font-size: 2.15rem !important;
+}
+
+.wk-modal-icon.wk-error i,
+.wk-modal-icon.wk-warning i,
+.wk-modal-icon.wk-info i {
+  font-size: 1.95rem !important;
+}
+
+
+/* Refinamento do ícone de sucesso dos modais/alerts */
+.swal2-icon.swal2-success {
+  position: relative !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(34, 197, 94, .30) !important;
+}
+
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+  height: 5px !important;
+  border-radius: 999px !important;
+  background-color: #22c55e !important;
+  box-shadow: none !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-line-tip {
+  width: 18px !important;
+  left: 15px !important;
+  top: 42px !important;
+  transform: rotate(45deg) !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-line-long {
+  width: 34px !important;
+  right: 12px !important;
+  top: 36px !important;
+  transform: rotate(-45deg) !important;
+}
+
+.wk-modal-icon.wk-success {
+  position: relative !important;
+}
+
+.wk-modal-icon.wk-success i {
+  display: none !important;
+}
+
+.wk-modal-icon.wk-success::before,
+.wk-modal-icon.wk-success::after {
+  content: '' !important;
+  position: absolute !important;
+  display: block !important;
+  height: 5px !important;
+  border-radius: 999px !important;
+  background: #22c55e !important;
+  transform-origin: left center !important;
+}
+
+.wk-modal-icon.wk-success::before {
+  width: 18px !important;
+  left: 20px !important;
+  top: 42px !important;
+  transform: rotate(45deg) !important;
+}
+
+.wk-modal-icon.wk-success::after {
+  width: 34px !important;
+  left: 31px !important;
+  top: 39px !important;
+  transform: rotate(-45deg) !important;
+}
+
+
+/* Correção final do ícone de sucesso: usa um SVG limpo para evitar falha na junção das linhas */
+.swal2-icon.swal2-success [class^='swal2-success-line'],
+.swal2-icon.swal2-success .swal2-success-ring,
+.swal2-icon.swal2-success .swal2-success-fix,
+.swal2-icon.swal2-success .swal2-success-circular-line-left,
+.swal2-icon.swal2-success .swal2-success-circular-line-right {
+  display: none !important;
+}
+
+.swal2-icon.swal2-success,
+.wk-modal-icon.wk-success {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.swal2-icon.swal2-success::before,
+.wk-modal-icon.wk-success::before {
+  content: "" !important;
+  width: 42px !important;
+  height: 42px !important;
+  display: block !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 42 42' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 22.5L17.2 29.7L32 14.3' fill='none' stroke='%2322c55e' stroke-width='4.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  transform: none !important;
+}
+
+.swal2-icon.swal2-success::after,
+.wk-modal-icon.wk-success::after {
+  content: none !important;
+  display: none !important;
+}
+
+.wk-modal-icon.wk-success i {
+  display: none !important;
+}
+
+
+/* Animação limpa para o ícone de sucesso dos modais */
+.swal2-icon.swal2-success,
+.wk-modal-icon.wk-success {
+  animation: worklySuccessCirclePop .46s cubic-bezier(.2, .9, .25, 1.25) both !important;
+}
+
+.swal2-icon.swal2-success::before,
+.wk-modal-icon.wk-success::before {
+  animation: worklySuccessCheckDraw .48s cubic-bezier(.22, 1, .36, 1) .22s both !important;
+  transform-origin: center !important;
+  will-change: clip-path, opacity, transform !important;
+}
+
+.swal2-icon.swal2-success::after,
+.wk-modal-icon.wk-success::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -7px !important;
+  display: block !important;
+  border-radius: 999px !important;
+  border: 2px solid rgba(34, 197, 94, .28) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  animation: worklySuccessPulse .72s ease-out .08s both !important;
+}
+
+@keyframes worklySuccessCirclePop {
+  0% {
+    opacity: 0;
+    transform: scale(.72);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.06);
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, .08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes worklySuccessCheckDraw {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: scale(.96);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes worklySuccessPulse {
+  0% {
+    opacity: .7;
+    transform: scale(.82);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.22);
+  }
+}

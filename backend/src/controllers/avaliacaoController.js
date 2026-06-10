@@ -38,7 +38,9 @@ exports.criar = async (req, res) => {
       comentario: String(comentario || '').trim()
     });
 
-    contrato.status = 'encerrado';
+    // Mantém o contrato como concluído após a avaliação.
+    // Antes o sistema mudava para 'encerrado', mas esse segundo status final confundia a apresentação.
+    contrato.status = 'concluido';
     await contrato.save();
 
     const avaliacao = await Avaliacao.findById(avaliacaoCriada._id)
@@ -50,7 +52,7 @@ exports.criar = async (req, res) => {
     // notifica o freelancer da nova avaliação.
     const nomeCliente = avaliacao.autor?.nome || 'O contratante';
     notificarAvaliacaoRecebida(contrato.freelancer._id, avaliacaoCriada._id, nomeCliente, Number(notaFreelancer)).catch(() => {});
-    return sucesso(res, 201, 'Avaliação salva com sucesso. Contrato encerrado.', mapAvaliacao(req, avaliacao));
+    return sucesso(res, 201, 'Avaliação salva com sucesso. Contrato concluído.', mapAvaliacao(req, avaliacao));
   } catch (error) {
     if (error && error.code === 11000) return erro(res, 400, 'Este contrato já foi avaliado.');
     console.error(error);

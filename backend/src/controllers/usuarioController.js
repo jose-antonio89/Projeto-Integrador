@@ -88,6 +88,34 @@ function usuarioEhContratante(usuario) {
   return tipo.includes('contratante') || tipo.includes('cliente');
 }
 
+
+async function anexarResumoAvaliacoesServicos(servicos = []) {
+  const lista = Array.isArray(servicos) ? servicos : [servicos];
+  const ids = lista.map(servico => servico?._id).filter(Boolean);
+
+  if (!ids.length) return Array.isArray(servicos) ? [] : null;
+
+  const resumo = await Avaliacao.aggregate([
+    { $match: { servico: { $in: ids } } },
+    { $group: { _id: '$servico', total: { $sum: 1 }, media: { $avg: '$notaServico' } } }
+  ]);
+
+  const porServico = new Map(resumo.map(item => [String(item._id), item]));
+
+  const comResumo = lista.map(servico => {
+    const base = servico?.toObject ? servico.toObject() : servico;
+    const item = porServico.get(String(base._id)) || { total: 0, media: 0 };
+
+    return {
+      ...base,
+      avaliacaoMediaServico: item.total ? Number(Number(item.media || 0).toFixed(1)) : 0,
+      totalAvaliacoesServico: item.total || 0
+    };
+  });
+
+  return Array.isArray(servicos) ? comResumo : comResumo[0];
+}
+
 async function montarDashboardPerfil(req, usuario, totalServicosPublicados = 0) {
   const usuarioId = usuario._id;
   const isFreelancer = usuarioEhFreelancer(usuario, totalServicosPublicados);
@@ -395,9 +423,11 @@ exports.buscarPerfilPublico = async (req, res) => {
       }, { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 })
     };
 
+    const servicosComResumo = await anexarResumoAvaliacoesServicos(servicosDoUsuario);
+
     return sucesso(res, 200, 'Perfil público carregado com sucesso.', null, {
       user: mapUsuarioPublico(req, usuario),
-      services: servicosDoUsuario.map(servico => mapServico(req, servico)),
+      services: servicosComResumo.map(servico => mapServico(req, servico)),
       reviews: avaliacoesRecebidas.map(avaliacao => mapAvaliacao(req, avaliacao)),
       reviewSummary: resumoAvaliacoes,
       modo: usuarioEhFreelancer(usuario, servicosDoUsuario.length) ? 'freelancer' : 'contratante'
