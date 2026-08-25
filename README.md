@@ -47,10 +47,12 @@
       - [**Parcerias Principais**](#parcerias-principais)
       - [**Atividades Principais**](#atividades-principais)
       - [**Recursos Principais**](#recursos-principais)
+      - [**Service Blueprint**](#serviceblueprint)
     - [👥 Para quem será elaborado?](#-para-quem-será-elaborado)
       - [🎯 **Segmento de Mercado**](#-segmento-de-mercado)
       - [**Relacionamento com Clientes**](#relacionamento-com-clientes)
       - [**Canais**](#canais)
+      - [**Jornada do Usuário**](#jornadadousuario)
     - [💰 Quanto custará?](#-quanto-custará)
       - [**Custo de Desenvolvimento**](#custo-de-desenvolvimento)
       - [**Custo de Infraestrutura**](#custo-de-infraestrutura)
@@ -200,7 +202,7 @@ Nosso trabalho se divide em quatro áreas essenciais. Primeiro, cuidamos constan
 #### **Recursos Principais**
 Temos tudo o que precisamos para fazer a Workly dar certo: uma equipe dedicada, tecnologia de qualidade, sistemas seguros de pagamento e um banco de dados com perfis verificados. Esses recursos nos permitem manter a plataforma estável, segura e sempre evoluindo para atender melhor nossos usuários.
 
-### Service Blueprint
+#### **Service Blueprint**
 
 [![Service Blueprint](frontend/assets/img2/serviceblueprint.png)](frontend/assets/img2/serviceblueprint.png)
 
@@ -218,7 +220,7 @@ Mantemos um relacionamento próximo com todos que usam nossa plataforma. Você p
 #### **Canais**
 Estamos presentes onde nossos usuários estão: na nossa plataforma principal (site), nas redes sociais mais usadas pelo público e através das nossas parcerias com faculdades e empresas. Assim fica fácil encontrar e usar a Workly do jeito que preferir.
 
-### Jornada do Usuário
+#### **Jornada do Usuário**
 
 [![Jornada do usuario](frontend/assets/img2/jornadadousuario.png)](frontend/assets/img2/jornadadousuario.png)
 
